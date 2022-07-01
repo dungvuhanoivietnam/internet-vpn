@@ -41,17 +41,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/img_back"
         app:sv_backgroundCircleColor="@color/transparent"
-        app:sv_centerCircleColor="#04AA5A"
+        app:sv_centerCircleColor="@color/color_violet"
         app:sv_centerCircleRadius="@dimen/_10sdp"
         app:sv_indicator="NormalSmallIndicator"
         app:sv_indicatorColor="@color/color_D9D9D9"
-        app:sv_indicatorLightColor="@color/core_green"
+        app:sv_indicatorLightColor="@color/color_violet"
         app:sv_indicatorWidth="@dimen/_5sdp"
         app:sv_markColor="@color/white_15_percent"
         app:sv_markStyle="ROUND"
         app:sv_minSpeed="0"
         app:sv_maxSpeed="100"
-        app:sv_pointerColor="@color/core_green"
+        app:sv_pointerColor="@color/color_violet"
         app:sv_speedometerColor="@color/white_15_percent"
         app:sv_speedometerWidth="@dimen/_16sdp"
         app:sv_tickTextFormat="INTEGER"
@@ -71,7 +71,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:textColor="@color/core_green"
+        android:textColor="@color/color_violet"
         android:textSize="32sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -111,6 +111,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
+        android:tint="@color/color_violet"
         android:src="@drawable/ic_spacing_line_down_left"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/spv_internet"
@@ -149,6 +150,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
+        android:tint="@color/color_violet"
         android:src="@drawable/ic_spacing_line_up_left"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/spv_internet"
@@ -173,7 +175,7 @@
         android:layout_width="@dimen/_133sdp"
         android:layout_height="@dimen/_35sdp"
         android:layout_marginTop="@dimen/_24sdp"
-        android:background="@drawable/bg_button"
+        android:background="@drawable/bg_core_radian"
         android:text="@string/check"
         android:textAllCaps="false"
         android:textColor="@color/white"
@@ -182,29 +184,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/spv_internet" />
 
-    <com.example.wise_memory_optimizer.custom.ExtTextView
-        android:id="@+id/txt_location_checked"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/_14sdp"
-        android:layout_marginTop="@dimen/_30sdp"
-        android:text="@string/location_checked"
-        android:textColor="@color/white"
-        android:textSize="@dimen/_14ssp"
-        app:layout_constraintTop_toBottomOf="@id/btn_check"
-        app:textViewFontAssetName="@string/font_medium" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rcv_location_checked"
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/pager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/btn_check"
         android:layout_marginHorizontal="@dimen/_16sdp"
         android:layout_marginTop="@dimen/_12sdp"
-        android:layout_marginBottom="@dimen/_100sdp"
-        android:background="@color/transparent"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txt_location_checked" />
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </androidx.viewpager.widget.ViewPager>
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/ll_empty"
@@ -213,7 +207,7 @@
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txt_location_checked">
+        app:layout_constraintTop_toBottomOf="@id/btn_check">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="wrap_content"

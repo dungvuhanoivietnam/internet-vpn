@@ -21,7 +21,9 @@ import com.example.wise_memory_optimizer.utils.NetWorkConnection
 import com.example.wise_memory_optimizer.utils.formatMbps
 import com.example.wise_memory_optimizer.utils.setTextPing
 import com.example.wise_memory_optimizer.utils.toMbps
+import com.github.anastr.speedviewlib.Gauge
 import fr.bmartel.speedtest.model.SpeedTestMode
+import java.util.*
 
 class CheckInternetSpeedFragment : Fragment() {
     private val viewModel by lazy {
@@ -157,17 +159,26 @@ class CheckInternetSpeedFragment : Fragment() {
         binding.spvInternet.run {
             withTremble = true
 
-            indicator.run {
-                color = ContextCompat.getColor(requireContext(), R.color.gray_9E)
-                width = resources.getDimension(com.intuit.sdp.R.dimen._6sdp)
-            }
-            centerCircleColor = ContextCompat.getColor(requireContext(), R.color.core_green)
-
             sections.run {
-                get(0).width = resources.getDimension(com.intuit.sdp.R.dimen._12sdp)
-                indicator
-                get(1).width = resources.getDimension(com.intuit.sdp.R.dimen._12sdp)
-                get(2).width = resources.getDimension(com.intuit.sdp.R.dimen._12sdp)
+                get(0).apply {
+                    width = resources.getDimension(com.intuit.sdp.R.dimen._40sdp)
+                    color = ContextCompat.getColor(requireContext(), R.color.color_violet)
+                }
+
+                get(1).apply {
+                    width = resources.getDimension(com.intuit.sdp.R.dimen._40sdp)
+                    color = ContextCompat.getColor(requireContext(), R.color.color_red)
+                }
+
+                get(2).apply {
+                    width = resources.getDimension(com.intuit.sdp.R.dimen._40sdp)
+                    color = ContextCompat.getColor(requireContext(), R.color.color_green_00)
+                }
+            }
+
+
+            onSpeedChangeListener = { gauge: Gauge, _: Boolean?, _: Boolean? ->
+
             }
         }
     }

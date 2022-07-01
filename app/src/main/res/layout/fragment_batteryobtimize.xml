@@ -249,7 +249,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="@dimen/_10sdp"
-                android:background="@drawable/bg_core_green"
+                android:background="@drawable/bg_core_radian"
                 android:paddingStart="@dimen/_20sdp"
                 android:paddingTop="@dimen/_5sdp"
                 android:paddingEnd="@dimen/_20sdp"

@@ -1,4 +1,4 @@
-package com.example.wise_memory_optimizer.ui.internet.list
+package com.example.wise_memory_optimizer.ui.internet.list.adapter
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.wise_memory_optimizer.R
 import com.example.wise_memory_optimizer.databinding.ItemLocationCheckedBinding
 import com.example.wise_memory_optimizer.model.location_speed_test.LocationTestingModel
-import com.example.wise_memory_optimizer.utils.setTextPing
 import com.example.wise_memory_optimizer.utils.showStateTesting
 
 class InternetSpeedAdapter(
