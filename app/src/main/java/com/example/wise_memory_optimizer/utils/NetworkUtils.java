@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.wifi.WifiManager;
+import android.text.format.Formatter;
 
 import java.net.NetworkInterface;
 import java.util.ArrayList;
@@ -31,5 +33,11 @@ public class NetworkUtils {
         }
 
         return networkList.contains("tun0");
+    }
+
+    public static String getIpAddress(Context context) {
+        WifiManager wm = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
+        String ip = Formatter.formatIpAddress(wm.getConnectionInfo().getIpAddress());
+        return ip;
     }
 }
