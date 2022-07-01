@@ -1,9 +1,11 @@
 package com.example.wise_memory_optimizer
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import androidx.appcompat.app.AppCompatActivity
+import com.example.wise_memory_optimizer.custom.MyCustomOnboarder
 import com.example.wise_memory_optimizer.databinding.ActivityMainBinding
 import com.example.wise_memory_optimizer.ui.battery.PreferenceUtil
 import com.example.wise_memory_optimizer.ui.battery.service.PowerService
@@ -16,6 +18,14 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        //        ScreenUtils.transparentStatusAndNavigation(this);
+        var onboarding = false
+        if (intent != null && intent.extras != null) {
+            onboarding = intent.extras!!.getBoolean("onboarding", false)
+        }
+        if (!onboarding) {
+            initOnboarding()
+        }
 
         ScreenUtils.transparentStatusAndNavigation(this)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -24,6 +34,15 @@ class MainActivity : AppCompatActivity() {
         if (!PowerService.isServiceRunning(applicationContext, PowerService::class.java)) {
             PowerService.startMy(applicationContext)
         }
+    }
+
+    private fun initOnboarding() {
+        val intent = Intent(
+            this,
+            MyCustomOnboarder::class.java
+        )
+        startActivity(intent)
+        finish()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
