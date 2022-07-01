@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/padding_midlde_xlarge"
+        android:background="@drawable/bg_dialog_loading_vpn"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/ivContent"
+                android:src="@drawable/ic_connect_vpn_error"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.example.wise_memory_optimizer.custom.ExtTextView
+                android:id="@+id/txtContent"
+                android:layout_width="wrap_content"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/padding_normal"
+                android:layout_marginTop="@dimen/padding_large_normal"
+                android:text="@string/error_connect_vpn"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_small"
+                app:textViewFontAssetName="@string/font_regular" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/color_gray_46"
+            android:layout_marginTop="@dimen/padding_normal" />
+
+        <com.example.wise_memory_optimizer.custom.ExtTextView
+            android:id="@+id/txtCancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/padding_normal"
+            android:text="@string/ok_vpn"
+            android:textColor="@color/color_green_00"
+            android:textSize="@dimen/text_size_middle_large"
+            app:textViewFontAssetName="@string/font_regular" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

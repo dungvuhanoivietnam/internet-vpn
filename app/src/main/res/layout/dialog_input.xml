@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_237sdp"
+        android:layout_centerInParent="true"
+        android:layout_margin="@dimen/_2sdp"
+        android:background="@drawable/bg_dialog_loading_vpn">
+
+        <com.example.wise_memory_optimizer.custom.ExtTextView
+            android:id="@+id/txt_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:text="@string/name_location"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_20ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:textViewFontAssetName="@string/font_medium" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edt_input"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_24sdp"
+            android:background="@drawable/bg_popup"
+            android:hint="@string/ex_living_room"
+            android:maxLines="1"
+            android:inputType="text"
+            android:padding="@dimen/_17sdp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/gray_9E"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_title" />
+
+        <View
+            android:id="@+id/spacing_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_marginTop="@dimen/_36sdp"
+            android:background="@color/white_15_percent"
+            app:layout_constraintTop_toBottomOf="@id/edt_input" />
+
+        <View
+            android:id="@+id/spacing_vertical"
+            android:layout_width="@dimen/_1sdp"
+            android:layout_height="0dp"
+            android:background="@color/white_15_percent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/spacing_horizontal" />
+
+        <com.example.wise_memory_optimizer.custom.ExtTextView
+            android:id="@+id/btn_cancel"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:text="@string/cancel"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_16sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/spacing_vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/spacing_horizontal"
+            app:textViewFontAssetName="@string/font_medium" />
+
+        <com.example.wise_memory_optimizer.custom.ExtTextView
+            android:id="@+id/btn_ok"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:text="@string/ok"
+            android:textColor="@color/core_green"
+            android:textSize="@dimen/_18sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/spacing_vertical"
+            app:layout_constraintTop_toBottomOf="@id/spacing_horizontal"
+            app:textViewFontAssetName="@string/font_black" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

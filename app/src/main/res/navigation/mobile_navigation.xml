@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.wise_memory_optimizer.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_homeFragment_to_ram_Obtimize"
+            app:destination="@id/ram_obtimize"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim" />
+
+        <action
+            android:id="@+id/action_homeFragment_to_battery_Obtimize"
+            app:destination="@id/battery_obtimize"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim" />
+
+        <action
+            android:id="@+id/action_homeFragment_to_cpu_booster"
+            app:destination="@id/cpu_obtimize"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim" />
+
+        <action
+            android:id="@+id/action_homeFragment_to_change_vpn"
+            app:destination="@id/change_vpn"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim" />
+
+        <action
+            android:id="@+id/action_homeFragment_to_duplicate_delete"
+            app:destination="@id/duplicate_delete"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_nav_home_to_list_internet_speed"
+            app:destination="@id/list_internet_speed" />
+
+        <action
+            android:id="@+id/action_auto_optimize"
+            app:destination="@id/nav_auto_optimize"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim" />
+
+        <action
+            android:id="@+id/action_nav_view_language"
+            app:destination="@id/nav_fragment_language"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim" />
+
+        <action
+            android:id="@+id/action_nav_view_privacy"
+            app:destination="@id/nav_fragment_privacy"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim" />
+
+        <action
+            android:id="@+id/action_nav_view_about_app"
+            app:destination="@id/nav_fragment_about_app"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/ram_optimizing"
+        android:name="com.example.wise_memory_optimizer.ui.ramObtimize.RamOptimizingFragment"
+        android:label="Ram optimizing"
+        tools:layout="@layout/fragment_ram_optimizing" />
+
+    <fragment
+        android:id="@+id/ram_obtimize"
+        android:name="com.example.wise_memory_optimizer.ui.ramObtimize.RamObtimizeFragment"
+        android:label="Ram Optimize"
+        tools:layout="@layout/fragment_ramobtimize" >
+        <action
+            android:id="@+id/ram_optimize_to_ram_optimizing"
+            app:destination="@id/ram_optimizing" />
+    </fragment>
+    <fragment
+        android:id="@+id/cpu_obtimize"
+        android:name="com.example.wise_memory_optimizer.ui.cpu.cpu.CpuFragment"
+        android:label="CPU Optimize"
+        tools:layout="@layout/fragment_cpu_booster">
+        <action
+            android:id="@+id/action_cpu_obtimize_to_cpu_obtimizing"
+            app:destination="@id/cpu_obtimizing" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/cpu_obtimizing"
+        android:name="com.example.wise_memory_optimizer.ui.cpu.optimizing.CpuOptimizingFragment"
+        android:label="CPU Optimizing"
+        tools:layout="@layout/fragment_cpu_optimizing" />
+
+    <fragment
+        android:id="@+id/battery_obtimize"
+        android:name="com.example.wise_memory_optimizer.ui.battery.BatteryObtimizeFragment"
+        android:label="battery_obtimize"
+        tools:layout="@layout/fragment_batteryobtimize" />
+
+    <fragment
+        android:id="@+id/cpu_booster"
+        android:name="com.example.wise_memory_optimizer."
+        android:label="cpu_booster"
+        tools:layout="@layout/fragment_batteryobtimize" />
+
+    <fragment
+        android:id="@+id/change_vpn"
+        android:name="com.example.wise_memory_optimizer.ui.vpn.ChangeVpnFragment"
+        android:label="change_vpn"
+        tools:layout="@layout/fragment_change_vpn">
+
+        <action
+            android:id="@+id/action_back_home"
+            app:destination="@id/nav_home"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim" />
+
+        <action
+            android:id="@+id/action_list_location"
+            app:destination="@id/show_list_country"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim" />
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/duplicate_delete"
+        android:name="com.example.wise_memory_optimizer.ui.duplicate.DuplicatePhotoFragment"
+        android:label="duplicate_delete"
+        tools:layout="@layout/fragment_duplicate_photo">
+
+
+        <action
+            android:id="@+id/action_duplicate_to_delete"
+            app:destination="@id/delete_duplicate"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@+id/nav_home"
+            app:popUpToInclusive="false" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/delete_duplicate"
+        android:name="com.example.wise_memory_optimizer.ui.duplicate.delete.DeleteDuplicateFragment"
+        android:label="delete_duplicate"
+        tools:layout="@layout/fragment_delete_duplicate">
+
+        <action
+            android:id="@+id/action_delete_duplicate_to_same_photo"
+            app:destination="@id/delete_same_photo"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim" />
+
+        <action
+            android:id="@+id/action_delete_duplicate_to_same_video"
+            app:destination="@id/delete_same_video"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim" />
+
+        <action
+            android:id="@+id/action_delete_duplicate_to_same_file"
+            app:destination="@id/delete_same_file"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim" />
+
+        <action
+            android:id="@+id/action_delete_duplicate_to_low_quality"
+            app:destination="@id/delete_low_quality"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/battery_optimizing"
+        android:name="com.example.wise_memory_optimizer.ui.battery.BatteryOptimizingFragment"
+        android:label="battery_optimizing"
+        tools:layout="@layout/fragment_battery_optimizing" />
+
+    <fragment
+        android:id="@+id/done_optimizer"
+        android:name="com.example.wise_memory_optimizer.ui.done.DoneFragment"
+        android:label="done_fragment"
+        tools:layout="@layout/fragment_done_optimizer">
+
+        <action
+            android:id="@+id/backtoHome"
+            app:destination="@id/nav_home"
+            app:enterAnim="@anim/nav_default_pop_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/delete_same_photo"
+        android:name="com.example.wise_memory_optimizer.ui.duplicate.same_photo.DeleteSamePhotoFragment"
+        android:label="delete_same_photo"
+        tools:layout="@layout/fragment_delete_same_photo" />
+
+    <fragment
+        android:id="@+id/delete_same_video"
+        android:name="com.example.wise_memory_optimizer.ui.duplicate.same_video.DeleteSameVideoFragment"
+        android:label="delete_same_video"
+        tools:layout="@layout/fragment_delete_same_video" />
+
+    <fragment
+        android:id="@+id/delete_same_file"
+        android:name="com.example.wise_memory_optimizer.ui.duplicate.same_file.DeleteSameFileFragment"
+        android:label="delete_same_file"
+        tools:layout="@layout/fragment_delete_same_video" />
+
+    <fragment
+        android:id="@+id/show_list_country"
+        android:name="com.example.wise_memory_optimizer.ui.vpn.ListLocationFragment"
+        android:label="delete_duplicate"
+        tools:layout="@layout/fragment_change_location">
+
+        <action
+            android:id="@+id/action_back"
+            app:destination="@id/change_vpn"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/delete_low_quality"
+        android:name="com.example.wise_memory_optimizer.ui.duplicate.lowquality.DeleteImageQualityFragment"
+        android:label="delete_low_quality"
+        tools:layout="@layout/fragment_delete_image_low_quality" />
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="com.example.wise_memory_optimizer.ui.gallery.GalleryFragment"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_gallery" />
+
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="com.example.wise_memory_optimizer.ui.slideshow.SlideshowFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_slideshow" />
+
+    <fragment
+        android:id="@+id/list_internet_speed"
+        android:name="com.example.wise_memory_optimizer.ui.internet.list.InternetSpeedFragment"
+        android:label="@string/tv_internet_speed"
+        tools:layout="@layout/fragment_internet_speed">
+        <action
+            android:id="@+id/action_list_internet_speed_to_check_internet_speed"
+            app:destination="@id/check_internet_speed" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/check_internet_speed"
+        android:name="com.example.wise_memory_optimizer.ui.internet.check.CheckInternetSpeedFragment"
+        tools:layout="@layout/fragment_check_internet_speed" />
+
+    <fragment
+        android:id="@+id/nav_auto_optimize"
+        android:name="com.example.wise_memory_optimizer.ui.menu.ui.AutoOptimizeFragment"
+        android:label="AutoOptimize"
+        tools:layout="@layout/fragment_auto_optimize" />
+
+    <fragment
+        android:id="@+id/nav_fragment_language"
+        android:name="com.example.wise_memory_optimizer.ui.menu.ui.LanguageFragment"
+        android:label="Language"
+        tools:layout="@layout/fragment_language" />
+
+    <fragment
+        android:id="@+id/nav_fragment_privacy"
+        android:name="com.example.wise_memory_optimizer.ui.menu.ui.PrivacyFragment"
+        android:label="Privacy"
+        tools:layout="@layout/fragment_privacy" />
+
+    <fragment
+        android:id="@+id/nav_fragment_about_app"
+        android:name="com.example.wise_memory_optimizer.ui.menu.ui.AboutAppFragment"
+        android:label="About App"
+        tools:layout="@layout/fragment_abount_app" />
+
+    <action
+        android:id="@+id/action_back"
+        app:destination="@id/nav_home"
+        app:enterAnim="@anim/nav_default_pop_enter_anim"
+        app:exitAnim="@anim/nav_default_pop_exit_anim" />
+
+    <action
+        android:id="@+id/action_auto_optimize"
+        app:destination="@id/nav_auto_optimize"
+        app:enterAnim="@anim/nav_default_pop_enter_anim"
+        app:exitAnim="@anim/nav_default_pop_exit_anim" />
+</navigation>

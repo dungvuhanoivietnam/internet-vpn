@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/iv_background"
+    tools:context=".ui.home.HomeFragment">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_24sdp"
+        android:padding="@dimen/_24sdp"
+        android:src="@drawable/ic_back_arrow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_home"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/internet_speed"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/_20ssp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/img_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/img_back"
+        app:layout_constraintTop_toTopOf="@id/img_back" />
+
+    <com.github.anastr.speedviewlib.PointerSpeedometer
+        android:id="@+id/spv_internet"
+        android:layout_width="@dimen/_140sdp"
+        android:layout_height="@dimen/_140sdp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="@dimen/_40sdp"
+        android:layout_marginTop="@dimen/_40sdp"
+        app:barrierAllowsGoneWidgets="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/img_back"
+        app:sv_backgroundCircleColor="@color/transparent"
+        app:sv_centerCircleColor="#04AA5A"
+        app:sv_centerCircleRadius="@dimen/_10sdp"
+        app:sv_indicator="NormalSmallIndicator"
+        app:sv_indicatorColor="@color/color_D9D9D9"
+        app:sv_indicatorLightColor="@color/core_green"
+        app:sv_indicatorWidth="@dimen/_5sdp"
+        app:sv_markColor="@color/white_15_percent"
+        app:sv_markStyle="ROUND"
+        app:sv_minSpeed="0"
+        app:sv_maxSpeed="100"
+        app:sv_pointerColor="@color/core_green"
+        app:sv_speedometerColor="@color/white_15_percent"
+        app:sv_speedometerWidth="@dimen/_16sdp"
+        app:sv_tickTextFormat="INTEGER"
+        app:sv_withPointer="true"
+        app:sv_tickRotation="false"
+        app:sv_tickNumber="2"
+        app:sv_textSize="@dimen/_10ssp"
+        app:sv_unit="@string/unit_empty"
+        app:sv_unitSpeedInterval="@dimen/_5sdp"
+        app:sv_unitTextColor="@color/white"
+        app:sv_unitTextSize="@dimen/_10ssp"
+        app:sv_withIndicatorLight="true"
+        app:sv_withTremble="true" />
+
+    <com.example.wise_memory_optimizer.custom.ExtTextView
+        android:id="@+id/txt_ping"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:textColor="@color/core_green"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/spv_internet"
+        app:layout_constraintTop_toBottomOf="@id/img_back"
+        tools:text="12" />
+
+    <com.example.wise_memory_optimizer.custom.ExtTextView
+        android:id="@+id/txt_ping_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:gravity="center_horizontal"
+        android:text="@string/ping_ms"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/spv_internet"
+        app:layout_constraintTop_toBottomOf="@id/txt_ping" />
+
+    <com.example.wise_memory_optimizer.custom.ExtTextView
+        android:id="@+id/txt_download"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:gravity="center_horizontal"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/spv_internet"
+        app:layout_constraintTop_toBottomOf="@id/txt_ping_description"
+        app:textViewFontAssetName="@string/font_medium"
+        tools:text="32.12" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/view_spacing_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:src="@drawable/ic_spacing_line_down_left"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/spv_internet"
+        app:layout_constraintTop_toBottomOf="@id/txt_download" />
+
+    <com.example.wise_memory_optimizer.custom.ExtTextView
+        android:id="@+id/txt_download_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:gravity="center_horizontal"
+        android:text="@string/download_mbps"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintEnd_toEndOf="@id/view_spacing_1"
+        app:layout_constraintStart_toStartOf="@id/view_spacing_1"
+        app:layout_constraintTop_toBottomOf="@id/txt_download" />
+
+    <com.example.wise_memory_optimizer.custom.ExtTextView
+        android:id="@+id/txt_upload"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_4sdp"
+        android:gravity="center_horizontal"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@id/txt_upload_description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/spv_internet"
+        app:textViewFontAssetName="@string/font_medium"
+        tools:text="20.18" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/view_spacing_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/ic_spacing_line_up_left"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/spv_internet"
+        app:layout_constraintTop_toBottomOf="@id/txt_download_description" />
+
+    <com.example.wise_memory_optimizer.custom.ExtTextView
+        android:id="@+id/txt_upload_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="2dp"
+        android:gravity="center_horizontal"
+        android:text="@string/upload_mbps"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintEnd_toEndOf="@id/view_spacing_2"
+        app:layout_constraintStart_toStartOf="@id/view_spacing_2"
+        app:layout_constraintTop_toBottomOf="@id/view_spacing_2" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_check"
+        android:layout_width="@dimen/_133sdp"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_marginTop="@dimen/_24sdp"
+        android:background="@drawable/bg_button"
+        android:text="@string/check"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_16sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spv_internet" />
+
+    <com.example.wise_memory_optimizer.custom.ExtTextView
+        android:id="@+id/txt_location_checked"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_14sdp"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:text="@string/location_checked"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintTop_toBottomOf="@id/btn_check"
+        app:textViewFontAssetName="@string/font_medium" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcv_location_checked"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:layout_marginBottom="@dimen/_100sdp"
+        android:background="@color/transparent"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_location_checked" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/ll_empty"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_location_checked">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_no_result" />
+
+        <com.example.wise_memory_optimizer.custom.ExtTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_84sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:gravity="center"
+            android:text="@string/there_are_currently_no_checked_locations"
+            android:textColor="@color/color_gray_666666"
+            app:textViewFontAssetName="@string/font_medium" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:backgroundTint="#4C4C4C"
+    android:background="@drawable/bg_gray_45"
+    android:paddingBottom="23dp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="17dp"
+        tools:text="Auto-optimize if Ram exceeds:"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintBottom_toBottomOf="@+id/txt_percentage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/txt_percentage" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_percentage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:fontFamily="@font/interbold700"
+        tools:text="80%"
+        android:textColor="#2BC75D"
+        android:textSize="@dimen/_22sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_regular400"
+        android:text="0"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/_10sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/seekBar_luminosite"
+        app:layout_constraintStart_toStartOf="@id/label"
+        app:layout_constraintTop_toTopOf="@+id/seekBar_luminosite" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_regular400"
+        android:text="100"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/_10sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/seekBar_luminosite"
+        app:layout_constraintEnd_toEndOf="@id/txt_percentage"
+        app:layout_constraintTop_toTopOf="@+id/seekBar_luminosite" />
+
+    <androidx.appcompat.widget.AppCompatSeekBar
+        android:id="@+id/seekBar_luminosite"
+        android:layout_width="0sp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_14sdp"
+        android:maxHeight="10dp"
+        android:progress="30"
+        android:progressDrawable="@drawable/seekbar_progress_style"
+        android:thumb="@drawable/seekbar_thumb_shape"
+        app:layout_constraintEnd_toStartOf="@+id/end"
+        app:layout_constraintStart_toEndOf="@+id/start"
+        app:layout_constraintTop_toBottomOf="@+id/txt_percentage" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

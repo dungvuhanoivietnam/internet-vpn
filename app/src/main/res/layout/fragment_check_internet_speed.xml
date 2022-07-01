@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/iv_background">
+
+    <com.example.wise_memory_optimizer.custom.ExtTextView
+        android:id="@+id/txt_location_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_48sdp"
+        android:text="@string/location"
+        android:textColor="@color/gray_9E"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.example.wise_memory_optimizer.custom.ExtTextView
+        android:id="@+id/txt_location"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_8sdp"
+        android:gravity="start"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintBottom_toBottomOf="@id/txt_location_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/txt_location_title"
+        app:layout_constraintTop_toTopOf="@id/txt_location_title"
+        tools:text="Living Room" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_ping_result"
+        android:layout_width="@dimen/_160sdp"
+        android:layout_height="@dimen/_160sdp"
+        android:background="@drawable/ic_bg_ping_result"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_location_title"
+        app:layout_constraintBottom_toTopOf="@id/txt_download"
+        >
+
+        <com.example.wise_memory_optimizer.custom.ExtTextView
+            android:id="@+id/txt_ping_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_40ssp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/txt_ping_result_description"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="12" />
+
+        <com.example.wise_memory_optimizer.custom.ExtTextView
+            android:id="@+id/txt_ping_result_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:text="@string/ping_ms"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12ssp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_ping_result"
+            app:layout_constraintVertical_chainStyle="packed" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.github.anastr.speedviewlib.PointerSpeedometer
+        android:id="@+id/spv_internet"
+        android:layout_width="@dimen/_220sdp"
+        android:layout_height="@dimen/_220sdp"
+        android:layout_gravity="center_horizontal"
+        app:barrierAllowsGoneWidgets="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_32sdp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_location_title"
+        app:sv_backgroundCircleColor="@color/transparent"
+        app:sv_centerCircleColor="#04AA5A"
+        app:sv_centerCircleRadius="15dp"
+        app:sv_indicator="NormalSmallIndicator"
+        app:sv_indicatorColor="@color/color_D9D9D9"
+        app:sv_indicatorLightColor="@color/core_green"
+        app:sv_indicatorWidth="@dimen/_5sdp"
+        app:sv_markColor="@color/white_15_percent"
+        app:sv_markStyle="ROUND"
+        app:sv_minSpeed="0"
+        app:sv_maxSpeed="100"
+        app:sv_pointerColor="@color/core_green"
+        app:sv_speedometerColor="@color/white_15_percent"
+        app:sv_speedometerWidth="@dimen/_16sdp"
+        app:sv_tickTextFormat="INTEGER"
+        app:sv_withPointer="true"
+        app:sv_tickRotation="false"
+        app:sv_tickNumber="2"
+        app:sv_textSize="@dimen/_10ssp"
+        app:sv_unit="@string/unit_mb_per_s"
+        app:sv_unitSpeedInterval="@dimen/_5sdp"
+        app:sv_unitTextColor="@color/white"
+        app:sv_unitTextSize="@dimen/_10ssp"
+        app:sv_withIndicatorLight="true"
+        app:sv_withTremble="true" />
+
+    <com.example.wise_memory_optimizer.custom.ExtTextView
+        android:id="@+id/txt_ping"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:gravity="center_horizontal"
+        android:textColor="@color/core_green"
+        android:textSize="@dimen/_32ssp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spv_internet"
+        tools:text="12" />
+
+    <com.example.wise_memory_optimizer.custom.ExtTextView
+        android:id="@+id/txt_ping_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:gravity="center_horizontal"
+        android:text="@string/ping_ms"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintEnd_toEndOf="@id/txt_ping"
+        app:layout_constraintStart_toStartOf="@id/txt_ping"
+        app:layout_constraintTop_toBottomOf="@id/txt_ping" />
+
+    <com.example.wise_memory_optimizer.custom.ExtTextView
+        android:id="@+id/txt_download"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintBottom_toBottomOf="@id/txt_ping_description"
+        app:layout_constraintEnd_toStartOf="@id/txt_ping_description"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/txt_ping_description"
+        app:textViewFontAssetName="@string/font_medium"
+        tools:text="90.12" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/view_spacing_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:src="@drawable/ic_spacing_line_down_right"
+        app:layout_constraintEnd_toEndOf="@id/txt_download"
+        app:layout_constraintStart_toStartOf="@id/txt_download"
+        app:layout_constraintTop_toBottomOf="@id/txt_download" />
+
+    <com.example.wise_memory_optimizer.custom.ExtTextView
+        android:id="@+id/txt_download_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:gravity="center_horizontal"
+        android:text="@string/download_mbps"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintEnd_toEndOf="@id/view_spacing_1"
+        app:layout_constraintStart_toStartOf="@id/view_spacing_1"
+        app:layout_constraintTop_toBottomOf="@id/txt_download" />
+
+    <com.example.wise_memory_optimizer.custom.ExtTextView
+        android:id="@+id/txt_upload"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_4sdp"
+        android:gravity="center_horizontal"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintBottom_toBottomOf="@id/txt_ping_description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/txt_ping_description"
+        app:layout_constraintTop_toTopOf="@id/txt_ping_description"
+        app:textViewFontAssetName="@string/font_medium"
+        tools:text="20.18" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/view_spacing_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_spacing_line_down_left"
+        app:layout_constraintEnd_toEndOf="@id/txt_upload"
+        app:layout_constraintStart_toStartOf="@id/txt_upload"
+        app:layout_constraintTop_toBottomOf="@id/txt_upload" />
+
+    <com.example.wise_memory_optimizer.custom.ExtTextView
+        android:id="@+id/txt_upload_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:gravity="center_horizontal"
+        android:text="@string/upload_mbps"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintEnd_toEndOf="@id/view_spacing_2"
+        app:layout_constraintStart_toStartOf="@id/view_spacing_2"
+        app:layout_constraintTop_toBottomOf="@id/txt_upload" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_done"
+        android:layout_width="@dimen/_133sdp"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_marginTop="@dimen/_50sdp"
+        android:background="@drawable/bg_button"
+        android:enabled="false"
+        android:text="@string/done"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_16sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_ping_description" />
+</androidx.constraintlayout.widget.ConstraintLayout>

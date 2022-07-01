@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/llContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_tiny"
+        android:background="@drawable/bg_transparent_border"
+        android:gravity="center_vertical"
+        android:padding="@dimen/padding_middle_tiny">
+
+        <ImageView
+            android:id="@+id/ivFlag"
+            android:layout_width="@dimen/size_image_normal"
+            android:layout_height="@dimen/size_image_normal"
+            android:background="@drawable/bg_gray_45" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_normal"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <com.example.wise_memory_optimizer.custom.ExtTextView
+                android:id="@+id/txtCountry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_18"
+                app:textViewFontAssetName="@string/font_regular" />
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/ivPing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/padding_midlde_tiny_small"
+                    android:src="@drawable/ic_ping" />
+
+                <com.example.wise_memory_optimizer.custom.ExtTextView
+                    android:id="@+id/txtIpAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/gray_9E"
+                    android:textSize="@dimen/text_size_setting_tiny"
+                    app:textViewFontAssetName="@string/font_regular" />
+
+                <com.example.wise_memory_optimizer.custom.ExtTextView
+                    android:id="@+id/txtDot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/padding_small"
+                    android:text="@string/dot"
+                    android:textColor="@color/gray_9E"
+                    android:textSize="@dimen/text_size_setting_tiny"
+                    app:textViewFontAssetName="@string/font_regular" />
+
+                <com.example.wise_memory_optimizer.custom.ExtTextView
+                    android:id="@+id/txtCityName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/gray_9E"
+                    android:textSize="@dimen/text_size_setting_tiny"
+                    app:textViewFontAssetName="@string/font_regular" />
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/ivSelect"
+            android:layout_width="@dimen/size_small"
+            android:layout_height="@dimen/size_small"
+            android:background="@drawable/bg_cicrle_gray_45"
+            android:padding="@dimen/padding_tiny_small" />
+
+    </LinearLayout>
+
+</LinearLayout>

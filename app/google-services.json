@@ -1,0 +1,220 @@
+{
+  "project_info": {
+    "project_number": "508323724899",
+    "firebase_url": "https://optimize-ram-default-rtdb.firebaseio.com",
+    "project_id": "optimize-ram",
+    "storage_bucket": "optimize-ram.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:508323724899:android:63b56a40b9223853f34256",
+        "android_client_info": {
+          "package_name": "com.example.wise_memory_optimizer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "508323724899-jdpmk3toujgbukqo9o1465cb4tdcmg01.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.wise_memory_optimizer",
+            "certificate_hash": "f79bca565c2c650ca53624e04ce29e32b815e437"
+          }
+        },
+        {
+          "client_id": "508323724899-ts07136pq7urq7er1rgpho6e3qhona13.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.wise_memory_optimizer",
+            "certificate_hash": "04d69e2d1e8fd9459d94d95b38851cc948b34876"
+          }
+        },
+        {
+          "client_id": "508323724899-rfk54ti63fnn5vn5g78d4ne3dr5jf1t1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNHxHJ4EB0BkH47-p4_ub0ELEoSsrtYHI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "508323724899-rfk54ti63fnn5vn5g78d4ne3dr5jf1t1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:508323724899:android:6fc762c29962d6a8f34256",
+        "android_client_info": {
+          "package_name": "com.merryblue.phoneoptimize"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "508323724899-rfk54ti63fnn5vn5g78d4ne3dr5jf1t1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNHxHJ4EB0BkH47-p4_ub0ELEoSsrtYHI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "508323724899-rfk54ti63fnn5vn5g78d4ne3dr5jf1t1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:508323724899:android:80e58163b2c5f0c4f34256",
+        "android_client_info": {
+          "package_name": "cpu.booster.phoneoptimizer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "508323724899-dfg2sv032d88qjl2jshai3ab2niqgenh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "cpu.booster.phoneoptimizer",
+            "certificate_hash": "954d4acdc3d0d0deeb9299d631f7fe80f20a3e3c"
+          }
+        },
+        {
+          "client_id": "508323724899-o956p99l6pkojkrh7ufr6761c0oroejl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "cpu.booster.phoneoptimizer",
+            "certificate_hash": "f79bca565c2c650ca53624e04ce29e32b815e437"
+          }
+        },
+        {
+          "client_id": "508323724899-rfk54ti63fnn5vn5g78d4ne3dr5jf1t1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNHxHJ4EB0BkH47-p4_ub0ELEoSsrtYHI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "508323724899-rfk54ti63fnn5vn5g78d4ne3dr5jf1t1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:508323724899:android:b53a692027e4b216f34256",
+        "android_client_info": {
+          "package_name": "internet.optimizer.boosterspeed"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "508323724899-pmb3v3ge1s3pjekgsj19kbgob7ngt6rc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "internet.optimizer.boosterspeed",
+            "certificate_hash": "f79bca565c2c650ca53624e04ce29e32b815e437"
+          }
+        },
+        {
+          "client_id": "508323724899-rg9dbo6bmq9fnhjt3hu7ucb9bjjl8emi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "internet.optimizer.boosterspeed",
+            "certificate_hash": "954d4acdc3d0d0deeb9299d631f7fe80f20a3e3c"
+          }
+        },
+        {
+          "client_id": "508323724899-rfk54ti63fnn5vn5g78d4ne3dr5jf1t1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNHxHJ4EB0BkH47-p4_ub0ELEoSsrtYHI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "508323724899-rfk54ti63fnn5vn5g78d4ne3dr5jf1t1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:508323724899:android:52c30468332b6932f34256",
+        "android_client_info": {
+          "package_name": "smart.optimizer.phonecleaner"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "508323724899-intdt4890j3p73micuc4iisi8h68cdfs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "smart.optimizer.phonecleaner",
+            "certificate_hash": "f79bca565c2c650ca53624e04ce29e32b815e437"
+          }
+        },
+        {
+          "client_id": "508323724899-iqqgsv553u77387eep0r16jmlvqhkvn8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "smart.optimizer.phonecleaner",
+            "certificate_hash": "954d4acdc3d0d0deeb9299d631f7fe80f20a3e3c"
+          }
+        },
+        {
+          "client_id": "508323724899-rfk54ti63fnn5vn5g78d4ne3dr5jf1t1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNHxHJ4EB0BkH47-p4_ub0ELEoSsrtYHI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "508323724899-rfk54ti63fnn5vn5g78d4ne3dr5jf1t1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

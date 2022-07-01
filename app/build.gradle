@@ -1,0 +1,128 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
+}
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        applicationId "cpu.booster.phoneoptimizer"
+        minSdk 23
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+//    signingConfigs {
+//        debug {
+//            storeFile file("config/android.keystore")
+//            storePassword DEBUG_KEY_PASSWORD
+//            keyAlias DEBUG_KEY_ALIAS
+//            keyPassword DEBUG_KEY_PASSWORD
+//            v2SigningEnabled true
+//        }
+//
+//        release {
+//            storeFile file("config/android.keystore")
+//            storePassword DEBUG_KEY_PASSWORD
+//            keyAlias DEBUG_KEY_ALIAS
+//            keyPassword DEBUG_KEY_PASSWORD
+//            v2SigningEnabled true
+//        }
+//    }
+
+    signingConfigs {
+        release {
+            storeFile file("config/android.keystore")
+            storePassword DEBUG_KEY_PASSWORD
+            keyAlias DEBUG_KEY_ALIAS
+            keyPassword DEBUG_KEY_PASSWORD
+            v2SigningEnabled true
+        }
+    }
+
+
+    buildTypes {
+
+        debug {
+            resValue "string", "app_label_name", "Booster Speed"
+            debuggable true
+            minifyEnabled false
+        }
+
+        release {
+            minifyEnabled false
+            debuggable false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+//            signingConfig signingConfigs.release
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+    implementation project(':speedviewlib')
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.4.2'
+    implementation 'com.google.android.material:material:1.6.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
+    implementation project(path: ':MPChartLib')
+    implementation 'com.github.bumptech.glide:glide:4.8.0'
+    implementation 'androidx.wear:wear:1.1.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
+//    implementation project(':MPChartLib')
+    testImplementation 'junit:junit:4.13.2'
+    implementation 'com.blankj:utilcodex:1.30.6'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+    implementation 'com.intuit.ssp:ssp-android:1.0.6'
+
+    implementation 'com.jjoe64:graphview:4.2.2'
+
+    /*https://github.com/airbnb/lottie-android*/
+    implementation 'com.airbnb.android:lottie:3.4.0'
+
+    // firebase
+    implementation platform('com.google.firebase:firebase-bom:30.1.0')
+    implementation 'com.google.firebase:firebase-database'
+    implementation 'com.google.firebase:firebase-storage'
+
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+
+    implementation project(path: ':vpnLib')
+
+    implementation 'fr.bmartel:jspeedtest:1.32.1'
+    implementation "com.orhanobut:hawk:2.0.1"
+
+    //room
+
+    //noinspection GradleDependency
+    implementation("androidx.room:room-runtime:2.4.2")
+    kapt("androidx.room:room-compiler:2.4.2")
+
+    // Firebase crash
+    implementation 'com.google.firebase:firebase-crashlytics-ktx:18.2.11'
+
+}

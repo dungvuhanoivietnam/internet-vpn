@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="MenuCustomer">
+        <attr name="title" format="string"/>
+        <attr name="image" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="SwitchCompatCustomer">
+        <attr name="txt_title" format="string"/>
+        <attr name="show_switch" format="boolean"/>
+
+    </declare-styleable>
+
+    <declare-styleable name="SeekBarCompatCustomer">
+        <attr name="txt_seekbar" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="RamOptimizerViewCustomer">
+        <attr name="txt_option" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="ViewOptimizerCustomer">
+        <attr name="txt_title_remote" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="ToolbarCustomer">
+        <attr name="txt_toolbar" format="string"/>
+    </declare-styleable>
+
+</resources>

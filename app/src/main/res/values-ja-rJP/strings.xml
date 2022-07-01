@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">wise-memory-optimizer</string>
+    <string name="navigation_drawer_open">ナビゲーションドロワーを開く</string>
+    <string name="navigation_drawer_close">ナビゲーションドロワーを閉じる</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">ナビゲーションヘッダー</string>
+    <string name="action_settings">設定</string>
+
+    <!--FONT-->
+    <string name="font_italic">fonts/Poppins-BlackItalic.ttf</string>
+    <string name="font_bold">fonts/Poppins-Bold.ttf</string>
+    <string name="font_regular">fonts/Poppins-Regular.ttf</string>
+    <string name="font_black">fonts/Poppins-Black.ttf</string>
+    <string name="font_medium">font/Poppins_medium500.ttf</string>
+
+    <string name="menu_home">家</string>
+    <string name="menu_gallery">ギャラリー</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="tv_batter_obtimize">バッテリーの最適化</string>
+    <string name="tv_ram_obtimize">ラムオプティマイズ</string>
+    <string name="tv_cpu_booster"><CPUブースター></CPUブースター></string>
+    <string name="tv_internet_speed">インターネット速度</string>
+    <string name="tv_delete_duplicate">重複を削除</string>
+    <string name="tv_change_vpn">VPNを変更する</string>
+    <string name="connecting_time">接続時間</string>
+    <string name="overall">全体</string>
+    <string name="txt_optimizer">オプティマイザ</string>
+    <string name="ram_currently_used">R現在使用されているRAM</string>
+    <string name="ram_total">RAMの総量</string>
+    <string name="ram_usage">ラムの使用法</string>
+    <string name="download_mbps">Mbpsをダウンロード</string>
+    <string name="upload_mbps">Mbpsをアップロード</string>
+    <string name="ping_ms">PINGミリ秒</string>
+    <string name="check">小切手</string>
+    <string name="location_checked">場所を確認しました</string>
+    <string name="internet_speed">インターネット速度</string>
+    <string name="cancel">キャンセル</string>
+    <string name="ok">わかった</string>
+    <string name="ex_living_room">例：居間</string>
+    <string name="name_location">名前の場所</string>
+    <string name="tv_application">開発されたアプリケーション</string>
+    <string name="tv_by_company">MerryBlue</string>
+    <string name="tv_looking_duplicate">重複ファイルを探しています</string>
+    <string name="tv_used_storage">使用済みストレージ</string>
+    <string name="tv_title_delete_duplicate">重複を削除</string>
+    <string name="tv_title_android">アンドロイド</string>
+    <string name="tv_title_obtimze">最適化</string>
+    <string name="tv_available">利用可能：</string>
+    <string name="tv_total">合計：</string>
+    <string name="tv_used">使用済み</string>
+    <string name="tv_can_deleted">削除できます</string>
+    <string name="tv_analysis">分析</string>
+    <string name="tv_same_photo">同じ写真</string>
+    <string name="tv_low_quality">低品質の写真</string>
+    <string name="tv_same_video">同じビデオ</string>
+    <string name="tv_same_file">同じファイル</string>
+    <string name="tv_optimize_memory">あなたはメモリを最適化することができます</string>
+    <string name="tv_delete_image">画像を削除</string>
+    <string name="tv_delete_file">ファイルを削除する</string>
+    <string name="tv_delete_video">ビデオを削除</string>
+    <string name="tv_des_delete_image">不要な写真を削除できます</string>
+    <string name="tv_des_delete_file">あなたはファイルを削除することができます</string>
+    <string name="tv_des_delete_video">あなたはビデオを削除することができます</string>
+
+    <!--vpn-->
+    <string name="download">ダウンロード</string>
+    <string name="upload">アップロード</string>
+    <string name="ip">IP: </string>
+    <string name="speed_down_up">KB/s</string>
+    <string name="vpn">VPN</string>
+    <string name="done">終わり</string>
+    <string name="vpn_being_change">VPNが変更されています</string>
+    <string name="rename">名前を変更</string>
+    <string name="there_are_currently_no_checked_locations">現在、チェックされている場所はありません</string>
+    <string name="location">位置：</string>
+    <string name="connect">接続</string>
+    <string name="connecting">接続中...</string>
+    <string name="waiting_for_server_connection">サーバー接続を待っています!!</string>
+    <string name="server_authenticating">サーバー認証!!</string>
+    <string name="reconnecting">再接続しています...</string>
+    <string name="no_network_connection">ネットワーク接続なし</string>
+    <string name="location_vpn">位置</string>
+    <string name="smart_location">スマートロケーション</string>
+    <string name="all_server">すべてのサーバー</string>
+    <string name="dot">●</string>
+    <string name="error_connect_vpn">サーバーの変更中にエラーが発生しました。 別のサーバーを選択してください</string>
+    <string name="success_connect_vpn">VPNアドレスが正常に変更されました</string>
+    <string name="error_network_vpn">この機能のネットワーク接続を有効にしてください</string>
+    <string name="error_load_server">サーバーの読み込みに失敗しました。 別のサーバーを選択してください</string>
+    <string name="getting_vpn_information">VPN情報の取得</string>
+    <string name="ok_vpn">Ok</string>
+    <string name="on_vpn">オン</string>
+    <string name="off_vpn">OFF</string>
+    <string name="ms">MS</string>
+    <string name="total_location">％sの場所</string>
+
+    <string name="toast_could_not_clean_reason">キャッシュをクリーンアップできませんでした：％1 $ s</string>
+    <!-- Rationales -->
+    <string name="rationale_title">不十分な権限</string>
+
+    <!-- Progress dialog -->
+    <string name="cleaning_cache">キャッシュのクリーニング</string>
+    <string name="cleaning_in_progress">クリーニング中…</string>
+
+    <!-- Clean on app startup preference -->
+    <string name="clean_on_app_startup">アプリの起動時にクリーンアップ</string>
+    <string name="clean_on_app_startup_summary">アプリケーションの起動時にキャッシュを自動的にクリーンアップ</string>
+    <string name="clean_on_app_startup_key" translatable="false">clean_on_app_startup</string>
+
+    <!-- Exit after clean up -->
+    <string name="exit_after_clean">Exit after clean up</string>
+    <string name="exit_after_clean_summary">Exit after Clean button is clicked and clean up is completed</string>
+    <string name="exit_after_clean_key" translatable="false">exit_after_clean</string>
+    <string name="clean_on_system_startup_key" translatable="false">clean_on_device_startup</string>
+
+    <!-- Toasts -->
+    <string name="cleaned">キャッシュがクリーンアップされました</string>
+    <string name="toast_could_not_clean">キャッシュをクリーンアップできませんでした</string>
+    <string name="pc_charging_status">充電状態</string>
+    <string name="all_charging_problem_was_fixed">すべての充電の問題が修正されました</string>
+    <string name="txt_battery">バッテリー</string>
+    <string name="power_full">パワーフル</string>
+    <string name="noti_battery_charging_timer_left">残りの充電</string>
+    <string name="time_left">残り時間</string>
+    <string name="fahrenheit">°F</string>
+    <string name="celsius">°C</string>
+    <string name="toast_mode_title">に切り替えました</string>
+    <string name="super_saving">延長する</string>
+    <string name="normal">普通</string>
+    <string name="custom">寝る</string>
+    <string name="my_mode">マイモード</string>
+    <string name="battery_full_des">充電が終了しました。 電源を抜いてください。</string>
+    <string name="du_home_digital_time_hour">時間</string>
+    <string name="du_home_digital_time_minute">分</string>
+    <string name="battery_life_time">バッテリーの寿命</string>
+    <string name="estimate_time">予定時刻</string>
+    <string name="txt_title_history_of_battery_usage">バッテリー使用履歴</string>
+    <string name="optimizing">最適化</string>
+    <string name="optimizing1">最適化.</string>
+    <string name="optimizing2">最適化..</string>
+    <string name="optimizing3">最適化...</string>
+    <string name="optimizing4">最適化....</string>
+    <string name="txt_option_ram">羊</string>
+    <string name="txt_option_cpu">CPUブースター</string>
+    <string name="txt_option_pin">ピン</string>
+    <string name="delete">消去</string>
+    <string name="same_photo">同じ写真</string>
+    <string name="same_video">同じビデオ</string>
+    <string name="same_file">同じファイル</string>
+    <string name="low_quality">低品質</string>
+
+
+    // multi language
+    <string name="txt_auto_optimize_ram">RAMの自動最適化</string>
+    <string name="txt_ram_exceeds">RAMが以下を超える場合は自動最適化：</string>
+    <string name="txt_auto_optimize_cpu">CPUの自動最適化</string>
+    <string name="txt_cpu_exceeds">CPUが以下を超えた場合に自動最適化：</string>
+    <string name="txt_auto_optimize_pin">PINの自動最適化</string>
+    <string name="txt_battery_is_even_lower">バッテリーがさらに低い場合は自動最適化：</string>
+    <string name="txt_description_abount_app">"アプリケーションストレージが不足していませんか？
+監視するインターネット速度計をお探しですか？
+あなたは追跡からあなたの場所を保護したいですか？
+あなたはとても幸運です！ スマートオプティマイザー-電話クリーナーは、すべての心配事に対する最も完璧な答えです。 メモリを最適化するアプリケーションであるだけでなく、このアプリはさらに多くの用途を提供します。
+★ラム最適化
+★バッテリーの最適化
+★CPUブースター
+★インターネット速度
+★重複を削除
+★VPNを変更する
+1つのアプリで6つの機能-これがお使いの携帯電話に最適なアプリであると言っても過言ではありません！"</string>
+    <string name="txt_label_abount_app">Best Lock Apps to Hide Photos</string>
+    <string name="txt_version_abount_app">Version 1.0.22</string>
+    <string name="txt_dialog_automatic_optiomization">自動最適化モード\nがアクティブ化されました</string>
+    <string name="txt_language_en">英語</string>
+    <string name="txt_language_chinese_Simplified">中国語（簡体字 ）</string>
+    <string name="txt_language_chinese_Traditional">中国語（繁体字）</string>
+    <string name="txt_language_in">インドネシア語</string>
+    <string name="txt_language_ja">日本</string>
+    <string name="txt_language_vi">ベトナム語</string>
+    <string name="txt_language_thai">タイ語</string>
+    <string name="txt_language_malay">マレーシア人</string>
+    <string name="txt_language_spanish">スペイン語</string>
+    <string name="txt_language_portuguese">ポルトガル語</string>
+    <string name="txt_language_russiane">ロシア</string>
+    <string name="txt_language_korean">韓国語</string>
+    <string name="txt_language_french">フランス語</string>
+    <string name="txt_language_german">ドイツ人</string>
+    <string name="txt_language_arabic">アラビア語</string>
+
+    <string name="txt_description_privacy">"これらの利用規約（「TOS」）の目的上、「Android Optimizerプラットフォーム」は、（i）App Server環境、（ii）App Development環境、（iii）Android Optimizer Previewer（ App Storeからダウンロード）、および（iv）AndroidOptimizerPlatformの他の3つの側面を使用して作成または開発されたアプリ。ここで使用されているように、Android Optimizerプラットフォームは、これらの4つの部分とそのすべてのコンポーネント、およびそれらのすべての更新、パッチ、修正、変更、および拡張機能を含むように定義されています。お客様側またはその他の同意またはアクション、および付随するすべてのドキュメント、ファイル、および資料。 Android Optimizer Platformは、MerryBlueLLCが所有および運営しています。 Android Optimizerプラットフォームは、ここに含まれるすべての契約条件、およびAndroid Optimizerによってこのサイトで随時公開される可能性のある他のすべての運用ルール、ポリシー、および手順を変更することなく、お客様の同意を条件として提供されます（総称して「契約」）。
+Android Optimizerプラットフォームにアクセスまたは使用する前に、本契約を注意深くお読みください。 Android Optimizer Platformのいずれかの部分にアクセスまたは使用することにより、これらの利用規約の条件に拘束されることに同意したことになります。これらの利用規約のすべての利用規約に同意しない場合は、AndroidOptimizerPlatformまたはその他のAndroidOptimizerサービスにアクセスしたり使用したりすることはできません。
+
+ユーザー/寄稿者の責任
+AndroidOptimizerまたはAndroidOptimizerを介して作成および/または公開されたアプリ（以下「コンテンツ」と呼びます）を使用して素材を利用可能にする（または第三者に許可する）場合、あなたは完全に問題のコンテンツがテキスト、グラフィックス、写真、画像、データファイル、写真、リンク、デザイン、オーディオまたはビデオファイル、またはその他のファイルを構成するかどうかに関係なく、そのコンテンツのコンテンツおよびそのコンテンツから生じる損害について責任を負います。アプリで使用する素材。
+
+コンテンツを利用可能にすることにより、次のことを表明および保証します。
+
+コンテンツのダウンロード、コピー、および使用は、第三者の著作権、特許、商標、または企業秘密の権利を含むがこれらに限定されない所有権を侵害するものではありません。
+
+雇用主があなたが作成した知的財産に対する権利を持っている場合、あなたは（i）雇用主からコンテンツを投稿または利用可能にする許可を受け取っているか、（ii）雇用主からコンテンツ内またはコンテンツに対するすべての権利の放棄を確保​​しています。
+
+コンテンツに関連するサードパーティのライセンスを完全に遵守し、エンドユーザーに必要な条件を正常に渡すために必要なすべてのことを実行しました。
+
+コンテンツには、ウイルス、ワーム、マルウェア、トロイの木馬、またはコンピューターのAndroid Optimizer、ハードウェア、または通信機器の機能を中断、破壊、または制限するように設計されたその他のコンピューターコード、ファイル、またはプログラムが含まれていないか、インストールされていません。
+
+コンテンツはスパムではなく、マシンまたはランダムに生成されたものではなく、サードパーティのサイトへのトラフィックを促進したり、サードパーティのサイトの検索エンジンランキングを上げたり、さらに違法行為を行うように設計された非倫理的または不要な商用コンテンツを含んでいません（フィッシングとして）または素材のソース（なりすましなど）に関して受信者を誤解させる。
+
+コンテンツは、違法、有害、脅迫的、虐待的、不法、中傷的、名誉毀損的、下品、わいせつ、児童ポルノ、わいせつ、冒涜的、他人のプライバシーを侵害するもの、憎悪的、人種的、民族的、またはその他の好ましくないものではありません。
+
+ニュースグループのスパムリンク、メーリングリスト、その他のブログやWebサイト、および同様の未承諾の宣伝方法など、不要な電子メッセージを介してアプリが宣伝されていない。
+
+また、アプリの名前が、読者にあなたが別の人や会社であると誤解させるような名前が付けられていません。
+
+
+使用制限
+AndroidOptimizerプラットフォームまたはAndroidOptimizerを使用して、AndroidOptimizerプラットフォームまたはAndroidOptimizerが提供するサービスを実質的に複製することはできません。これには、Android Optimizerコンテンツの再公開、またはAndroidOptimizerと実質的に同様の別個のAndroidOptimizerまたはコンテンツ管理ツールの作成が含まれます。 Android Optimizerが、独自の裁量により、これらの条件またはこれらの条件の精神に違反した、または違反を試みたと判断または信じた場合、Android Optimizerプラットフォームを使用およびアクセスする機能は、通知の有無にかかわらず、一時的または永続的に取り消される場合があります。 。
+
+
+所有権
+Android Optimizerは、Android Optimizerプラットフォームに関するすべての権利、権原、および利益を所有します。これには、それに付随するすべての知的および所有権が含まれますが、これらに限定されません。ここで付与された限定ライセンスを除き、このTOSのいかなる内容も譲渡するものではありません。 、伝達、障害、またはその他の方法でAndroidOptimizer自体に悪影響を与えるその中の所有権または所有権、またはその他のAndroid Optimizerの情報または資料（有形または無形）、形式および媒体を問わず。 AndroidOptimizerおよびAndroidOptimizerのロゴ、およびAndroid Optimizerプラットフォームに関連して使用されるその他すべての商標、サービスマーク、グラフィックス、およびロゴは、AndroidOptimizerまたはAndroidOptimizerのライセンサーの商標または登録商標です。 Android Optimizer Platformに関連して使用されるその他の商標、サービスマーク、グラフィックス、およびロゴは、その他のサードパーティの商標である可能性があります。 Android Optimizerプラットフォームを使用することにより、AndroidOptimizerまたはサードパーティの商標を複製または使用する権利またはライセンスが付与されることはありません。
+
+
+変更点
+Android Optimizerは、独自の裁量により、これらのTOSの一部を変更または置換する権利を留保します。これらのTOSに変更がないか定期的に確認するのはあなたの責任です。これらのTOSに変更を投稿した後も、Android Optimizer Platformを継続して使用またはアクセスすると、それらの変更に同意したものと見なされます。また、Android Optimizerは、将来、Android Optimizer Webサイトを通じて、またはAndroid Optimizerプラットフォームと組み合わせて（新しいツールやリソースのリリースを含む）、新しいサービスや機能を提供する可能性があります。このような新機能および/またはサービスは、これらの利用規約の条件に従うものとします。
+
+データの収集と使用
+お客様は、Android Optimizer、その親会社、子会社、関連会社、およびそれぞれの後継者および譲受人が、Android Optimizerの使用に関連する特定の技術情報を収集および使用する場合があることに同意するものとします。これには、サポートに関連して提供される情報が含まれますが、これに限定されません。またはAndroidOptimizerの技術サービス。
+
+AndroidOptimizerの変更
+Android Optimizerは、通知の有無にかかわらず、Android OptimizerPlatformまたはAndroidOptimizer、あるいはその一部をいつでも随時、一時的または恒久的に変更または中止することがあります。 Android Optimizerプラットフォームの一部として、AndroidOptimizerからAndroidOptimizerのアップデートを受け取る場合があります。このアップデートは、デバイスに自動的にダウンロードおよびインストールされる場合があります。これらのアップデートには、バグ修正、機能の強化または改善、またはAndroidOptimizerのまったく新しいバージョンが含まれる場合があります。お客様は、Android Optimizerがサービスの一部としてそのような更新を自動的に配信する場合があり、必要に応じてそれらを受信して​​インストールすることに同意するものとします。お客様は、Android Optimizerが、Android OptimizerPlatformまたはAndroidOptimizerのそのような更新、変更、一時停止、または中止について、お客様または第三者に対して責任を負わないことに同意するものとします。
+
+終了
+Android Optimizerには、このライセンスを終了する権利と、Android Optimizerがこれらの利用規約の条件に違反したと合理的に判断した場合を含め、理由を問わずいつでもAndroidOptimizerを使用する権利があります。このライセンスまたはAndroidOptimizerを使用する権利が何らかの理由で終了した場合は、Android Optimizerの使用をすべて停止し、Android Optimizerに戻るか、AndroidOptimizerおよび所有中または所有しているAndroidOptimizerのすべてのコピーを破棄する必要があります。あなたのコントロール。 Android Optimizerは、上記への準拠を書面で証明するように要求する場合があり、Android Optimizerがそのような要求を行った場合は、そうすることに同意するものとします。
+
+保証の否認
+Android OptimizerまたはこれらのTOSに関連して適用される、またはお客様に提供される表明または保証はありません。法律で認められる最大限の範囲で、Android Optimizerとそのアクセスおよび使用に関するすべての表明および保証を否認します。これには、明示または黙示を問わず、商品性またはフィットネスの黙示の保証が含まれますが、これに限定されません。権利、非侵害、および/または取引の過程または取引の使用から生じる保証。
+
+上記の一般性を制限することなく、Android Optimizerは「現状有姿」および「利用可能な状態」で利用可能になり、Android Optimizerは、Android Optimizerがユーザーの要件を満たしていること、またはユーザーが使用していることを保証、保証、または表明しません。 、Android OptimizerPLATFORMまたはAndroidOptimizerの操作または使用結果は、中断がなく、完全で、信頼性が高く、正確で、最新であり、エラーがなく、コンピューターウイルスがなく、その他の点で安全である必要があります。 Android OptimizerPLATFORMおよび/またはAndroidOptimizerのダウンロード、インストール、コピー、操作、使用、および/または配布のリスクはすべてお客様が負うものとします。
+
+
+一般的な表明および保証
+お客様は、（i）Android OptimizerPlatformおよびAndroidOptimizerの使用が、適用されるすべての法律および規制（お客様の国、州、市、またはその他の政府地域の地域の法律または規制を含むがこれに限定されない）に厳密に従うことを表明および保証します。 、オンラインでの行為と許容されるコンテンツに関して、米国またはお客様が居住する国からエクスポートされた技術データの送信に関して適用されるすべての法律）および（ii）Android OptimizerPlatformおよびAndroidOptimizerの使用により、第三者の知的財産権が侵害または悪用されることはありません。 。
+
+補償
+お客様は、Android Optimizer、その親、子会社、関連会社、および/またはそれぞれの後継者を擁護し、役員、取締役、従業員、代理人、ライセンサー、代表者、広告主、ビジネスおよびプロモーションパートナー、運用サービスプロバイダー、サプライヤー、再販業者、請負業者を割り当てることに同意するものとします。 （「AndroidOptimizer補償対象者」）すべての請求、要求、および/またはアクションに対して、Android Optimizer補償対象者を、すべての損失、損害、費用、および費用（合理的な弁護士費用を含む）から無害に補償および保持します。 、これらのTOSの違反または違反、他の当事者の権利の侵害、不正流用または違反、法律または規制の違反または違反、これらのTOSの条件の違反または違反、 Android OptimizerPlatformまたはAndroidOptimizerの使用、変更、またはエクスポート、あるいはこれらの利用規約に関連するもの。 Android Optimizerは、その費用負担で、請求またはアクションの独占的な防御と制御、および和解または妥協のためのすべての交渉を引き受ける権利を留保し、お客様は当社の要求に応じて完全に協力することに同意するものとします。
+
+
+一般用語
+これらのTOSの条項の修正、変更、放棄、または免除は、書面で行われ、Android Optimizerの正式な代表者によって署名されていない限り、有効ではありません。 Android Optimizerが書面で作成し、Android Optimizerによって署名されていない限り、Android Optimizerが権利を行使したり、義務を履行したりすることの失敗または遅延は、その権利またはその他の権利または権限の放棄または継続的な放棄として損なわれる、または解釈されないものとします。これらのTOSは、Android OptimizerPlatformおよび/またはAndroidOptimizerへのアクセスまたは使用に関するAndroidOptimizerとお客様の間の完全な合意を構成し、そのような主題に関するお客様とAndroidOptimizerの間の以前の合意に優先します。 Android Optimizerの書面による同意なしに、これらのTOSまたは本契約に基づいて付与された権利を譲渡または譲渡することはできません。これらのTOSに基づくAndroidOptimizerの権利は、AndroidOptimizerによって自由に譲渡できます。これらのTOSのいずれかの条項が違法、無効、または執行不能であると判断された場合、これらのTOSの残りの条項は損なわれず、完全に効力を持ち続けるものとします。これらのTOSは、当事者、その後継者、および許可された譲受人を拘束し、その利益を保証します。"</string>
+    <string name="txt_label_privacy">次の利用規約は、AndroidOptimizerPlatformのすべての使用に適用されます。</string>
+    <string name="txt_verstion_privacy">バージョン1.0.22</string>
+    <string name="title_privacy">プライバシー</string>
+    <string name="txt_current_language">現在の言語</string>
+    <string name="title_language">言語</string>
+    <string name="title_about_app">アプリについて</string>
+    <string name="txt_option_kbs">Kb/s</string>
+    <string name="txt_no_data">データなし</string>
+    <string name="cpu_temp_c">CPU温度（°C）</string>
+    <string name="cooler">クーラー</string>
+    <string name="amount_of_processor_used">使用したプロセッサーの量</string>
+    <string name="kill_process">強制終了されたプロセス</string>
+    <string name="off_bluetooth">Bluetoothがオフでした</string>
+    <string name="off_rotate">回転がオフでした</string>
+    <string name="clear_ram">ラムは明確だった</string>
+    <string name="amount_of_processor_free">無料のプロセッサの量</string>
+    <string name="automatically_optimize_in">自動的に最適化：</string>
+    <string name="plesase_check_the_connection">接続を確認してください</string>
+    <string name="yes">はい</string>
+</resources>

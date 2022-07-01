@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <com.example.wise_memory_optimizer.ui.menu.customer.ViewOptimizerCustomer
+        android:layout_width="0sp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:padding="@dimen/_10sdp"
+        app:txt_title_remote="@string/txt_option_ram"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.example.wise_memory_optimizer.ui.menu.customer.ViewOptimizerCustomer
+        android:layout_width="0sp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        app:txt_title_remote="@string/txt_option_cpu"
+        android:padding="@dimen/_10sdp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.example.wise_memory_optimizer.ui.menu.customer.ViewOptimizerCustomer
+        android:layout_width="0sp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:padding="@dimen/_10sdp"
+        app:txt_title_remote="@string/txt_option_pin"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.example.wise_memory_optimizer.ui.menu.customer.ViewOptimizerCustomer
+        android:layout_width="0sp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        app:txt_title_remote="@string/txt_option_kbs"
+        android:padding="@dimen/_10sdp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</LinearLayout>

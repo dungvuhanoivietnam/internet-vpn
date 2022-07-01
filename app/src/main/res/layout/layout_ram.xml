@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ProgressBar
+        android:id="@+id/progress_ram"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:indeterminateOnly="false"
+        android:max="100"
+        tools:progressDrawable="@drawable/progressbar_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:progress="60" />
+
+    <TextView
+        android:id="@+id/txt_percentage_ram"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/league_spartan_bold700"
+        android:textColor="#00BC3C"
+        android:textSize="@dimen/_8ssp"
+        app:layout_constraintBottom_toBottomOf="@+id/progress_ram"
+        app:layout_constraintEnd_toEndOf="@id/progress_ram"
+        app:layout_constraintStart_toStartOf="@+id/progress_ram"
+        app:layout_constraintTop_toTopOf="@id/progress_ram"
+        tools:text="60%" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_regular400"
+        android:text="@string/txt_option_ram"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_4ssp"
+        app:layout_constraintEnd_toEndOf="@id/txt_percentage_ram"
+        app:layout_constraintStart_toStartOf="@id/txt_percentage_ram"
+        app:layout_constraintTop_toBottomOf="@id/txt_percentage_ram"
+        tools:textColor="@color/black" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

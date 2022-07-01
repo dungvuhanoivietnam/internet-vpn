@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_menu"
+    android:fillViewport="true"
+    android:fitsSystemWindows="true">
+
+    <com.example.wise_memory_optimizer.custom.ToolbarCustomer
+        android:id="@+id/toolbar"
+        android:layout_width="0sp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@id/tv_save"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:txt_toolbar="Auto Optimize " />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="14dp"
+        android:fontFamily="sans-serif-medium"
+        android:padding="5dp"
+        android:text="Save"
+        android:textColor="#2BC75D"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0sp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.example.wise_memory_optimizer.custom.RamOptimizerViewCustomer
+                android:id="@+id/progress_ram"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@id/progress_cpu"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:txt_option="@string/txt_option_ram" />
+
+            <com.example.wise_memory_optimizer.custom.RamOptimizerViewCustomer
+                android:id="@+id/progress_cpu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:progress="0"
+                app:layout_constraintEnd_toStartOf="@id/progress_pin"
+                app:layout_constraintStart_toEndOf="@+id/progress_ram"
+                app:layout_constraintTop_toTopOf="@id/progress_ram"
+                app:txt_option="@string/txt_option_cpu" />
+
+            <com.example.wise_memory_optimizer.custom.RamOptimizerViewCustomer
+                android:id="@+id/progress_pin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/progress_cpu"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/progress_cpu"
+                app:layout_constraintTop_toTopOf="@id/progress_cpu"
+                app:txt_option="@string/txt_option_pin" />
+
+            <com.example.wise_memory_optimizer.custom.SwitchCompatCustomer
+                android:id="@+id/switch_ram"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintTop_toBottomOf="@id/progress_ram"
+                app:txt_title="@string/txt_auto_optimize_ram" />
+
+            <com.example.wise_memory_optimizer.custom.SeekBarCompatCustomer
+                android:id="@+id/seekbar_ram"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="17dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintTop_toBottomOf="@id/switch_ram"
+                app:txt_seekbar="@string/txt_ram_exceeds" />
+
+            <com.example.wise_memory_optimizer.custom.SwitchCompatCustomer
+                android:id="@+id/switch_cpu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintTop_toBottomOf="@id/seekbar_ram"
+                app:txt_title="@string/txt_auto_optimize_cpu" />
+
+            <com.example.wise_memory_optimizer.custom.SeekBarCompatCustomer
+                android:id="@+id/seekbar_cpu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="17dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintTop_toBottomOf="@id/switch_cpu"
+                app:txt_seekbar="@string/txt_cpu_exceeds" />
+
+            <com.example.wise_memory_optimizer.custom.SwitchCompatCustomer
+                android:id="@+id/switch_pin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintTop_toBottomOf="@id/seekbar_cpu"
+                app:txt_title="@string/txt_auto_optimize_pin" />
+
+            <com.example.wise_memory_optimizer.custom.SeekBarCompatCustomer
+                android:id="@+id/seekbar_pin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="17dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintTop_toBottomOf="@id/switch_pin"
+                app:txt_seekbar="@string/txt_battery_is_even_lower" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

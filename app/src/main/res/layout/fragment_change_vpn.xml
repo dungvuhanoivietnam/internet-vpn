@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_vpn">
+
+    <include
+        android:id="@+id/llToolbar"
+        layout="@layout/custom_toolbar"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_small"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/llToolbar"
+        app:srcCompat="@drawable/img_world" />
+
+    <com.example.wise_memory_optimizer.custom.ExtTextView
+        android:id="@+id/txtTitleTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_tiny"
+        android:text="@string/connecting_time"
+        android:textColor="@color/gray_9E"
+        android:textSize="@dimen/text_size_normal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivTop"
+        app:textViewFontAssetName="@string/font_regular" />
+
+    <com.example.wise_memory_optimizer.custom.ExtTextView
+        android:id="@+id/txtCountDown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_large"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitleTime"
+        app:textViewFontAssetName="@string/font_regular" />
+
+    <LinearLayout
+        android:id="@+id/ctCountry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/padding_xlarge"
+        android:layout_marginTop="@dimen/padding_small"
+        android:background="@drawable/bg_button_black"
+        android:gravity="center_vertical"
+        android:padding="@dimen/padding_middle_tiny"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtCountDown">
+
+        <ImageView
+            android:id="@+id/ivFlag"
+            android:layout_width="@dimen/size_image_normal"
+            android:layout_height="@dimen/size_image_normal"
+            android:background="@drawable/bg_gray_45" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_normal"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <com.example.wise_memory_optimizer.custom.ExtTextView
+                android:id="@+id/txtCountry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_18"
+                app:textViewFontAssetName="@string/font_regular" />
+
+            <com.example.wise_memory_optimizer.custom.ExtTextView
+                android:id="@+id/txtIpAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_tiny_small"
+                android:textColor="@color/gray_9E"
+                android:textSize="@dimen/text_size_setting_tiny"
+                app:textViewFontAssetName="@string/font_regular" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_right_white" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/vCenter"
+        android:layout_width="1dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="@dimen/padding_small"
+        android:background="@drawable/bg_gray_45"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ctCountry" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_midlde_tiny_small"
+        android:gravity="center"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="@+id/vCenter"
+        app:layout_constraintTop_toBottomOf="@+id/ctCountry">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_speed_download"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.example.wise_memory_optimizer.custom.ExtTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/padding_small"
+                android:layout_marginTop="@dimen/padding_tiny_small"
+                android:text="@string/download"
+                android:textColor="@color/gray_9E"
+                android:textSize="@dimen/text_size_setting_tiny"
+                app:layout_constraintLeft_toRightOf="@+id/ivDownload"
+                app:layout_constraintTop_toTopOf="parent"
+                app:textViewFontAssetName="@string/font_regular" />
+
+            <com.example.wise_memory_optimizer.custom.ExtTextView
+                android:id="@+id/txtSpeedDownload"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/padding_small"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_small"
+                app:layout_constraintLeft_toRightOf="@+id/ivDownload"
+                app:layout_constraintTop_toTopOf="@+id/txtTitleDownload"
+                app:textViewFontAssetName="@string/font_regular" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_midlde_tiny_small"
+        android:gravity="center"
+        app:layout_constraintLeft_toLeftOf="@+id/vCenter"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ctCountry">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_speed_upload"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.example.wise_memory_optimizer.custom.ExtTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/padding_small"
+                android:layout_marginTop="@dimen/padding_tiny_small"
+                android:text="@string/upload"
+                android:textColor="@color/gray_9E"
+                android:textSize="@dimen/text_size_setting_tiny"
+                app:layout_constraintLeft_toRightOf="@+id/ivDownload"
+                app:layout_constraintTop_toTopOf="parent"
+                app:textViewFontAssetName="@string/font_regular" />
+
+            <com.example.wise_memory_optimizer.custom.ExtTextView
+                android:id="@+id/txtSpeedUpload"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/padding_small"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_small"
+                app:layout_constraintLeft_toRightOf="@+id/ivDownload"
+                app:layout_constraintTop_toTopOf="@+id/txtTitleDownload"
+                app:textViewFontAssetName="@string/font_regular" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/ivStart"
+        android:layout_width="@dimen/size_xlarge"
+        android:layout_height="@dimen/size_xlarge"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vCenter" />
+
+    <com.example.wise_memory_optimizer.custom.ExtTextView
+        android:id="@+id/txtStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_small"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivStart"
+        app:textViewFontAssetName="@string/font_regular" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Normal -->
+    <item android:drawable="@drawable/bg_button_enable" android:state_active="true"/>
+    <!-- Enable -->
+    <item android:drawable="@drawable/bg_button_enable" android:state_enabled="true" />
+    <!-- Disable -->
+    <item android:drawable="@drawable/bg_button_disable" android:state_enabled="false"/>
+
+</selector>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/bg_popup"
+        android:orientation="vertical">
+
+        <com.example.wise_memory_optimizer.custom.ExtTextView
+            android:id="@+id/btn_rename"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_edit"
+            android:drawablePadding="@dimen/_11sdp"
+            android:padding="@dimen/_14sdp"
+            android:text="@string/rename"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_16ssp" />
+
+        <com.example.wise_memory_optimizer.custom.ExtTextView
+            android:id="@+id/btn_delete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_delete"
+            android:drawablePadding="@dimen/_11sdp"
+            android:padding="@dimen/_14sdp"
+            android:text="@string/delete"
+            android:textColor="@color/color_red_status"
+            android:textSize="@dimen/_16ssp" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</RelativeLayout>

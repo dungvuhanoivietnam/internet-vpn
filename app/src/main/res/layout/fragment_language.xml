@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_menu"
+    android:fillViewport="true"
+    android:fitsSystemWindows="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.example.wise_memory_optimizer.custom.ToolbarCustomer
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:txt_toolbar="@string/title_language" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_28sdp"
+            android:text="@string/txt_current_language"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_13ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/cbb"
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:background="@drawable/green_progress_drawable"
+            android:fontFamily="@font/poppins_medium500"
+            android:paddingStart="18dp"
+            android:paddingTop="11dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="11dp"
+            android:text="English"
+            android:textColor="#00BC3C"
+            android:textSize="@dimen/_13ssp"
+            app:drawableEndCompat="@drawable/ic_vector"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/label" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcl_english"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_38sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:background="@drawable/bg_gray_53"
+            android:padding="2dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@+id/cbb"
+            tools:itemCount="5"
+            tools:listitem="@layout/item_language" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/save"
+            android:layout_marginTop="@dimen/_38sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium500"
+            android:text="Save"
+            android:background="@drawable/bg_button_30sdp"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_18ssp"
+            android:paddingVertical="@dimen/_6sdp"
+            android:paddingHorizontal="@dimen/_56sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:backgroundTint="#666666"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rcl_english" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

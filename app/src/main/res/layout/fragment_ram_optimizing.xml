@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_background"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <View
+            android:id="@+id/blurr"
+            android:layout_width="@dimen/_125sdp"
+            android:layout_height="@dimen/_125sdp"
+            android:background="@drawable/ic_blur"
+            app:layout_constraintBottom_toBottomOf="@+id/view_bg"
+            app:layout_constraintEnd_toEndOf="@+id/view_bg"
+            app:layout_constraintStart_toStartOf="@+id/view_bg"
+            app:layout_constraintTop_toTopOf="@+id/view_bg" />
+        <View
+            android:id="@+id/view_bg"
+            android:layout_width="@dimen/_110sdp"
+            android:layout_height="@dimen/_110sdp"
+            android:background="@drawable/bg_core_green"
+            app:layout_constraintBottom_toBottomOf="@id/iv_progress"
+            app:layout_constraintEnd_toEndOf="@id/iv_progress"
+            app:layout_constraintStart_toStartOf="@id/iv_progress"
+            app:layout_constraintTop_toTopOf="@+id/iv_progress" />
+
+        <ImageView
+            android:id="@+id/ic_pin"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_70sdp"
+            android:src="@drawable/ic_ram_boots"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_progress"
+            android:layout_width="@dimen/_130sdp"
+            android:layout_height="@dimen/_130sdp"
+            android:src="@drawable/ic_progress"
+            app:layout_constraintBottom_toBottomOf="@id/ic_pin"
+            app:layout_constraintEnd_toEndOf="@id/ic_pin"
+            app:layout_constraintStart_toStartOf="@id/ic_pin"
+            app:layout_constraintTop_toTopOf="@id/ic_pin" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/percent_optimizer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_40sdp"
+        android:fontFamily="@font/interbold700"
+        android:text="60%"
+        android:gravity="center_vertical"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_30ssp" />
+
+    <TextView
+        android:id="@+id/tv_optimizing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_regular400"
+        android:gravity="start"
+        android:text="@string/optimizing"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_11ssp" />
+</androidx.appcompat.widget.LinearLayoutCompat>

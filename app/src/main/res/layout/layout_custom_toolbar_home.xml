@@ -1,0 +1,45 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llTop"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/padding_small">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/padding_large"
+        android:src="@drawable/ic_logo_home" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/padding_normal"
+        android:fontFamily="@font/poppins_medium500"
+        android:text="@string/tv_title_android"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_middle_large" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium500"
+        android:text="@string/tv_title_obtimze"
+        android:textColor="@color/core_green"
+        android:textSize="@dimen/text_size_middle_large" />
+
+    <RelativeLayout
+        android:id="@+id/ivRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|center"
+        android:gravity="right">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_menu" />
+    </RelativeLayout>
+
+
+</LinearLayout>

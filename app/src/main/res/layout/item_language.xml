@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/root_view"
+    android:layout_marginTop="@dimen/_3sdp"
+    android:background="@color/color_5252"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_english"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_regular400"
+        android:paddingStart="18dp"
+        android:paddingTop="11dp"
+        android:paddingBottom="11dp"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/_14ssp"
+        tools:ignore="RtlSymmetry"
+        tools:text="Indonesian" />
+
+</RelativeLayout>
