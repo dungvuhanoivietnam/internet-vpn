@@ -271,4 +271,9 @@ No amendment, modification, waiver or discharge of any provision of these TOS sh
     <string name="plesase_check_the_connection">Please check the connection</string>
     <string name="yes">Yes</string>
 
+    // more
+    <string name="check_speed">Check Speed</string>
+    <string name="nation">Nation:</string>
+    <string name="current_network">Current network</string>
+
 </resources>

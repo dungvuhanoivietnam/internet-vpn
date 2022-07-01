@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_medium500"
         android:text="@string/tv_title_obtimze"
-        android:textColor="@color/core_green"
+        android:textColor="@color/color_4B5CBF"
         android:textSize="@dimen/text_size_middle_large" />
 
     <RelativeLayout

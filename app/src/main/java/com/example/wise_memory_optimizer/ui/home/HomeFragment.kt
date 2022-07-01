@@ -16,6 +16,7 @@ import com.example.wise_memory_optimizer.R
 import com.example.wise_memory_optimizer.custom.MenuCustomer
 import com.example.wise_memory_optimizer.databinding.FragmentHomeBinding
 import com.example.wise_memory_optimizer.utils.NavigationUtils
+import com.example.wise_memory_optimizer.utils.NetworkUtils
 
 
 class HomeFragment : Fragment() {
@@ -181,6 +182,7 @@ class HomeFragment : Fragment() {
             Navigation.findNavController(binding.llInternet)
                 .navigate(R.id.action_nav_home_to_list_internet_speed)
         }
+        binding.txtIpAddress.setText(NetworkUtils.getIpAddress(context))
         return root
     }
 
