@@ -4,11 +4,11 @@
 4
 5    <uses-sdk
 6        android:minSdkVersion="14"
-6-->D:\MaryBlue\internet-vpn\onboard\src\main\AndroidManifest.xml
+6-->D:\Source_App\Clone\internet-vpn\onboard\src\main\AndroidManifest.xml
 7        android:targetSdkVersion="31" />
-7-->D:\MaryBlue\internet-vpn\onboard\src\main\AndroidManifest.xml
+7-->D:\Source_App\Clone\internet-vpn\onboard\src\main\AndroidManifest.xml
 8
 9    <application />
-9-->D:\MaryBlue\internet-vpn\onboard\src\main\AndroidManifest.xml:3:5-20
+9-->D:\Source_App\Clone\internet-vpn\onboard\src\main\AndroidManifest.xml:3:5-20
 10
 11</manifest>

@@ -212,9 +212,9 @@ class HomeFragment : Fragment() {
         return root
     }
 
-    private val vpnThread = OpenVPNThread()
-    private val vpnService = OpenVPNService()
-    var vpnStart = false
+    private val vpnThread : OpenVPNThread = OpenVPNThread()
+    private val vpnService: OpenVPNService = OpenVPNService()
+    var vpnStart : Boolean = false
     private var viewModel: ChangeVpnViewModel? = null
     private var databaseReference: DatabaseReference? = null
     private var database: FirebaseDatabase? = null
