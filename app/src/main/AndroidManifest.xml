@@ -83,6 +83,16 @@
         </service>
 
         <receiver
+            android:name="com.example.wise_memory_optimizer.ui.receiver.NetworkChangeReceiver"
+            android:label="NetworkChangeReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
+            </intent-filter>
+        </receiver>
+
+        <receiver
             android:name=".custom.BroadcastReceiver"
             android:exported="false">
             <intent-filter>

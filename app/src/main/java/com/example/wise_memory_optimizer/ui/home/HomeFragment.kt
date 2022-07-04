@@ -1,6 +1,11 @@
 package com.example.wise_memory_optimizer.ui.home
 
+import android.content.Context
+import android.content.Intent
+import android.content.IntentFilter
 import android.os.Bundle
+import android.provider.Settings
+import android.util.Log
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
@@ -13,15 +18,18 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
+import com.example.wise_memory_optimizer.MainActivity
 import com.example.wise_memory_optimizer.R
 import com.example.wise_memory_optimizer.custom.MenuCustomer
 import com.example.wise_memory_optimizer.databinding.FragmentHomeBinding
 import com.example.wise_memory_optimizer.ui.dialog.DialogInformationVpn
 import com.example.wise_memory_optimizer.ui.dialog.DialogLoadingVpn
 import com.example.wise_memory_optimizer.ui.internet.check.CheckInternetSpeedViewModel
+import com.example.wise_memory_optimizer.ui.receiver.NetworkChangeReceiver
 import com.example.wise_memory_optimizer.ui.vpn.ChangeVpnViewModel
 import com.example.wise_memory_optimizer.utils.NavigationUtils
 import com.example.wise_memory_optimizer.utils.NetworkUtils
+import com.example.wise_memory_optimizer.utils.NetworkUtils.NETWORK_STATUS_NOT_CONNECTED
 import com.example.wise_memory_optimizer.utils.showStateTesting
 import com.google.firebase.FirebaseApp
 import com.google.firebase.database.DatabaseReference
@@ -43,7 +51,7 @@ class HomeFragment : Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
-    private lateinit var dialogLoadingVpn: DialogLoadingVpn
+    private var dialogLoadingVpn: DialogLoadingVpn? = null
     private var dialogInformationVpn: DialogInformationVpn? = null
 
     override fun onCreateView(
@@ -200,30 +208,56 @@ class HomeFragment : Fragment() {
             Navigation.findNavController(binding.llInternet)
                 .navigate(R.id.action_nav_home_to_list_internet_speed)
         }
-        binding.txtIpAddress.text = NetworkUtils.getIpAddress(context)
-        binding.txtNation.text = NetworkUtils.findSSIDForWifiInfo(context)
+        dialogLoadingVpn = context?.let {
+            DialogLoadingVpn(it, R.style.MaterialDialogSheet) {
 
-        dialogLoadingVpn = DialogLoadingVpn(requireContext(), R.style.MaterialDialogSheet){
-
+            }
         }
         dialogInformationVpn =
             context?.let {
-                DialogInformationVpn(it,R.style.MaterialDialogSheet) {
-
+                DialogInformationVpn(it, R.style.MaterialDialogSheet) {
+                    if (it == DialogInformationVpn.TYPE_INFO.ERROR_NETWORK) {
+                        val intent = Intent(Settings.ACTION_WIRELESS_SETTINGS)
+                        requireActivity().startActivityForResult(intent, 50)
+                    }
                 }
             }
         initData()
         initObserver()
+        networkReceiver = object : NetworkChangeReceiver() {
+            override fun onReceive(context: Context?, intent: Intent?) {
+                super.onReceive(context, intent)
+                if (intent!!.action == "android.net.conn.CONNECTIVITY_CHANGE") {
+                    val status = intent.getIntExtra("status", 0)
+                    if (status != NETWORK_STATUS_NOT_CONNECTED && !isLoaded) {
+                        activity!!.runOnUiThread({
+                            initData()
+                        })
+                    }
+                }
+            }
+        }
+        IntentFilter("android.net.conn.CONNECTIVITY_CHANGE").also {
+            (requireActivity() as? MainActivity)?.registerReceiver(networkReceiver, it)
+        }
         return root
     }
 
-    private val vpnThread : OpenVPNThread = OpenVPNThread()
+    var networkReceiver: NetworkChangeReceiver? = null
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        initData()
+    }
+
+    private val vpnThread: OpenVPNThread = OpenVPNThread()
     private val vpnService: OpenVPNService = OpenVPNService()
-    var vpnStart : Boolean = false
+    var vpnStart: Boolean = false
     private var viewModel: ChangeVpnViewModel? = null
     private var databaseReference: DatabaseReference? = null
     private var database: FirebaseDatabase? = null
     private var firebaseStorage: FirebaseStorage? = null
+    private var isLoaded = false
 
     fun initData() {
         viewModel = activity?.let {
@@ -232,25 +266,27 @@ class HomeFragment : Fragment() {
             )
         }
         if (NetworkUtils.isNetworkAvailable(activity)) {
+            isLoaded = true
+            if (dialogInformationVpn!!.isShowing) dialogInformationVpn!!.dismiss()
             activity?.let { FirebaseApp.initializeApp(it) }
             database = FirebaseDatabase.getInstance()
             firebaseStorage = FirebaseStorage.getInstance()
             databaseReference = database!!.reference
-            if (viewModel!!.dfCity.code != null){
+            if (viewModel!!.dfCity.code != null) {
                 internetSpeedViewModel.getPing()
                 return
             }
 
-            if (!dialogLoadingVpn.isShowing) {
-                dialogLoadingVpn.show()
-                dialogLoadingVpn.loadingInfo()
+            if (!dialogLoadingVpn!!.isShowing) {
+                dialogLoadingVpn!!.show()
+                dialogLoadingVpn!!.loadingInfo()
                 viewModel!!.getData(databaseReference, context) { o: Any? ->
                     internetSpeedViewModel.getPing()
-                    if (!requireActivity().isFinishing && dialogLoadingVpn.isShowing) {
-                        dialogLoadingVpn.dismiss()
-                    }
+                    if (dialogLoadingVpn!!.isShowing) dialogLoadingVpn!!.dismiss()
                 }
             }
+            binding.txtIpAddress.text = NetworkUtils.getIpAddress(context)
+            binding.txtNation.text = NetworkUtils.findSSIDForWifiInfo(context)
         } else {
             if (!dialogInformationVpn!!.isShowing) {
                 dialogInformationVpn!!.show()
@@ -259,8 +295,8 @@ class HomeFragment : Fragment() {
         }
     }
 
-    private fun initObserver(){
-        internetSpeedViewModel.pingValue.observe(viewLifecycleOwner){ ping ->
+    private fun initObserver() {
+        internetSpeedViewModel.pingValue.observe(viewLifecycleOwner) { ping ->
             binding.txtPing.text = ping.toInt().toString()
             binding.ivStatePing.showStateTesting(ping)
         }
@@ -269,6 +305,7 @@ class HomeFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+        (requireActivity() as? MainActivity)?.unregisterReceiver(networkReceiver)
     }
 
     override fun onResume() {
