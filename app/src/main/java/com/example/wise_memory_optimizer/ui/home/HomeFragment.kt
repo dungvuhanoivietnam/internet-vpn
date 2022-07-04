@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import androidx.appcompat.app.ActionBarDrawerToggle
-import androidx.core.util.Consumer
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
@@ -19,9 +18,11 @@ import com.example.wise_memory_optimizer.custom.MenuCustomer
 import com.example.wise_memory_optimizer.databinding.FragmentHomeBinding
 import com.example.wise_memory_optimizer.ui.dialog.DialogInformationVpn
 import com.example.wise_memory_optimizer.ui.dialog.DialogLoadingVpn
+import com.example.wise_memory_optimizer.ui.internet.check.CheckInternetSpeedViewModel
 import com.example.wise_memory_optimizer.ui.vpn.ChangeVpnViewModel
 import com.example.wise_memory_optimizer.utils.NavigationUtils
 import com.example.wise_memory_optimizer.utils.NetworkUtils
+import com.example.wise_memory_optimizer.utils.showStateTesting
 import com.google.firebase.FirebaseApp
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -34,6 +35,10 @@ class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
     var drawerLayout: DrawerLayout? = null
+
+    private val internetSpeedViewModel by lazy {
+        ViewModelProvider(this).get(CheckInternetSpeedViewModel::class.java)
+    }
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -198,17 +203,18 @@ class HomeFragment : Fragment() {
         binding.txtIpAddress.text = NetworkUtils.getIpAddress(context)
         binding.txtNation.text = NetworkUtils.findSSIDForWifiInfo(context)
         dialogLoadingVpn = context?.let {
-            DialogLoadingVpn(it, R.style.MaterialDialogSheet, {
+            DialogLoadingVpn(it, R.style.MaterialDialogSheet) {
 
-            })
+            }
         }
         dialogInformationVpn =
             context?.let {
-                DialogInformationVpn(it,R.style.MaterialDialogSheet, {
+                DialogInformationVpn(it,R.style.MaterialDialogSheet) {
 
-                })
+                }
             }
         initData()
+        initObserver()
         return root
     }
 
@@ -230,23 +236,32 @@ class HomeFragment : Fragment() {
             activity?.let { FirebaseApp.initializeApp(it) }
             database = FirebaseDatabase.getInstance()
             firebaseStorage = FirebaseStorage.getInstance()
-            databaseReference = database!!.getReference()
+            databaseReference = database!!.reference
             if (viewModel!!.dfCity.code != null){
+                internetSpeedViewModel.getPing()
                 return
             }
 
             if (!dialogLoadingVpn!!.isShowing) {
                 dialogLoadingVpn!!.show()
                 dialogLoadingVpn!!.loadingInfo()
-                viewModel!!.getData(databaseReference, context, { o: Any? ->
+                viewModel!!.getData(databaseReference, context) { o: Any? ->
+                    internetSpeedViewModel.getPing()
                     if (dialogLoadingVpn!!.isShowing) dialogLoadingVpn!!.dismiss()
-                })
+                }
             }
         } else {
             if (!dialogInformationVpn!!.isShowing) {
                 dialogInformationVpn!!.show()
                 dialogInformationVpn!!.setState(DialogInformationVpn.TYPE_INFO.ERROR_NETWORK)
             }
+        }
+    }
+
+    private fun initObserver(){
+        internetSpeedViewModel.pingValue.observe(viewLifecycleOwner){ ping ->
+            binding.txtPing.text = ping.toInt().toString()
+            binding.ivStatePing.showStateTesting(ping)
         }
     }
 

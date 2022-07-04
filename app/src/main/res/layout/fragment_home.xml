@@ -298,6 +298,7 @@
                         app:lottie_rawRes="@raw/done_loading" />
 
                     <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/iv_state_ping"
                         android:layout_width="@dimen/_14sdp"
                         android:layout_height="@dimen/_14sdp"
                         android:src="@color/core_green"
