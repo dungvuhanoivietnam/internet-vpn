@@ -280,5 +280,12 @@ No amendment, modification, waiver or discharge of any provision of these TOS sh
     <string name="faster">Faster</string>
     <string name="optimize_current_network_speed">Optimize current network speed</string>
     <string name="recheck">Recheck</string>
+    <string name="speed_test">Speed Test</string>
+    <string name="change_vpn">&amp; Change VPN</string>
+    <string name="menu_notification">Notification</string>
+    <string name="name_author">Application developed \nby Merry Blue</string>
+    <string name="privacy">Privacy</string>
+    <string name="about_app">About App</string>
+    <string name="premium">Premium</string>
 
 </resources>

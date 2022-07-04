@@ -30,29 +30,29 @@ class MenuCustomer(context: Context, private var attrs: AttributeSet) : Constrai
         val title = typedArray.getString(R.styleable.MenuCustomer_title)
 
         when(title){
-            "Home" -> {
-                binding.iv.setImageResource(R.drawable.ic_group_39572)
+            context.getString(R.string.menu_home) -> {
+                binding.iv.setImageResource(R.drawable.ic_menu_home)
             }
-            "Auto Optimize" -> {
-                binding.iv.setImageResource(R.drawable.ic_outline_motion_photos_auto)
-            }
+//            "Auto Optimize" -> {
+//                binding.iv.setImageResource(R.drawable.ic_outline_motion_photos_auto)
+//            }
 
-            "Notification" -> {
-                binding.iv.setImageResource(R.drawable.ic_ph_notification_fill)
+            context.getString(R.string.menu_notification) -> {
+                binding.iv.setImageResource(R.drawable.ic_menu_notification)
                 binding.switchCompat.visibility = VISIBLE
                 binding.ivAr.visibility = GONE
 
             }
 
-            "Language" -> {
-                binding.iv.setImageResource(R.drawable.ic_translate_2_1)
+            context.getString(R.string.title_language) -> {
+                binding.iv.setImageResource(R.drawable.ic_menu_translate)
 
             }
-            "Privacy" -> {
-                binding.iv.setImageResource(R.drawable.ic_shield)
+            context.getString(R.string.privacy) -> {
+                binding.iv.setImageResource(R.drawable.ic_menu_privacy)
             }
-            "About App" -> {
-                binding.iv.setImageResource(R.drawable.ic_info)
+            context.getString(R.string.about_app) -> {
+                binding.iv.setImageResource(R.drawable.ic_menu_info)
             }
         }
 

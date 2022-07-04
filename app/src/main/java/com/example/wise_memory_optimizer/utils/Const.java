@@ -65,4 +65,6 @@ public class Const {
     public static final String[] arr_productInApp = {"remove_ads"};
     public static final String urlPolicy = "https://docs.google.com/document/d/1GPFYSGUe29P7ge3BuKyIQfWOZRX72bCKdtKHAE5LGIQ/edit?usp=sharing";
     public static final String mailFeedback = "nguyensonhoang.qmt@gmail.com";
+
+    public static final boolean ON_OFF_APP_CLONE = true;
 }

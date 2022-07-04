@@ -7,26 +7,39 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.core.util.Consumer
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.example.wise_memory_optimizer.R
 import com.example.wise_memory_optimizer.custom.MenuCustomer
 import com.example.wise_memory_optimizer.databinding.FragmentHomeBinding
+import com.example.wise_memory_optimizer.ui.dialog.DialogInformationVpn
+import com.example.wise_memory_optimizer.ui.dialog.DialogLoadingVpn
+import com.example.wise_memory_optimizer.ui.vpn.ChangeVpnViewModel
 import com.example.wise_memory_optimizer.utils.NavigationUtils
 import com.example.wise_memory_optimizer.utils.NetworkUtils
+import com.google.firebase.FirebaseApp
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.storage.FirebaseStorage
+import de.blinkt.openvpn.core.OpenVPNService
+import de.blinkt.openvpn.core.OpenVPNThread
 
 
-class  HomeFragment : Fragment() {
+class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
-    var drawerLayout: DrawerLayout?= null
+    var drawerLayout: DrawerLayout? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
+    private var dialogLoadingVpn: DialogLoadingVpn? = null
+    private var dialogInformationVpn: DialogInformationVpn? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -74,7 +87,7 @@ class  HomeFragment : Fragment() {
         val language: MenuCustomer = headerView.findViewById(R.id.language)
         val privacy: MenuCustomer = headerView.findViewById(R.id.privacy)
         val aboutApp: MenuCustomer = headerView.findViewById(R.id.about_app)
-        home.setListener(object : MenuCustomer.Listener{
+        home.setListener(object : MenuCustomer.Listener {
             override fun onClick() {
                 val data = Bundle()
                 data.putString("data", "Auto Optimize")
@@ -84,7 +97,7 @@ class  HomeFragment : Fragment() {
             }
         })
 
-        autoOptimize.setListener(object : MenuCustomer.Listener{
+        autoOptimize.setListener(object : MenuCustomer.Listener {
             override fun onClick() {
                 val data = Bundle()
                 drawerLayout?.closeDrawers()
@@ -94,12 +107,12 @@ class  HomeFragment : Fragment() {
             }
         })
 
-        notification.setListener(object : MenuCustomer.Listener{
+        notification.setListener(object : MenuCustomer.Listener {
             override fun onClick() {
                 drawerLayout?.closeDrawers()
             }
         })
-        language.setListener(object : MenuCustomer.Listener{
+        language.setListener(object : MenuCustomer.Listener {
             override fun onClick() {
                 val data = Bundle()
                 drawerLayout?.closeDrawers()
@@ -109,7 +122,7 @@ class  HomeFragment : Fragment() {
             }
         })
 
-        privacy.setListener(object : MenuCustomer.Listener{
+        privacy.setListener(object : MenuCustomer.Listener {
             override fun onClick() {
                 val data = Bundle()
                 drawerLayout?.closeDrawers()
@@ -119,7 +132,7 @@ class  HomeFragment : Fragment() {
             }
         })
 
-        aboutApp.setListener(object : MenuCustomer.Listener{
+        aboutApp.setListener(object : MenuCustomer.Listener {
             override fun onClick() {
                 val data = Bundle()
                 drawerLayout?.closeDrawers()
@@ -146,7 +159,7 @@ class  HomeFragment : Fragment() {
             Navigation.findNavController(binding.llRam)
                 .navigate(R.id.action_homeFragment_to_ram_Obtimize, data)
         }
-        llCpu.setOnClickListener{
+        llCpu.setOnClickListener {
             val data = Bundle()
             data.putString("data", "CPU")
             Navigation.findNavController(binding.llCpu)
@@ -183,7 +196,58 @@ class  HomeFragment : Fragment() {
                 .navigate(R.id.action_nav_home_to_list_internet_speed)
         }
         binding.txtIpAddress.text = NetworkUtils.getIpAddress(context)
+        binding.txtNation.text = NetworkUtils.findSSIDForWifiInfo(context)
+        dialogLoadingVpn = context?.let {
+            DialogLoadingVpn(it, R.style.MaterialDialogSheet, {
+
+            })
+        }
+        dialogInformationVpn =
+            context?.let {
+                DialogInformationVpn(it,R.style.MaterialDialogSheet, {
+
+                })
+            }
+        initData()
         return root
+    }
+
+    private val vpnThread = OpenVPNThread()
+    private val vpnService = OpenVPNService()
+    var vpnStart = false
+    private var viewModel: ChangeVpnViewModel? = null
+    private var databaseReference: DatabaseReference? = null
+    private var database: FirebaseDatabase? = null
+    private var firebaseStorage: FirebaseStorage? = null
+
+    fun initData() {
+        viewModel = activity?.let {
+            ViewModelProvider(it).get(
+                ChangeVpnViewModel::class.java
+            )
+        }
+        if (NetworkUtils.isNetworkAvailable(activity)) {
+            activity?.let { FirebaseApp.initializeApp(it) }
+            database = FirebaseDatabase.getInstance()
+            firebaseStorage = FirebaseStorage.getInstance()
+            databaseReference = database!!.getReference()
+            if (viewModel!!.dfCity.code != null){
+                return
+            }
+
+            if (!dialogLoadingVpn!!.isShowing) {
+                dialogLoadingVpn!!.show()
+                dialogLoadingVpn!!.loadingInfo()
+                viewModel!!.getData(databaseReference, context, { o: Any? ->
+                    if (dialogLoadingVpn!!.isShowing) dialogLoadingVpn!!.dismiss()
+                })
+            }
+        } else {
+            if (!dialogInformationVpn!!.isShowing) {
+                dialogInformationVpn!!.show()
+                dialogInformationVpn!!.setState(DialogInformationVpn.TYPE_INFO.ERROR_NETWORK)
+            }
+        }
     }
 
     override fun onDestroyView() {

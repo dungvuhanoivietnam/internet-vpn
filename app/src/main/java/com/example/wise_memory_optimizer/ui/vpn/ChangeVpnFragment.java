@@ -2,6 +2,8 @@ package com.example.wise_memory_optimizer.ui.vpn;
 
 import static android.app.Activity.RESULT_OK;
 
+import static com.example.wise_memory_optimizer.utils.Const.ON_OFF_APP_CLONE;
+
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -97,7 +99,7 @@ public class ChangeVpnFragment extends Fragment {
             return view;
         }
 
-        if (NetworkUtils.isNetworkAvailable(getActivity())) {
+        if (NetworkUtils.isNetworkAvailable(getActivity()) && !ON_OFF_APP_CLONE) {
             if (!dialogLoadingVpn.isShowing()) {
                 dialogLoadingVpn.show();
                 dialogLoadingVpn.loadingInfo();

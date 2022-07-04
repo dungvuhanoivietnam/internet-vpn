@@ -14,7 +14,7 @@
         android:layout_height="50dp"
         android:background="@drawable/bg_border_"
         android:padding="15dp"
-        android:src="@drawable/ic_group_39572"
+        android:src="@drawable/ic_menu_home"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

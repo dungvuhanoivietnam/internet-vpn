@@ -1,0 +1,61 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+  <path
+      android:pathData="M12,22C17.523,22 22,17.523 22,12C22,6.477 17.523,2 12,2C6.477,2 2,6.477 2,12C2,17.523 6.477,22 12,22Z"
+      android:strokeLineJoin="round"
+      android:strokeWidth="2"
+      android:fillColor="#00000000"
+      android:strokeLineCap="round">
+    <aapt:attr name="android:strokeColor">
+      <gradient 
+          android:startX="13.759"
+          android:startY="22"
+          android:endX="14.689"
+          android:endY="2.03"
+          android:type="linear">
+        <item android:offset="0" android:color="#FF4B5CBF"/>
+        <item android:offset="0.708" android:color="#FF9B7BF5"/>
+      </gradient>
+    </aapt:attr>
+  </path>
+  <path
+      android:pathData="M12,16V12"
+      android:strokeLineJoin="round"
+      android:strokeWidth="2"
+      android:fillColor="#00000000"
+      android:strokeLineCap="round">
+    <aapt:attr name="android:strokeColor">
+      <gradient 
+          android:startX="12.588"
+          android:startY="16"
+          android:endX="13.308"
+          android:endY="12.132"
+          android:type="linear">
+        <item android:offset="0" android:color="#FF4B5CBF"/>
+        <item android:offset="0.708" android:color="#FF9B7BF5"/>
+      </gradient>
+    </aapt:attr>
+  </path>
+  <path
+      android:pathData="M12,8H12.01"
+      android:strokeLineJoin="round"
+      android:strokeWidth="2"
+      android:fillColor="#00000000"
+      android:strokeLineCap="round">
+    <aapt:attr name="android:strokeColor">
+      <gradient 
+          android:startX="12.006"
+          android:startY="9"
+          android:endX="12.211"
+          android:endY="8.956"
+          android:type="linear">
+        <item android:offset="0" android:color="#FF4B5CBF"/>
+        <item android:offset="0.708" android:color="#FF9B7BF5"/>
+      </gradient>
+    </aapt:attr>
+  </path>
+</vector>

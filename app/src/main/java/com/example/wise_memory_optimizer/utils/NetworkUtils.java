@@ -6,8 +6,11 @@ import android.location.Address;
 import android.location.Geocoder;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.wifi.WifiConfiguration;
+import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.text.format.Formatter;
+import android.util.Log;
 
 import java.io.IOException;
 import java.net.NetworkInterface;
@@ -48,5 +51,21 @@ public class NetworkUtils {
     public static String getSSID(Context context) {
         WifiManager wm = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
         return wm.getConnectionInfo().getSSID();
+    }
+
+    public static String findSSIDForWifiInfo(Context context) {
+        WifiManager wm = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
+        WifiInfo wifiInfo = wm.getConnectionInfo();
+        List<WifiConfiguration> listOfConfigurations = wm.getConfiguredNetworks();
+
+        for (int index = 0; index < listOfConfigurations.size(); index++) {
+            WifiConfiguration configuration = listOfConfigurations.get(index);
+            if (configuration.networkId == wifiInfo.getNetworkId()) {
+                Log.e("natruou",configuration.SSID);
+                return configuration.SSID.replace("\"","");
+            }
+        }
+
+        return null;
     }
 }
