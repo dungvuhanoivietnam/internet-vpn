@@ -20,10 +20,11 @@ import com.example.wise_memory_optimizer.ui.internet.check.CheckInternetSpeedFra
 import com.example.wise_memory_optimizer.ui.internet.list.adapter.InternetPagerAdapter
 import com.example.wise_memory_optimizer.utils.formatMbps
 import com.example.wise_memory_optimizer.utils.setTextPing
+import com.google.android.material.tabs.TabLayoutMediator
 
 
 class InternetSpeedFragment : Fragment() {
-    private val viewModel: MainViewModel by navGraphViewModels(R.id.mobile_navigation)
+    private val viewModelActivity: MainViewModel by navGraphViewModels(R.id.mobile_navigation)
 
     private lateinit var binding: FragmentInternetSpeedBinding
 
@@ -46,7 +47,7 @@ class InternetSpeedFragment : Fragment() {
     }
 
     private fun initData() {
-        viewModel.resultTestingModel?.let {
+        viewModelActivity.resultTestingModel?.let {
             updateDefaultTestingData(it)
         }
     }
@@ -55,24 +56,32 @@ class InternetSpeedFragment : Fragment() {
         setupSpeedView()
         setupViewPager()
 
-        if (viewModel.listSpeedTest.isEmpty()) {
+        if (viewModelActivity.listRecentlyTesting.isEmpty() && viewModelActivity.getListFavoriteTesting().isEmpty()) {
             binding.run {
                 llEmpty.isVisible = true
                 pager.isVisible = false
+                tabLayout.isVisible = false
             }
         } else {
             binding.run {
                 llEmpty.isVisible = false
-                pager.isVisible = false
+                pager.isVisible = true
+                tabLayout.isVisible = true
             }
         }
     }
 
     private fun setupViewPager() {
-        pagerAdapter = InternetPagerAdapter(childFragmentManager)
-
+        pagerAdapter = InternetPagerAdapter(childFragmentManager,lifecycle)
         binding.pager.adapter = pagerAdapter
-        binding.tabLayout.setupWithViewPager(binding.pager)
+
+        TabLayoutMediator(binding.tabLayout,binding.pager){tab, position ->
+            if (position == 0){
+                tab.text = getString(R.string.recently)
+            }else{
+                tab.text = getString(R.string.favourite)
+            }
+        }.attach()
     }
 
     private fun setupEvent() {

@@ -23,7 +23,6 @@ import com.example.wise_memory_optimizer.utils.setTextPing
 import com.example.wise_memory_optimizer.utils.toMbps
 import com.github.anastr.speedviewlib.Gauge
 import fr.bmartel.speedtest.model.SpeedTestMode
-import java.util.*
 
 class CheckInternetSpeedFragment : Fragment() {
     private val viewModel by lazy {
@@ -198,7 +197,7 @@ class CheckInternetSpeedFragment : Fragment() {
 
     private fun setupEvent() {
         binding.btnDone.setOnClickListener {
-            mainViewModel.saveResultTestingModel(locationTestingModel)
+            mainViewModel.addRecentTestingModel(locationTestingModel)
             findNavController().popBackStack()
         }
     }

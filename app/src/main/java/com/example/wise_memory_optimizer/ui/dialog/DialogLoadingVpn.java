@@ -66,7 +66,7 @@ public class DialogLoadingVpn extends Dialog {
 
     @Override
     public void dismiss() {
-        super.dismiss();
         isInfo = false;
+        super.dismiss();
     }
 }

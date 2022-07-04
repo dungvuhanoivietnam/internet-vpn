@@ -43,7 +43,7 @@ class HomeFragment : Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
-    private var dialogLoadingVpn: DialogLoadingVpn? = null
+    private lateinit var dialogLoadingVpn: DialogLoadingVpn
     private var dialogInformationVpn: DialogInformationVpn? = null
 
     override fun onCreateView(
@@ -202,10 +202,9 @@ class HomeFragment : Fragment() {
         }
         binding.txtIpAddress.text = NetworkUtils.getIpAddress(context)
         binding.txtNation.text = NetworkUtils.findSSIDForWifiInfo(context)
-        dialogLoadingVpn = context?.let {
-            DialogLoadingVpn(it, R.style.MaterialDialogSheet) {
 
-            }
+        dialogLoadingVpn = DialogLoadingVpn(requireContext(), R.style.MaterialDialogSheet){
+
         }
         dialogInformationVpn =
             context?.let {
@@ -242,12 +241,14 @@ class HomeFragment : Fragment() {
                 return
             }
 
-            if (!dialogLoadingVpn!!.isShowing) {
-                dialogLoadingVpn!!.show()
-                dialogLoadingVpn!!.loadingInfo()
+            if (!dialogLoadingVpn.isShowing) {
+                dialogLoadingVpn.show()
+                dialogLoadingVpn.loadingInfo()
                 viewModel!!.getData(databaseReference, context) { o: Any? ->
                     internetSpeedViewModel.getPing()
-                    if (dialogLoadingVpn!!.isShowing) dialogLoadingVpn!!.dismiss()
+                    if (!requireActivity().isFinishing && dialogLoadingVpn.isShowing) {
+                        dialogLoadingVpn.dismiss()
+                    }
                 }
             }
         } else {

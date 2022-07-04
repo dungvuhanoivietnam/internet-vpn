@@ -8,6 +8,19 @@ class App: Application() {
 
     override fun onCreate() {
         super.onCreate()
+        instance = this
         Hawk.init(applicationContext).build()
+    }
+
+    companion object{
+        @Volatile
+        private var instance: App? = null
+
+        @JvmStatic
+        fun getInstance(): App = instance ?: synchronized(this) {
+            instance ?: App().also {
+                instance = it
+            }
+        }
     }
 }

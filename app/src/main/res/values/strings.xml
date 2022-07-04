@@ -287,5 +287,7 @@ No amendment, modification, waiver or discharge of any provision of these TOS sh
     <string name="privacy">Privacy</string>
     <string name="about_app">About App</string>
     <string name="premium">Premium</string>
+    <string name="recently">Recently</string>
+    <string name="favourite">Favourite</string>
 
 </resources>
