@@ -183,6 +183,7 @@ class HomeFragment : Fragment() {
                 .navigate(R.id.action_nav_home_to_list_internet_speed)
         }
         binding.txtIpAddress.setText(NetworkUtils.getIpAddress(context))
+        binding.txtNation.setText(NetworkUtils.getSSID(context))
         return root
     }
 

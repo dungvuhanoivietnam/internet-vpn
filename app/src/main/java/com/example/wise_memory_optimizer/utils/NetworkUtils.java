@@ -44,4 +44,9 @@ public class NetworkUtils {
         String ip = Formatter.formatIpAddress(wm.getConnectionInfo().getIpAddress());
         return ip;
     }
+
+    public static String getSSID(Context context) {
+        WifiManager wm = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
+        return wm.getConnectionInfo().getSSID();
+    }
 }

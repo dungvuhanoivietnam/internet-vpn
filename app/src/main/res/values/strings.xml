@@ -67,6 +67,7 @@
     <string name="download">Download</string>
     <string name="upload">Upload</string>
     <string name="ip">IP: </string>
+    <string name="ipwf">IPWF </string>
     <string name="speed_down_up">KB/s</string>
     <string name="vpn">VPN</string>
     <string name="done">Done</string>
@@ -273,7 +274,7 @@ No amendment, modification, waiver or discharge of any provision of these TOS sh
 
     // more
     <string name="check_speed">Check Speed</string>
-    <string name="nation">Nation:</string>
+    <string name="nation">ISP:</string>
     <string name="current_network">Current network</string>
 
 </resources>
