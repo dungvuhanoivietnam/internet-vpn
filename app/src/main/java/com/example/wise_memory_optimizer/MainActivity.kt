@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //        ScreenUtils.transparentStatusAndNavigation(this);
+
         var onboarding = false
         if (intent != null && intent.extras != null) {
             onboarding = intent.extras!!.getBoolean("onboarding", false)
@@ -66,6 +66,14 @@ class MainActivity : AppCompatActivity() {
     override fun attachBaseContext(newBase: Context?) {
         val language = PreferenceUtil.getString(newBase, PreferenceUtil.SETTING_ENGLISH,"")
         super.attachBaseContext(MyContextWrapper.wrap(newBase,language));
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        for (item in  supportFragmentManager.fragments){
+            for (mItem in item.childFragmentManager.fragments)
+                mItem.onActivityResult(resultCode, resultCode,data)
+        }
     }
 
 }
