@@ -23,7 +23,7 @@
             android:id="@+id/view_bg"
             android:layout_width="@dimen/_110sdp"
             android:layout_height="@dimen/_110sdp"
-            android:background="@drawable/bg_core_green"
+            android:background="@drawable/bg_core_radian"
             app:layout_constraintBottom_toBottomOf="@id/iv_progress"
             app:layout_constraintEnd_toEndOf="@id/iv_progress"
             app:layout_constraintStart_toStartOf="@id/iv_progress"

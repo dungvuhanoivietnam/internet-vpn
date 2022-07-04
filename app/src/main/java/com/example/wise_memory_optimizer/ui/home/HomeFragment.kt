@@ -19,7 +19,7 @@ import com.example.wise_memory_optimizer.utils.NavigationUtils
 import com.example.wise_memory_optimizer.utils.NetworkUtils
 
 
-class HomeFragment : Fragment() {
+class  HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
     var drawerLayout: DrawerLayout?= null
@@ -182,8 +182,7 @@ class HomeFragment : Fragment() {
             Navigation.findNavController(binding.llInternet)
                 .navigate(R.id.action_nav_home_to_list_internet_speed)
         }
-        binding.txtIpAddress.setText(NetworkUtils.getIpAddress(context))
-        binding.txtNation.setText(NetworkUtils.getSSID(context))
+        binding.txtIpAddress.text = NetworkUtils.getIpAddress(context)
         return root
     }
 

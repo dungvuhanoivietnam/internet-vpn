@@ -12,6 +12,17 @@
         android:orientation="vertical">
 
         <com.example.wise_memory_optimizer.custom.ExtTextView
+            android:id="@+id/btn_recheck"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_recheck"
+            android:drawablePadding="@dimen/_11sdp"
+            android:padding="@dimen/_14sdp"
+            android:text="@string/recheck"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_16ssp" />
+
+        <com.example.wise_memory_optimizer.custom.ExtTextView
             android:id="@+id/btn_rename"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

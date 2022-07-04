@@ -24,7 +24,7 @@
             android:id="@+id/view_bg"
             android:layout_width="@dimen/_120sdp"
             android:layout_height="@dimen/_120sdp"
-            android:background="@drawable/bg_core_green"
+            android:background="@drawable/bg_core_radian"
             app:layout_constraintBottom_toBottomOf="@id/lottie"
             app:layout_constraintEnd_toEndOf="@id/lottie"
             app:layout_constraintStart_toStartOf="@id/lottie"
