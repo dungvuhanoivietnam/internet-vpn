@@ -40,18 +40,19 @@ class ChangeLanguageAdapter(
 
         binding.tvEnglish.text = item.language
 
-        binding.rootView.setBackgroundColor(
-            if (item.selected) ContextCompat.getColor(
-                context,
-                R.color.black
-            ) else ContextCompat.getColor(context, R.color.color_5252)
-        )
+//        binding.rootView.setBackgroundColor(
+//            if (item.selected) ContextCompat.getColor(
+//                context,
+//                R.color.black
+//            ) else ContextCompat.getColor(context, R.color.color_5252)
+//        )
 
-        binding.tvEnglish.setTextColor(
-            if (item.selected) ContextCompat.getColor(context, R.color.core_green)
-            else ContextCompat.getColor(context, R.color.white)
-        )
+//        binding.tvEnglish.setTextColor(
+//            if (item.selected) ContextCompat.getColor(context, R.color.core_green)
+//            else ContextCompat.getColor(context, R.color.white)
+//        )
 
+        binding.rb.isChecked = item.selected
         binding.rootView.setOnClickListener {
             updateView(position, item)
         }
@@ -70,4 +71,4 @@ class ChangeLanguageAdapter(
 
 }
 
-data class Language(var language: String?, var selected: Boolean, var value : String?= "")
+data class Language(var language: String?, var selected: Boolean, var value: String? = "")

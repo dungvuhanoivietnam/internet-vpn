@@ -148,6 +148,10 @@ abstract class OnboardBase : AppCompatActivity(), OnboardViewPagerListener {
         pagerAdapter.notifyDataSetChanged()
     }
 
+    protected fun addFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction().add(R.id.background, fragment).commit()
+    }
+
     /**
      * Called by the user to associate permissions with slides.
      *
@@ -433,7 +437,7 @@ abstract class OnboardBase : AppCompatActivity(), OnboardViewPagerListener {
 
         setScrollDurationFactor(DEFAULT_SCROLL_DURATION_FACTOR)
         setIndicatorColor(resources.getColor(R.color.color_4B5CBF),
-                resources.getColor(R.color.color_E3F4FB));
+                resources.getColor(R.color.color_E3F4FB))
     }
 
     override fun onPostCreate(savedInstanceState: Bundle?) {

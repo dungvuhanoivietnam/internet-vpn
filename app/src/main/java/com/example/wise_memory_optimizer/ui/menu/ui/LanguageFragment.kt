@@ -21,7 +21,7 @@ import com.example.wise_memory_optimizer.ui.menu.adapter.ChangeLanguageAdapter
 import com.example.wise_memory_optimizer.ui.menu.adapter.Language
 import java.util.*
 
-class LanguageFragment : Fragment(R.layout.fragment_language) {
+class LanguageFragment(arg1: Boolean) : Fragment(R.layout.fragment_language) {
     private var _binding: FragmentLanguageBinding? = null
 
     private val binding get() = _binding!!
@@ -29,6 +29,7 @@ class LanguageFragment : Fragment(R.layout.fragment_language) {
     private var adapter: ChangeLanguageAdapter? = null
     private var position : Int = -1
     private var lang : Language?= null
+    private val firsTimeInApp = arg1
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -38,6 +39,8 @@ class LanguageFragment : Fragment(R.layout.fragment_language) {
         _binding = FragmentLanguageBinding.inflate(inflater, container, false)
         return binding.root
     }
+
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -67,15 +70,20 @@ class LanguageFragment : Fragment(R.layout.fragment_language) {
                 findNavController().popBackStack()
             }
         })
+        if (!firsTimeInApp) {
+            binding.save.setOnClickListener {
+                PreferenceUtil.saveString(
+                    requireContext(),
+                    PreferenceUtil.SETTING_ENGLISH,
+                    lang?.value
+                )
+                Handler(Looper.getMainLooper()).postDelayed({
+                    /* Create an Intent that will start the Menu-Activity. */
+                    activity?.finish()
+                    startActivity(Intent(activity, MainActivity::class.java))
+                }, 500)
 
-        binding.save.setOnClickListener {
-            PreferenceUtil.saveString(requireContext(),PreferenceUtil.SETTING_ENGLISH,lang?.value)
-            Handler(Looper.getMainLooper()).postDelayed({
-                /* Create an Intent that will start the Menu-Activity. */
-                activity?.finish()
-                startActivity(Intent(activity, MainActivity::class.java))
-            }, 500)
-
+            }
         }
     }
 
@@ -90,6 +98,23 @@ class LanguageFragment : Fragment(R.layout.fragment_language) {
     }
 
     private fun initData() {
+        //set ui first time in app
+        if (firsTimeInApp){
+            binding.save.setText(R.string.next)
+            binding.save.setOnClickListener {
+                PreferenceUtil.saveString(
+                    requireContext(),
+                    PreferenceUtil.SETTING_ENGLISH,
+                    lang?.value
+                )
+                Handler(Looper.getMainLooper()).postDelayed({
+                    /* Create an Intent that will start the Menu-Activity. */
+                    activity?.supportFragmentManager?.popBackStack()
+                }, 500)
+
+            }
+        }
+
         lstLanguage.add(Language(getString(R.string.txt_language_en), false, "en"))
         lstLanguage.add(Language(getString(R.string.txt_language_chi), false, "zh"))
         lstLanguage.add(Language(getString(R.string.txt_language_ja), false, "ja"))

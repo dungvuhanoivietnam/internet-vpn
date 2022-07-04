@@ -1,23 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
     android:id="@+id/root_view"
-    android:layout_marginTop="@dimen/_3sdp"
-    android:background="@color/color_5252"
-    android:layout_height="wrap_content">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_4sdp"
+    android:layout_marginBottom="@dimen/_4sdp"
+    android:background="@drawable/bg_transparent_border_language">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/iv_flag"
+        android:layout_width="@dimen/_32sdp"
+        android:layout_height="@dimen/_32sdp"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="@dimen/_18sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:layout_marginBottom="@dimen/_12sdp"
+        app:cardCornerRadius="@dimen/_4sdp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </androidx.cardview.widget.CardView>
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_english"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@id/iv_flag"
         android:fontFamily="@font/poppins_regular400"
         android:paddingStart="18dp"
         android:paddingTop="11dp"
         android:paddingBottom="11dp"
-        android:textColor="@android:color/white"
-        android:textSize="@dimen/_14ssp"
+        android:textColor="@color/color_D9D9D9"
+        android:textSize="@dimen/_14sdp"
         tools:ignore="RtlSymmetry"
         tools:text="Indonesian" />
+
+    <RadioButton
+        android:clickable="false"
+        android:id="@+id/rb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:backgroundTint="#FFBC58"
+        android:buttonTint="#FFBC58" />
 
 </RelativeLayout>
