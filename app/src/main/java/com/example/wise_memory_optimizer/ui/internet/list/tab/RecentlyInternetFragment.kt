@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.PopupWindow
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.navGraphViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.wise_memory_optimizer.MainViewModel
@@ -17,6 +18,7 @@ import com.example.wise_memory_optimizer.custom.ExtTextView
 import com.example.wise_memory_optimizer.databinding.FragmentRecentlyInternetSpeedBinding
 import com.example.wise_memory_optimizer.model.location_speed_test.LocationTestingModel
 import com.example.wise_memory_optimizer.ui.dialog.InputDialog
+import com.example.wise_memory_optimizer.ui.internet.check.CheckInternetSpeedFragment
 import com.example.wise_memory_optimizer.ui.internet.list.adapter.InternetSpeedAdapter
 
 class RecentlyInternetFragment : Fragment() {
@@ -111,6 +113,9 @@ class RecentlyInternetFragment : Fragment() {
         val inflater =
             (requireContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE)) as LayoutInflater
         val view = inflater.inflate(R.layout.popup_edit_item_checked, null).apply {
+            /**
+             *   Handle rename location testing
+             * */
             findViewById<ExtTextView>(R.id.btn_rename).setOnClickListener {
                 InputDialog(
                     context = requireContext(),
@@ -123,8 +128,29 @@ class RecentlyInternetFragment : Fragment() {
                 rootView.isVisible = false
             }
 
+            /**
+             *   Handle delete location testing
+             * */
             findViewById<ExtTextView>(R.id.btn_delete).setOnClickListener {
                 listLocationTesting.removeAt(position)
+                viewModelActivity.deleteRecentTestingModel(model)
+                adapterSpeedTest?.notifyItemRemoved(position)
+                rootView.isVisible = false
+            }
+
+            /**
+             *   Handle recheck location testing
+             * */
+            findViewById<ExtTextView>(R.id.btn_recheck).setOnClickListener {
+                listLocationTesting.removeAt(position)
+                viewModelActivity.deleteRecentTestingModel(model)
+                val data = Bundle().apply {
+                    putString(CheckInternetSpeedFragment.LOCATION_NAME, model.roomName)
+                }
+                findNavController().navigate(
+                    R.id.action_list_internet_speed_to_check_internet_speed,
+                    data
+                )
                 adapterSpeedTest?.notifyItemRemoved(position)
                 rootView.isVisible = false
             }
