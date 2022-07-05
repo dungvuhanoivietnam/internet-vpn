@@ -20,7 +20,7 @@ import com.example.wise_memory_optimizer.custom.ExtTextView;
 public class DialogInformationVpn extends Dialog {
 
     public enum TYPE_INFO {
-        ERROR_NETWORK, ERROR_VPN, SUCCESS_VPN, ERROR_SERVER
+        ERROR_NETWORK, ERROR_VPN, SUCCESS_VPN, ERROR_SERVER , SUCCESS_VPN_HOME
     }
 
     private Consumer<TYPE_INFO> consumerClick;
@@ -71,6 +71,10 @@ public class DialogInformationVpn extends Dialog {
             case ERROR_SERVER:
                 text = R.string.error_load_server;
                 mDrawable = R.drawable.ic_error_loading_server;
+                break;
+            case SUCCESS_VPN_HOME :
+                mDrawable = R.drawable.ic_success_vpn_home;
+                text = R.string.your_network_speed_has_improved;
                 break;
 
         }

@@ -58,6 +58,12 @@ public class DialogLoadingVpn extends Dialog {
         txtStatus.setVisibility(View.VISIBLE);
     }
 
+    public void loadingHome(){
+        isInfo = true;
+        txtContent.setText(getContext().getString(R.string.boosting_your_internet));
+        txtStatus.setVisibility(View.GONE);
+    }
+
     public void loadingInfo() {
         isInfo = true;
         txtContent.setText(getContext().getString(R.string.getting_vpn_information));
