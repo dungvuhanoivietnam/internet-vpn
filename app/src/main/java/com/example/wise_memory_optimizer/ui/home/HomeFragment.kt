@@ -281,7 +281,7 @@ class HomeFragment : Fragment() {
             )
         }
         initLocalNetwork()
-        if (viewModel!!.dfCity.code != null){
+        if (viewModel!!.dfCity.code != null) {
             internetSpeedViewModel.getPing()
             return
         }
@@ -297,12 +297,13 @@ class HomeFragment : Fragment() {
                 dialogLoadingVpn!!.loadingInfo()
                 viewModel!!.getData(databaseReference, context) { o: Any? ->
                     internetSpeedViewModel.getPing()
-                    if (dialogLoadingVpn!!.isShowing && ! requireActivity().isFinishing) dialogLoadingVpn!!.dismiss()
+                    if (dialogLoadingVpn!!.isShowing && !requireActivity().isFinishing) dialogLoadingVpn!!.dismiss()
                 }
-        } else {
-            if (!dialogInformationVpn!!.isShowing) {
-                dialogInformationVpn!!.show()
-                dialogInformationVpn!!.setState(DialogInformationVpn.TYPE_INFO.ERROR_NETWORK)
+            } else {
+                if (!dialogInformationVpn!!.isShowing) {
+                    dialogInformationVpn!!.show()
+                    dialogInformationVpn!!.setState(DialogInformationVpn.TYPE_INFO.ERROR_NETWORK)
+                }
             }
         }
     }
@@ -405,7 +406,7 @@ class HomeFragment : Fragment() {
         return false
     }
 
-    private fun updateStatus(isOn: Boolean) {
+    fun updateStatus(isOn: Boolean) {
     }
 
     fun setStatus(connectionState: String?) {
@@ -460,5 +461,6 @@ class HomeFragment : Fragment() {
             }
         }
     }
+
 
 }
