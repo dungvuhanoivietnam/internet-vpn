@@ -306,7 +306,7 @@ class HomeFragment : Fragment() {
                 dialogLoadingVpn!!.loadingInfo()
                 viewModel!!.getData(databaseReference, context) { o: Any? ->
                     internetSpeedViewModel.getPing()
-                    if (dialogLoadingVpn!!.isShowing) dialogLoadingVpn!!.dismiss()
+                    if (dialogLoadingVpn!!.isShowing && ! requireActivity().isFinishing) dialogLoadingVpn!!.dismiss()
                 }
             }
         } else {
