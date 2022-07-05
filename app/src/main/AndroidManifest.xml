@@ -69,6 +69,7 @@
         </activity>
 
         <activity
+            android:theme="@style/splash_screen"
             android:name=".custom.MyCustomOnboarder"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
