@@ -1,11 +1,13 @@
 package com.example.wise_memory_optimizer.ui.home
 
+import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
+import android.net.VpnService
 import android.os.Bundle
+import android.os.RemoteException
 import android.provider.Settings
-import android.util.Log
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
@@ -16,12 +18,14 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.example.wise_memory_optimizer.MainActivity
 import com.example.wise_memory_optimizer.R
 import com.example.wise_memory_optimizer.custom.MenuCustomer
 import com.example.wise_memory_optimizer.databinding.FragmentHomeBinding
+import com.example.wise_memory_optimizer.model.vpn.Server
 import com.example.wise_memory_optimizer.ui.dialog.DialogInformationVpn
 import com.example.wise_memory_optimizer.ui.dialog.DialogLoadingVpn
 import com.example.wise_memory_optimizer.ui.internet.check.CheckInternetSpeedViewModel
@@ -30,13 +34,18 @@ import com.example.wise_memory_optimizer.ui.vpn.ChangeVpnViewModel
 import com.example.wise_memory_optimizer.utils.NavigationUtils
 import com.example.wise_memory_optimizer.utils.NetworkUtils
 import com.example.wise_memory_optimizer.utils.NetworkUtils.NETWORK_STATUS_NOT_CONNECTED
+import com.example.wise_memory_optimizer.utils.Utils.Companion.checkDoubleClick
 import com.example.wise_memory_optimizer.utils.showStateTesting
+import com.google.android.gms.tasks.OnSuccessListener
 import com.google.firebase.FirebaseApp
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
+import de.blinkt.openvpn.OpenVpnApi
 import de.blinkt.openvpn.core.OpenVPNService
 import de.blinkt.openvpn.core.OpenVPNThread
+import java.nio.charset.StandardCharsets
 
 
 class HomeFragment : Fragment() {
@@ -146,6 +155,15 @@ class HomeFragment : Fragment() {
             }
         })
 
+        binding.txtFaster.setOnClickListener({
+            if (!checkDoubleClick()) return@setOnClickListener
+            if (vpnStart) {
+                stopVpn()
+            } else {
+                prepareVpn()
+            }
+        })
+
         binding.home.ivRight.setOnClickListener {
             drawerLayout?.openDrawer(Gravity.RIGHT)
         }
@@ -220,7 +238,7 @@ class HomeFragment : Fragment() {
                 super.onReceive(context, intent)
                 if (intent!!.action == "android.net.conn.CONNECTIVITY_CHANGE") {
                     val status = intent.getIntExtra("status", 0)
-                    if (status != NETWORK_STATUS_NOT_CONNECTED && !isLoaded) {
+                    if (status != NETWORK_STATUS_NOT_CONNECTED && (viewModel == null || viewModel!!.dfCity.code == null) ) {
                         activity!!.runOnUiThread({
                             initData()
                         })
@@ -248,7 +266,13 @@ class HomeFragment : Fragment() {
     private var databaseReference: DatabaseReference? = null
     private var database: FirebaseDatabase? = null
     private var firebaseStorage: FirebaseStorage? = null
-    private var isLoaded = false
+    private var storageRef: StorageReference? = null
+    private val server = Server()
+
+    fun initLocalNetwork(){
+        binding.txtIpAddress.text = NetworkUtils.getIpAddress(context)
+        binding.txtNation.text = NetworkUtils.findSSIDForWifiInfo(context)
+    }
 
     fun initData() {
         viewModel = activity?.let {
@@ -256,28 +280,25 @@ class HomeFragment : Fragment() {
                 ChangeVpnViewModel::class.java
             )
         }
+        initLocalNetwork()
+        if (viewModel!!.dfCity.code != null){
+            internetSpeedViewModel.getPing()
+            return
+        }
         if (NetworkUtils.isNetworkAvailable(activity)) {
-            isLoaded = true
             if (dialogInformationVpn!!.isShowing) dialogInformationVpn!!.dismiss()
             activity?.let { FirebaseApp.initializeApp(it) }
             database = FirebaseDatabase.getInstance()
             firebaseStorage = FirebaseStorage.getInstance()
+            storageRef = firebaseStorage!!.reference
             databaseReference = database!!.reference
-            if (viewModel!!.dfCity.code != null) {
-                internetSpeedViewModel.getPing()
-                return
-            }
-
             if (!dialogLoadingVpn!!.isShowing) {
                 dialogLoadingVpn!!.show()
                 dialogLoadingVpn!!.loadingInfo()
                 viewModel!!.getData(databaseReference, context) { o: Any? ->
                     internetSpeedViewModel.getPing()
-                    if (dialogLoadingVpn!!.isShowing) dialogLoadingVpn!!.dismiss()
+                    if (dialogLoadingVpn!!.isShowing && ! requireActivity().isFinishing) dialogLoadingVpn!!.dismiss()
                 }
-            }
-            binding.txtIpAddress.text = NetworkUtils.getIpAddress(context)
-            binding.txtNation.text = if ("".equals(NetworkUtils.getSSID(context)))  getString(R.string.unknow) else NetworkUtils.getSSID(context)
         } else {
             if (!dialogInformationVpn!!.isShowing) {
                 dialogInformationVpn!!.show()
@@ -302,6 +323,142 @@ class HomeFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         drawerLayout?.closeDrawer(GravityCompat.END);
+        LocalBroadcastManager.getInstance(requireActivity())
+            .registerReceiver(broadcastReceiver, IntentFilter("connectionState"))
+    }
+
+    override fun onPause() {
+        LocalBroadcastManager.getInstance(requireActivity()!!).unregisterReceiver(broadcastReceiver)
+        super.onPause()
+    }
+
+    /**
+     * Prepare for vpn connect with required permission
+     */
+    private fun prepareVpn() {
+        if (!vpnStart) {
+            if (getInternetStatus()) {
+                val intent = VpnService.prepare(context)
+                if (intent != null) {
+                    startActivityForResult(intent, 1)
+                } else startVpn()
+            } else {
+
+                // No internet connection available
+//                showToast("you have no internet connection !!");
+            }
+        } else if (stopVpn()) {
+
+            // VPN is stopped, show a Toast message.
+//            showToast("Disconnect Successfully");
+        }
+    }
+
+    fun getInternetStatus(): Boolean {
+        return NetworkUtils.isNetworkAvailable(activity)
+    }
+
+    /**
+     * Start the VPN
+     */
+    private fun startVpn() {
+        if (viewModel == null || viewModel!!.dfCity.code == null)
+            return
+        server.country = viewModel!!.dfCity.country
+        server.ovpn = viewModel!!.dfCity.code + ".ovpn"
+        server.ovpnUserName = viewModel!!.dfCity.username
+        server.ovpnUserPassword = viewModel!!.dfCity.pass
+        // .ovpn file
+        storageRef!!.child("ovpn").child(server.ovpn).getBytes(Long.MAX_VALUE)
+            .addOnSuccessListener(
+                { bytes: ByteArray? ->
+                    try {
+                        OpenVpnApi.startVpn(
+                            context,
+                            String(bytes!!, StandardCharsets.UTF_8),
+                            server.getCountry(),
+                            server.getOvpnUserName(),
+                            server.getOvpnUserPassword()
+                        )
+                    } catch (e: RemoteException) {
+                        e.printStackTrace()
+                    }
+                    if (dialogLoadingVpn != null && !dialogLoadingVpn!!.isShowing) dialogLoadingVpn!!.show()
+                    if (dialogLoadingVpn!!.isShowing) dialogLoadingVpn!!.setStatus(
+                        requireContext().getString(
+                            R.string.connecting
+                        )
+                    )
+                    vpnStart = true
+                })
+    }
+
+    fun stopVpn(): Boolean {
+        try {
+            vpnThread.stopProcess()
+            vpnStart = false
+            updateStatus(false)
+            return true
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+        return false
+    }
+
+    private fun updateStatus(isOn: Boolean) {
+    }
+
+    fun setStatus(connectionState: String?) {
+        if (connectionState != null) when (connectionState) {
+            "DISCONNECTED" -> {
+                vpnStart = false
+                if (dialogLoadingVpn != null && dialogLoadingVpn!!.isShowing) dialogLoadingVpn!!.dismiss()
+            }
+            "CONNECTED" -> {
+                vpnStart = true
+                if (dialogLoadingVpn != null && dialogLoadingVpn!!.isShowing) dialogLoadingVpn!!.dismiss()
+                if (dialogInformationVpn != null && !dialogInformationVpn!!.isShowing) {
+                    dialogInformationVpn!!.show()
+                    dialogInformationVpn!!.setState(DialogInformationVpn.TYPE_INFO.SUCCESS_VPN_HOME)
+                }
+                viewModel!!.serverCahce = server
+                updateStatus(true)
+            }
+            "WAIT" -> if (dialogLoadingVpn != null && dialogLoadingVpn!!.isShowing) dialogLoadingVpn!!.setStatus(
+                requireContext().getString(R.string.waiting_for_server_connection)
+            )
+            "AUTH" -> if (dialogLoadingVpn != null && dialogLoadingVpn!!.isShowing) dialogLoadingVpn!!.setStatus(
+                requireContext().getString(R.string.server_authenticating)
+            )
+            "RECONNECTING" -> if (dialogLoadingVpn != null && dialogLoadingVpn!!.isShowing) dialogLoadingVpn!!.setStatus(
+                requireContext().getString(R.string.reconnecting)
+            )
+            "NONETWORK" -> if (dialogLoadingVpn != null && dialogLoadingVpn!!.isShowing) dialogLoadingVpn!!.setStatus(
+                requireContext().getString(R.string.no_network_connection)
+            )
+        }
+    }
+
+    var broadcastReceiver: BroadcastReceiver = object : BroadcastReceiver() {
+        override fun onReceive(context: Context, intent: Intent) {
+            try {
+                setStatus(intent.getStringExtra("state"))
+            } catch (e: java.lang.Exception) {
+                e.printStackTrace()
+            }
+            try {
+                var duration = intent.getStringExtra("duration")
+                var lastPacketReceive = intent.getStringExtra("lastPacketReceive")
+                var byteIn = intent.getStringExtra("byteIn")
+                var byteOut = intent.getStringExtra("byteOut")
+                if (duration == null) duration = "00:00:00"
+                if (lastPacketReceive == null) lastPacketReceive = "0"
+                if (byteIn == null) byteIn = ""
+                if (byteOut == null) byteOut = ""
+            } catch (e: java.lang.Exception) {
+                e.printStackTrace()
+            }
+        }
     }
 
 }

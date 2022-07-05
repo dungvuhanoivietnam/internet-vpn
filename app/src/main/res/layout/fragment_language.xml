@@ -6,11 +6,13 @@
     android:layout_height="match_parent"
     android:background="@drawable/background_menu"
     android:fillViewport="true"
-    android:fitsSystemWindows="true">
+    android:fitsSystemWindows="true"
+    android:nestedScrollingEnabled="false">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/transparent">
 
         <com.example.wise_memory_optimizer.custom.ToolbarCustomer
             android:id="@+id/toolbar"
@@ -27,6 +29,7 @@
             android:text="@string/txt_current_language"
             android:textColor="@android:color/white"
             android:textSize="@dimen/_13ssp"
+            android:visibility="gone"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/toolbar" />
 
@@ -46,6 +49,7 @@
             android:text="English"
             android:textColor="#00BC3C"
             android:textSize="@dimen/_13ssp"
+            android:visibility="gone"
             app:drawableEndCompat="@drawable/ic_vector"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -54,33 +58,35 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rcl_english"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_marginStart="@dimen/_16sdp"
-            android:layout_marginTop="@dimen/_38sdp"
+            android:layout_marginTop="@dimen/_28sdp"
             android:layout_marginEnd="@dimen/_16sdp"
-            android:background="@drawable/bg_gray_53"
+            android:layout_marginBottom="@dimen/_40sdp"
+            android:background="@color/transparent"
             android:padding="2dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@id/save"
             app:layout_constraintTop_toBottomOf="@+id/cbb"
             tools:itemCount="5"
             tools:listitem="@layout/item_language" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/save"
-            android:layout_marginTop="@dimen/_38sdp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_38sdp"
+            android:layout_marginBottom="@dimen/_80sdp"
+            android:background="@drawable/bg_btn_gradient"
             android:fontFamily="@font/poppins_medium500"
-            android:text="Save"
-            android:background="@drawable/bg_button_30sdp"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/_18ssp"
+            android:paddingHorizontal="@dimen/_45sdp"
             android:paddingVertical="@dimen/_6sdp"
-            android:paddingHorizontal="@dimen/_56sdp"
+            android:text="Save"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:backgroundTint="#666666"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/rcl_english" />
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

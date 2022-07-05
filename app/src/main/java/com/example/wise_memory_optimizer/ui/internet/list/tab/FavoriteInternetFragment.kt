@@ -3,29 +3,30 @@ package com.example.wise_memory_optimizer.ui.internet.list.tab
 import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.PopupWindow
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.navGraphViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.wise_memory_optimizer.MainViewModel
 import com.example.wise_memory_optimizer.R
 import com.example.wise_memory_optimizer.custom.ExtTextView
-import com.example.wise_memory_optimizer.databinding.FragmentListInternetBinding
+import com.example.wise_memory_optimizer.databinding.FragmentFavoriteInternetSpeedBinding
 import com.example.wise_memory_optimizer.model.location_speed_test.LocationTestingModel
 import com.example.wise_memory_optimizer.ui.dialog.InputDialog
+import com.example.wise_memory_optimizer.ui.internet.check.CheckInternetSpeedFragment
+import com.example.wise_memory_optimizer.ui.internet.check.CheckInternetSpeedFragment.Companion.IS_FAVORITE
+import com.example.wise_memory_optimizer.ui.internet.check.CheckInternetSpeedFragment.Companion.LOCATION_NAME
 import com.example.wise_memory_optimizer.ui.internet.list.adapter.InternetSpeedAdapter
 
-class ListInternetFragment(
-    var isFavorite : Boolean = false
-) : Fragment() {
-    private val viewModel: MainViewModel by navGraphViewModels(R.id.mobile_navigation)
+class FavoriteInternetFragment : Fragment() {
+    private val viewModelActivity: MainViewModel by navGraphViewModels(R.id.mobile_navigation)
 
-    private lateinit var binding: FragmentListInternetBinding
+    private lateinit var binding: FragmentFavoriteInternetSpeedBinding
 
     private var adapterSpeedTest: InternetSpeedAdapter? = null
     private var listLocationTesting = mutableListOf<LocationTestingModel>()
@@ -35,14 +36,14 @@ class ListInternetFragment(
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentListInternetBinding.inflate(inflater, container, false)
+        binding = FragmentFavoriteInternetSpeedBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupRecycleView()
-        updateRcvData()
+
     }
 
     /**
@@ -66,19 +67,23 @@ class ListInternetFragment(
         isFavorite: Boolean,
         position: Int
     ) {
-        // unselect all favorite
-        listLocationTesting.forEach { locationTestingModel ->
-            if (locationTestingModel.isFavorite) {
-                locationTestingModel.isFavorite = false
-            }
+        model.isFavorite = !isFavorite
+        listLocationTesting.removeAt(position)
+        viewModelActivity.run {
+            addRecentTestingModel(model)
+            deleteFavoriteInternetTesting(model)
         }
 
-        model.isFavorite = isFavorite
-        listLocationTesting.run {
-            removeAt(position)
-            add(0, model)
-        }
         adapterSpeedTest?.notifyDataSetChanged()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        listLocationTesting.run {
+            clear()
+            addAll(viewModelActivity.getListFavoriteTesting())
+        }
+        updateRcvData()
     }
 
 
@@ -87,13 +92,8 @@ class ListInternetFragment(
      * */
     @SuppressLint("NotifyDataSetChanged")
     private fun updateRcvData() {
-        if (viewModel.listSpeedTest.isNotEmpty()) {
+        if (listLocationTesting.isNotEmpty()) {
             binding.rcvLocationChecked.isVisible = true
-            listLocationTesting.run {
-                clear()
-                addAll(viewModel.listSpeedTest)
-            }
-            Log.e("=======>", "updateRcvData ${listLocationTesting.size}" )
             adapterSpeedTest?.notifyDataSetChanged()
         } else {
             binding.rcvLocationChecked.isVisible = false
@@ -116,6 +116,10 @@ class ListInternetFragment(
         val inflater =
             (requireContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE)) as LayoutInflater
         val view = inflater.inflate(R.layout.popup_edit_item_checked, null).apply {
+
+            /**
+             *   Handle rename location testing
+             * */
             findViewById<ExtTextView>(R.id.btn_rename).setOnClickListener {
                 InputDialog(
                     context = requireContext(),
@@ -128,8 +132,30 @@ class ListInternetFragment(
                 rootView.isVisible = false
             }
 
+            /**
+            *   Handle delete location testing
+            * */
             findViewById<ExtTextView>(R.id.btn_delete).setOnClickListener {
+                viewModelActivity.deleteFavoriteInternetTesting(model)
                 listLocationTesting.removeAt(position)
+                adapterSpeedTest?.notifyItemRemoved(position)
+                rootView.isVisible = false
+            }
+
+            /**
+             *   Handle recheck location testing
+             * */
+            findViewById<ExtTextView>(R.id.btn_recheck).setOnClickListener {
+                listLocationTesting.removeAt(position)
+                viewModelActivity.deleteFavoriteInternetTesting(model)
+                val data = Bundle().apply {
+                    putString(LOCATION_NAME, model.roomName)
+                    putBoolean(IS_FAVORITE, model.isFavorite)
+                }
+                findNavController().navigate(
+                    R.id.action_list_internet_speed_to_check_internet_speed,
+                    data
+                )
                 adapterSpeedTest?.notifyItemRemoved(position)
                 rootView.isVisible = false
             }
@@ -139,6 +165,5 @@ class ListInternetFragment(
             contentView = view
             isOutsideTouchable = true
         }.showAsDropDown(anchorView)
-
     }
 }

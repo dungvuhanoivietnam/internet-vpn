@@ -62,7 +62,6 @@ class InternetSpeedAdapter(
             }
 
             imgFavorite.setOnClickListener {
-                isFavorite = !isFavorite
                 onClickFavorite.invoke(locationCheckedModel, isFavorite,position)
             }
         }

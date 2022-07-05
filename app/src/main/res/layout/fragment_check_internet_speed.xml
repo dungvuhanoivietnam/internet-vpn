@@ -34,44 +34,62 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout_ping_result"
-        android:layout_width="@dimen/_160sdp"
-        android:layout_height="@dimen/_160sdp"
-        android:background="@drawable/ic_bg_ping_result"
-        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/txt_location_title"
-        app:layout_constraintBottom_toTopOf="@id/txt_download"
-        >
+        app:layout_constraintBottom_toTopOf="@id/txt_download">
 
-        <com.example.wise_memory_optimizer.custom.ExtTextView
-            android:id="@+id/txt_ping_result"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:textSize="@dimen/_40ssp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@id/txt_ping_result_description"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_chainStyle="packed"
-            tools:text="12" />
+        <View
+            android:id="@+id/view_bg"
+            android:layout_width="@dimen/_154sdp"
+            android:layout_height="@dimen/_154sdp"
+            android:background="@drawable/bg_core_radian"
+            app:layout_constraintBottom_toBottomOf="@id/lottie"
+            app:layout_constraintEnd_toEndOf="@id/lottie"
+            app:layout_constraintStart_toStartOf="@id/lottie"
+            app:layout_constraintTop_toTopOf="@+id/lottie" />
 
-        <com.example.wise_memory_optimizer.custom.ExtTextView
-            android:id="@+id/txt_ping_result_description"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/_8sdp"
-            android:text="@string/ping_ms"
-            android:textColor="@color/white"
-            android:textSize="@dimen/_12ssp"
-            android:textStyle="bold"
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottie"
+            android:layout_width="@dimen/_224sdp"
+            android:layout_height="@dimen/_224sdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/txt_ping_result"
-            app:layout_constraintVertical_chainStyle="packed" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/done_loading" />
+
+        <TextView
+            android:id="@+id/txt_ping_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium500"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_42sdp"
+            app:layout_constraintVertical_bias="0.4"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="12" />
+
+        <TextView
+            android:id="@+id/txt_ping_result_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium500"
+            android:text="@string/ping_ms"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_ping_result" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.github.anastr.speedviewlib.PointerSpeedometer

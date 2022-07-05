@@ -46,7 +46,7 @@
         android:fullBackupContent="@xml/backup_rules"
         android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="Phone Optimizer"
+        android:label="Boost Internet"
         android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -69,6 +69,7 @@
         </activity>
 
         <activity
+            android:theme="@style/splash_screen"
             android:name=".custom.MyCustomOnboarder"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
