@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_marginRight="@dimen/padding_normal"
         android:fontFamily="@font/poppins_medium500"
-        android:text="@string/tv_title_android"
+        android:text="@string/Boost"
         android:textColor="@color/white"
         android:textSize="@dimen/text_size_middle_large" />
 
@@ -23,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_medium500"
-        android:text="@string/tv_title_obtimze"
+        android:text="@string/internet"
         android:textColor="@color/color_4B5CBF"
         android:textSize="@dimen/text_size_middle_large" />
 

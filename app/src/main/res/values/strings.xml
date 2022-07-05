@@ -67,7 +67,6 @@
     <string name="download">Download</string>
     <string name="upload">Upload</string>
     <string name="ip">IP: </string>
-    <string name="ipwf">IPWF </string>
     <string name="speed_down_up">KB/s</string>
     <string name="vpn">VPN</string>
     <string name="done">Done</string>
@@ -287,5 +286,9 @@ No amendment, modification, waiver or discharge of any provision of these TOS sh
     <string name="privacy">Privacy</string>
     <string name="about_app">About App</string>
     <string name="premium">Premium</string>
+    <string name="Boost">Boost</string>
+    <string name="internet">Internet</string>
+    <string name="ipwf">IPWF:</string>
+    <string name="unknow">Unknow</string>
 
 </resources>

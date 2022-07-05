@@ -84,15 +84,6 @@ class HomeFragment : Fragment() {
 
         drawerLayout?.addDrawerListener(mDrawerToggle)
 
-//        val navView: NavigationView = binding.navView
-//        val navController = findNavController()
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-//        appBarConfiguration = AppBarConfiguration(setOf(
-//                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow), drawerLayout)
-//        setupActionBarWithNavController(navController, appBarConfiguration)
-//        navView.setupWithNavController(navController)
-
         val headerView = binding.navView.getHeaderView(0)
         val home: MenuCustomer = headerView.findViewById(R.id.home)
         val autoOptimize: MenuCustomer = headerView.findViewById(R.id.auto_optimize)
@@ -286,7 +277,7 @@ class HomeFragment : Fragment() {
                 }
             }
             binding.txtIpAddress.text = NetworkUtils.getIpAddress(context)
-            binding.txtNation.text = NetworkUtils.findSSIDForWifiInfo(context)
+            binding.txtNation.text = if ("".equals(NetworkUtils.getSSID(context)))  getString(R.string.unknow) else NetworkUtils.getSSID(context)
         } else {
             if (!dialogInformationVpn!!.isShowing) {
                 dialogInformationVpn!!.show()
