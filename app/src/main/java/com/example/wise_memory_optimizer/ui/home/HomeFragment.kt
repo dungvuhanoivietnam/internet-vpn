@@ -295,15 +295,15 @@ class HomeFragment : Fragment() {
             if (!dialogLoadingVpn!!.isShowing) {
                 dialogLoadingVpn!!.show()
                 dialogLoadingVpn!!.loadingInfo()
-                viewModel!!.getData(databaseReference, context) { o: Any? ->
-                    internetSpeedViewModel.getPing()
-                    if (dialogLoadingVpn!!.isShowing && !requireActivity().isFinishing) dialogLoadingVpn!!.dismiss()
-                }
-            } else {
-                if (!dialogInformationVpn!!.isShowing) {
-                    dialogInformationVpn!!.show()
-                    dialogInformationVpn!!.setState(DialogInformationVpn.TYPE_INFO.ERROR_NETWORK)
-                }
+            }
+            viewModel!!.getData(databaseReference, context) { o: Any? ->
+                internetSpeedViewModel.getPing()
+                if (dialogLoadingVpn!!.isShowing && !requireActivity().isFinishing) dialogLoadingVpn!!.dismiss()
+            }
+        }else{
+            if (!dialogInformationVpn!!.isShowing) {
+                dialogInformationVpn!!.show()
+                dialogInformationVpn!!.setState(DialogInformationVpn.TYPE_INFO.ERROR_NETWORK)
             }
         }
     }
@@ -324,12 +324,12 @@ class HomeFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         drawerLayout?.closeDrawer(GravityCompat.END);
-        LocalBroadcastManager.getInstance(requireActivity())
-            .registerReceiver(broadcastReceiver, IntentFilter("connectionState"))
+//        LocalBroadcastManager.getInstance(requireActivity())
+//            .registerReceiver(broadcastReceiver, IntentFilter("connectionState"))
     }
 
     override fun onPause() {
-        LocalBroadcastManager.getInstance(requireActivity()!!).unregisterReceiver(broadcastReceiver)
+//        LocalBroadcastManager.getInstance(requireActivity()!!).unregisterReceiver(broadcastReceiver)
         super.onPause()
     }
 

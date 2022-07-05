@@ -6,7 +6,7 @@
     <queries>
         <package android:name="smart.optimizer.phonecleaner" />
         <package android:name="cpu.booster.phoneoptimizer"/>
-        <package android:name="internet.optimizer.boosterspeed"/>
+<!--        <package android:name="internet.optimizer.boosterspeed"/>-->
     </queries>
 
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
