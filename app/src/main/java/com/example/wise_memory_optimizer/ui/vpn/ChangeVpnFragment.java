@@ -24,6 +24,7 @@ import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.navigation.Navigation;
 
 import com.bumptech.glide.Glide;
+import com.example.wise_memory_optimizer.MainActivity;
 import com.example.wise_memory_optimizer.R;
 import com.example.wise_memory_optimizer.databinding.FragmentChangeVpnBinding;
 import com.example.wise_memory_optimizer.model.vpn.City;
@@ -351,7 +352,7 @@ public class ChangeVpnFragment extends Fragment {
         // .ovpn file
         storageRef.child("ovpn").child(server.getOvpn()).getBytes(Long.MAX_VALUE).addOnSuccessListener(bytes -> {
             try {
-                OpenVpnApi.startVpn(getContext(), new String(bytes, StandardCharsets.UTF_8), server.getCountry(), server.getOvpnUserName(), server.getOvpnUserPassword());
+                OpenVpnApi.startVpn(getContext(), new String(bytes, StandardCharsets.UTF_8), server.getCountry(), server.getOvpnUserName(), server.getOvpnUserPassword(), MainActivity.class);
             } catch (RemoteException e) {
                 e.printStackTrace();
             }

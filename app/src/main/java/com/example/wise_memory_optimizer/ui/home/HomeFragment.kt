@@ -8,7 +8,6 @@ import android.net.VpnService
 import android.os.Bundle
 import android.os.RemoteException
 import android.provider.Settings
-import android.util.Log
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
@@ -347,7 +346,7 @@ class HomeFragment : Fragment() {
             if (getInternetStatus()) {
                 val intent = VpnService.prepare(context)
                 if (intent != null) {
-                    startActivityForResult(intent, 1)
+                    startActivityForResult(intent, 100)
                 } else startVpn()
             } else {
 
@@ -385,7 +384,7 @@ class HomeFragment : Fragment() {
                             String(bytes!!, StandardCharsets.UTF_8),
                             server.getCountry(),
                             server.getOvpnUserName(),
-                            server.getOvpnUserPassword()
+                            server.getOvpnUserPassword(), MainActivity::class.java
                         )
                     } catch (e: RemoteException) {
                         e.printStackTrace()

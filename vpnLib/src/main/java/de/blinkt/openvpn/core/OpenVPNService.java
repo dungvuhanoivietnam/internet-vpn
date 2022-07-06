@@ -37,10 +37,12 @@ import android.system.OsConstants;
 import android.text.TextUtils;
 import android.util.Base64;
 import android.util.Log;
+import android.widget.RemoteViews;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
+import androidx.core.app.NotificationCompat;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import java.io.IOException;
@@ -1310,6 +1312,25 @@ public class OpenVPNService extends VpnService implements StateListener, Callbac
             if (time >= maxTimeService && getManagement() != null) {
                 sendMessage("", String.valueOf(lastPacketReceive), byteIn, byteOut);
                 getManagement().stopVPN(false);
+
+                Intent intent = new Intent();
+                PendingIntent pIntent = PendingIntent.getActivity(getApplicationContext(), 0, intent, 0);
+
+                // TODO: Make this accessible to exterior projects, such as web interface.
+                Notification notification = new Notification.Builder(getApplicationContext())
+                        .setTicker("Notification")
+                        .setContentTitle("Important Message")
+                        .setContentText("This is an example of a push notification using a Navigation Manager")
+                        .setSmallIcon(R.mipmap.ic_launcher)
+                        .setContentIntent(pIntent)
+                        .build();
+
+                notification.flags = Notification.FLAG_AUTO_CANCEL;
+
+                NotificationManager nManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+
+                nManager.notify(0, notification);
+
                 return;
             }
             long lastTime = maxTimeService - time;
@@ -1463,5 +1484,40 @@ public class OpenVPNService extends VpnService implements StateListener, Callbac
 
     public boolean isConnected() {
         return flag;
+    }
+
+    static RemoteViews remoteViews;
+
+    private void startServiceForeground() {
+        if (Build.VERSION.SDK_INT >= 26) {
+            ((NotificationManager) getSystemService(NotificationManager.class))
+                    .createNotificationChannel(new NotificationChannel("noti_my_service", "My Background Service", NotificationManager.IMPORTANCE_NONE));
+
+            remoteViews = new RemoteViews(getPackageName(), R.layout.item_notification);
+//            RemoteViews remoteViews = new RemoteViews(getPackageName(), R.layout.layout_remote_view);
+            Intent intent = new Intent(this, mProfile.aClass);
+            intent.setFlags(603979776);
+
+            NotificationCompat.Builder cVar = new NotificationCompat.Builder(this, "noti_my_service");
+            cVar.setSmallIcon((int) R.mipmap.ic_launcher);
+            cVar.setAutoCancel(true);
+            cVar.setCustomContentView(remoteViews);
+            PendingIntent activity;
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                activity = PendingIntent.getBroadcast(this, 0,
+                        intent, PendingIntent.FLAG_IMMUTABLE | PendingIntent.FLAG_CANCEL_CURRENT);
+            } else {
+                activity = PendingIntent.getBroadcast(this, 0,
+                        intent, PendingIntent.FLAG_CANCEL_CURRENT);
+            }
+
+            cVar.setContentIntent(activity);
+            try {
+                startForeground(103, cVar.getNotification());
+            } catch (Exception exception) {
+//                LogUtil.e("#PowerService - startServiceForeground exception - " + exception.getMessage());
+            }
+        }
     }
 }
