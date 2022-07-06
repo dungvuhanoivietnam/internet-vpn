@@ -2,28 +2,27 @@ package com.example.wise_memory_optimizer.ui.internet.list.adapter
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentStatePagerAdapter
-import com.example.wise_memory_optimizer.ui.internet.list.tab.ListInternetFragment
+import androidx.lifecycle.Lifecycle
+import androidx.viewpager2.adapter.FragmentStateAdapter
+import com.example.wise_memory_optimizer.ui.internet.list.tab.FavoriteInternetFragment
+import com.example.wise_memory_optimizer.ui.internet.list.tab.RecentlyInternetFragment
+
+private const val NUM_TABS = 2
 
 class InternetPagerAdapter(
-    fm: FragmentManager
-) : FragmentStatePagerAdapter(fm) {
+    fm: FragmentManager,
+    lifecycle: Lifecycle
+) : FragmentStateAdapter(fm,lifecycle) {
 
-    override fun getCount(): Int  = 2
-
-    override fun getPageTitle(position: Int): CharSequence {
-        return if (position == 0){
-            "Recently"
-        }else {
-            "Favourite"
-        }
+    override fun getItemCount(): Int {
+        return NUM_TABS
     }
 
-    override fun getItem(position: Int): Fragment {
+    override fun createFragment(position: Int): Fragment {
         return if (position == 0){
-            ListInternetFragment(isFavorite = false)
+            RecentlyInternetFragment()
         }else {
-           ListInternetFragment(isFavorite = true)
+            FavoriteInternetFragment()
         }
     }
 }

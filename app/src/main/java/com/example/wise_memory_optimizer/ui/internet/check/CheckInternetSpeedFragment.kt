@@ -23,7 +23,6 @@ import com.example.wise_memory_optimizer.utils.setTextPing
 import com.example.wise_memory_optimizer.utils.toMbps
 import com.github.anastr.speedviewlib.Gauge
 import fr.bmartel.speedtest.model.SpeedTestMode
-import java.util.*
 
 class CheckInternetSpeedFragment : Fragment() {
     private val viewModel by lazy {
@@ -49,9 +48,14 @@ class CheckInternetSpeedFragment : Fragment() {
         }.create()
     }
 
+    val isFavorite : Boolean by lazy {
+        arguments?.getBoolean(IS_FAVORITE,false) ?: false
+    }
+
     companion object {
         var TAG = CheckInternetSpeedFragment::class.java.simpleName
         const val LOCATION_NAME = "location-name"
+        const val IS_FAVORITE = "is favorite"
         const val PING_MIN_VALUE = 1F
     }
 
@@ -116,7 +120,7 @@ class CheckInternetSpeedFragment : Fragment() {
             }
 
             locationTestingModel.ping?.let { ping ->
-                binding.txtPing.setTextPing(ping)
+                binding.txtPing.text = ping.toInt().toString()
                 binding.txtPingResult.text = ping.toInt().toString()
             }
         }
@@ -198,7 +202,12 @@ class CheckInternetSpeedFragment : Fragment() {
 
     private fun setupEvent() {
         binding.btnDone.setOnClickListener {
-            mainViewModel.saveResultTestingModel(locationTestingModel)
+            if (isFavorite){
+                locationTestingModel.isFavorite = true
+                mainViewModel.addFavoriteInternetTesting(locationTestingModel)
+            }else {
+                mainViewModel.addRecentTestingModel(locationTestingModel)
+            }
             findNavController().popBackStack()
         }
     }

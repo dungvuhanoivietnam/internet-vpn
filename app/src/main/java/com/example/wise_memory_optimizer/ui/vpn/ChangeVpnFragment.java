@@ -34,6 +34,7 @@ import com.example.wise_memory_optimizer.ui.dialog.DialogLoadingVpn;
 import com.example.wise_memory_optimizer.utils.NavigationUtils;
 import com.example.wise_memory_optimizer.utils.NetworkUtils;
 import com.example.wise_memory_optimizer.utils.SharePrefrenceUtils;
+import com.example.wise_memory_optimizer.utils.Utils;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
@@ -62,9 +63,6 @@ public class ChangeVpnFragment extends Fragment {
     private City dfCity = new City();
     private Server server = new Server();
     private ChangeVpnViewModel viewModel;
-    private ArrayList<Country> countries = new ArrayList<>();
-    private ArrayList<City> citySmarts = new ArrayList<>();
-    private HashMap<String, ArrayList<City>> spCities = new HashMap<>();
 
     private OpenVPNThread vpnThread = new OpenVPNThread();
     private OpenVPNService vpnService = new OpenVPNService();
@@ -128,9 +126,6 @@ public class ChangeVpnFragment extends Fragment {
             server.setOvpnUserName(dfCity.getUsername());
             server.setOvpnUserPassword(dfCity.getPass());
         }
-        countries = viewModel.getCountries();
-        citySmarts = viewModel.getCitySmarts();
-        spCities = viewModel.getSpCities();
     }
 
     @Override
@@ -153,7 +148,7 @@ public class ChangeVpnFragment extends Fragment {
             NavigationUtils.Companion.back(binding.getRoot());
         });
         binding.ivStart.setOnClickListener(view1 -> {
-            if (!checkDoubleClick())
+            if (!Utils.Companion.checkDoubleClick())
                 return;
             if (vpnStart) {
                 stopVpn();
@@ -407,15 +402,5 @@ public class ChangeVpnFragment extends Fragment {
         return false;
     }
 
-    //check double click;
-    private Long oldTimeClick = System.currentTimeMillis();
 
-    public boolean checkDoubleClick() {
-        long tmp = System.currentTimeMillis();
-        if (tmp - oldTimeClick >= 1000) {
-            oldTimeClick = tmp;
-            return true;
-        }
-        return false;
-    }
 }
