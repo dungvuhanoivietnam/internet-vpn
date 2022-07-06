@@ -25,6 +25,7 @@ import com.example.wise_memory_optimizer.MainActivity
 import com.example.wise_memory_optimizer.R
 import com.example.wise_memory_optimizer.custom.MenuCustomer
 import com.example.wise_memory_optimizer.databinding.FragmentHomeBinding
+import com.example.wise_memory_optimizer.model.vpn.City
 import com.example.wise_memory_optimizer.model.vpn.Server
 import com.example.wise_memory_optimizer.ui.dialog.DialogInformationVpn
 import com.example.wise_memory_optimizer.ui.dialog.DialogLoadingVpn
@@ -280,6 +281,8 @@ class HomeFragment : Fragment() {
     }
 
     fun initData() {
+        if (activity == null)
+            return
         viewModel = activity?.let {
             ViewModelProvider(it).get(
                 ChangeVpnViewModel::class.java
@@ -368,35 +371,50 @@ class HomeFragment : Fragment() {
      * Start the VPN
      */
     private fun startVpn() {
-        if (viewModel == null || viewModel!!.dfCity.code == null)
+        if (viewModel == null || viewModel!!.cities == null || viewModel!!.cities.size == 0)
             return
-        server.country = viewModel!!.dfCity.country
-        server.ovpn = viewModel!!.dfCity.code + ".ovpn"
-        server.ovpnUserName = viewModel!!.dfCity.username
-        server.ovpnUserPassword = viewModel!!.dfCity.pass
+        var city: City? = null
+        viewModel!!.cities.forEach {
+            if (city == null){
+                city = it
+            }else if (city!!.ping != 0){
+                if (it.ping < city!!.ping)
+                {
+                    city = it
+                }
+            }
+        }
+        server.country = city!!.country
+        server.ovpn = city!!.code + ".ovpn"
+        server.ovpnUserName = city!!.username
+        server.ovpnUserPassword = city!!.pass
         // .ovpn file
-        storageRef!!.child("ovpn").child(server.ovpn).getBytes(Long.MAX_VALUE)
-            .addOnSuccessListener(
-                { bytes: ByteArray? ->
-                    try {
-                        OpenVpnApi.startVpn(
-                            context,
-                            String(bytes!!, StandardCharsets.UTF_8),
-                            server.getCountry(),
-                            server.getOvpnUserName(),
-                            server.getOvpnUserPassword(), MainActivity::class.java
+        storageRef!!.child("ovpn").listAll().addOnSuccessListener {
+            it.items.forEach {
+                if (it.name.contains(server.country)){
+                    it.getBytes(Long.MAX_VALUE).addOnSuccessListener {
+                        try {
+                            OpenVpnApi.startVpn(
+                                context,
+                                String(it, StandardCharsets.UTF_8),
+                                server.getCountry(),
+                                server.getOvpnUserName(),
+                                server.getOvpnUserPassword(), MainActivity::class.java
+                            )
+                        } catch (e: RemoteException) {
+                            e.printStackTrace()
+                        }
+                        if (dialogLoadingVpn != null && !dialogLoadingVpn!!.isShowing) dialogLoadingVpn!!.show()
+                        if (dialogLoadingVpn!!.isShowing) dialogLoadingVpn!!.setStatus(
+                            requireContext().getString(
+                                R.string.connecting
+                            )
                         )
-                    } catch (e: RemoteException) {
-                        e.printStackTrace()
+                        vpnStart = true
                     }
-                    if (dialogLoadingVpn != null && !dialogLoadingVpn!!.isShowing) dialogLoadingVpn!!.show()
-                    if (dialogLoadingVpn!!.isShowing) dialogLoadingVpn!!.setStatus(
-                        requireContext().getString(
-                            R.string.connecting
-                        )
-                    )
-                    vpnStart = true
-                })
+                }
+            }
+        }
     }
 
     fun stopVpn(): Boolean {

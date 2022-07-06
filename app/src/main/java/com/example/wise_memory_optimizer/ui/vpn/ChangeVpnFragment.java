@@ -83,8 +83,12 @@ public class ChangeVpnFragment extends Fragment {
 
         if (NetworkUtils.isConnectVpn() && server.getCountry().contains(viewModel.getServerCahce().getCountry())) {
             if (NetworkUtils.isNetworkAvailable(getActivity())) {
-                stopVpn();
-                prepareVpn();
+                if (!NetworkUtils.isConnectVpn()) {
+                    stopVpn();
+                    prepareVpn();
+                }else{
+                    updateStatus(true);
+                }
             } else {
                 if (!dialogInformationVpn.isShowing()) {
                     dialogInformationVpn.show();

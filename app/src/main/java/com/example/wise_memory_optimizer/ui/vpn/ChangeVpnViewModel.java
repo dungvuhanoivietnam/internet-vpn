@@ -26,6 +26,7 @@ public class ChangeVpnViewModel extends ViewModel {
     private HashMap<String, Country> hmCountries = new HashMap<>();
     private Server server = new Server();
     private ArrayList<City> citySmarts = new ArrayList<>();
+    private ArrayList<City> cities = new ArrayList<>();
     private Server serverCahce = new Server();
 
     public ChangeVpnViewModel(SavedStateHandle state) {
@@ -85,6 +86,7 @@ public class ChangeVpnViewModel extends ViewModel {
                     if (city == null)
                         continue;
 
+                    cities.add(city);
                     if (dfCity.getCode() == null && city.getDf() == 1 && "".equals(codeDf)) {
                         dfCity = city;
                     }
@@ -125,5 +127,9 @@ public class ChangeVpnViewModel extends ViewModel {
 
     public void setServerCahce(Server serverCahce) {
         this.serverCahce = serverCahce;
+    }
+
+    public ArrayList<City> getCities() {
+        return cities;
     }
 }
