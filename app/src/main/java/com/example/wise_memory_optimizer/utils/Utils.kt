@@ -383,18 +383,5 @@ class Utils {
             } catch (unused: java.lang.Exception) {
             }
         }
-
-        //check double click;
-        private var oldTimeClick = System.currentTimeMillis()
-
-        fun checkDoubleClick(): Boolean {
-            val tmp = System.currentTimeMillis()
-            if (tmp - oldTimeClick >= 1000) {
-                oldTimeClick = tmp
-                return true
-            }
-            return false
-        }
-
     }
 }
