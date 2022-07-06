@@ -10,6 +10,8 @@ import com.example.wise_memory_optimizer.databinding.ActivityMainBinding
 import com.example.wise_memory_optimizer.ui.battery.PreferenceUtil
 import com.example.wise_memory_optimizer.ui.battery.service.PowerService
 import com.example.wise_memory_optimizer.utils.ScreenUtils
+import com.example.wise_memory_optimizer.utils.SharePreferenceUtils
+import com.example.wise_memory_optimizer.utils.SharePrefrenceUtils
 
 
 class MainActivity : AppCompatActivity() {
@@ -19,12 +21,18 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        var onboarding = false
-        if (intent != null && intent.extras != null) {
-            onboarding = intent.extras!!.getBoolean("onboarding", false)
-        }
-        if (!onboarding) {
-            initOnboarding()
+        //        ScreenUtils.transparentStatusAndNavigation(this);
+
+        //check open app first time
+        val firstTime =  PreferenceUtil.getBoolean(applicationContext,PreferenceUtil.OPEN_APP_FIRST_TIME,true)
+        if (firstTime) {
+            var onboarding = false
+            if (intent != null && intent.extras != null) {
+                onboarding = intent.extras!!.getBoolean("onboarding", false)
+            }
+            if (!onboarding) {
+                initOnboarding()
+            }
         }
 
         ScreenUtils.transparentStatusAndNavigation(this)

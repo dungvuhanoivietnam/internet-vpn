@@ -41,6 +41,7 @@ public class PreferenceUtil {
     public static final String TIME_STOP_HOUR = "time_stop_hour";
     public static final String TIME_STOP_MINUTE = "time_stop_minutes";
     private static final String WHITE_LIST = "whitelist";
+    public static final String OPEN_APP_FIRST_TIME = "open_app_first_time";
 
     public void saveBatterySaver(Context context, List<BatteryInfo> list) {
         SharedPreferences.Editor edit = context.getSharedPreferences(MyPREFERENCES, 0).edit();

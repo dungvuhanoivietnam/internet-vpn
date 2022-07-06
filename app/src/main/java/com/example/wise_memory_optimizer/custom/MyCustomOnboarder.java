@@ -8,31 +8,35 @@ import androidx.fragment.app.Fragment;
 
 import com.aemerse.onboard.OnboardAdvanced;
 import com.aemerse.onboard.OnboardFragment;
+import com.aemerse.onboard.ScreenUtils;
 import com.example.wise_memory_optimizer.MainActivity;
 import com.example.wise_memory_optimizer.R;
+import com.example.wise_memory_optimizer.ui.battery.PreferenceUtil;
+import com.example.wise_memory_optimizer.ui.menu.ui.LanguageFragment;
 
 public class MyCustomOnboarder extends OnboardAdvanced {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        addSlide(OnboardFragment.newInstance("Internet and VPN\n solution for you", "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.",
+        ScreenUtils.transparentStatusAndNavigation(this);
+        addSlide(OnboardFragment.newInstance(getString(R.string.onboard_title_1), getString(R.string.onboard_des_1),
                 R.drawable.bg_guide_ip_1,
                 R.drawable.bg_guide,
                 getResources().getColor(R.color.color_4B5CBF),
                 getResources().getColor(R.color.white),0,0,R.drawable.bg_guide));
-        addSlide(OnboardFragment.newInstance("Internet and VPN\n solution for you", "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.",
+        addSlide(OnboardFragment.newInstance(getString(R.string.onboard_title_2), getString(R.string.onboard_des_2),
                 R.drawable.bg_guide_ip_2,
                 R.drawable.bg_guide,
                 getResources().getColor(R.color.color_4B5CBF),
                 getResources().getColor(R.color.white),0,0,R.drawable.bg_guide));
-        addSlide(OnboardFragment.newInstance("Internet and VPN\n solution for you", "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.",
+        addSlide(OnboardFragment.newInstance(getString(R.string.onboard_title_3), getString(R.string.onboard_des_3),
                 R.drawable.bg_guide_ip_3,
                 R.drawable.bg_guide,
                 getResources().getColor(R.color.color_4B5CBF),
                 getResources().getColor(R.color.white),0,0,R.drawable.bg_guide));
-
+//        addFragment(new LanguageFragment(true));
+//        getSupportFragmentManager().beginTransaction().add(R.id.background, new LanguageFragment());
     }
 
     @Override
@@ -42,6 +46,7 @@ public class MyCustomOnboarder extends OnboardAdvanced {
         Bundle args = new Bundle();
         args.putBoolean("onboarding", true);
         intent.putExtras(args);
+        PreferenceUtil.saveBoolean(getApplicationContext(), PreferenceUtil.OPEN_APP_FIRST_TIME, false);
         startActivity(intent);
         finish();
     }
@@ -53,6 +58,7 @@ public class MyCustomOnboarder extends OnboardAdvanced {
         Bundle args = new Bundle();
         args.putBoolean("onboarding", true);
         intent.putExtras(args);
+        PreferenceUtil.saveBoolean(getApplicationContext(), PreferenceUtil.OPEN_APP_FIRST_TIME, false);
         startActivity(intent);
         finish();
     }
