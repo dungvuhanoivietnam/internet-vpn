@@ -100,6 +100,8 @@ class LanguageFragment(arg1: Boolean) : Fragment(R.layout.fragment_language) {
     private fun initData() {
         //set ui first time in app
         if (firsTimeInApp){
+            binding.toolbar.visibility = View.GONE
+            binding.llFirstTime.visibility = View.VISIBLE
             binding.save.setText(R.string.next)
             binding.save.setOnClickListener {
                 PreferenceUtil.saveString(
@@ -107,10 +109,11 @@ class LanguageFragment(arg1: Boolean) : Fragment(R.layout.fragment_language) {
                     PreferenceUtil.SETTING_ENGLISH,
                     lang?.value
                 )
-                Handler(Looper.getMainLooper()).postDelayed({
-                    /* Create an Intent that will start the Menu-Activity. */
-                    activity?.supportFragmentManager?.popBackStack()
-                }, 500)
+                activity?.onBackPressed()
+//                Handler(Looper.getMainLooper()).postDelayed({
+//                    /* Create an Intent that will start the Menu-Activity. */
+//                    activity?.supportFragmentManager?.popBackStack()
+//                }, 500)
 
             }
         }

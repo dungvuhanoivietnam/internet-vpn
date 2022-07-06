@@ -35,8 +35,12 @@ public class MyCustomOnboarder extends OnboardAdvanced {
                 R.drawable.bg_guide,
                 getResources().getColor(R.color.color_4B5CBF),
                 getResources().getColor(R.color.white),0,0,R.drawable.bg_guide));
-//        addFragment(new LanguageFragment(true));
+        addFragment(new LanguageFragment(true));
 //        getSupportFragmentManager().beginTransaction().add(R.id.background, new LanguageFragment());
+    }
+
+    public void removeFragLang(){
+
     }
 
     @Override

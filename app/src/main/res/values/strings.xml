@@ -294,5 +294,6 @@ No amendment, modification, waiver or discharge of any provision of these TOS sh
     <string name="onboard_des_2">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</string>
     <string name="onboard_des_3">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</string>
     <string name="next">Next</string>
+    <string name="select_language">Select language</string>
 
 </resources>

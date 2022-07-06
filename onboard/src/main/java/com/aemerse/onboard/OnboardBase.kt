@@ -149,7 +149,7 @@ abstract class OnboardBase : AppCompatActivity(), OnboardViewPagerListener {
     }
 
     protected fun addFragment(fragment: Fragment) {
-        supportFragmentManager.beginTransaction().add(R.id.background, fragment).commit()
+        supportFragmentManager.beginTransaction().add(R.id.background, fragment).addToBackStack(fragment.javaClass.simpleName).commit()
     }
 
     /**
