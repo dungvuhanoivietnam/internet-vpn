@@ -303,4 +303,7 @@ No amendment, modification, waiver or discharge of any provision of these TOS sh
     <string name="your_network_speed_has_improved">Your network speed has improved</string>
     <string name="select_language">Select language</string>
 
+    // more
+    <string name="optimization_time_is_maintained_in">Optimization time is maintained in</string>
+
 </resources>

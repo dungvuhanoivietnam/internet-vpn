@@ -165,6 +165,8 @@ public class ChangeVpnFragment extends Fragment {
     }
 
     private void updateStatus(boolean isOn) {
+        if (binding == null)
+            return;
         binding.txtStatus.setText(getContext().getString(isOn ? R.string.on_vpn : R.string.off_vpn));
         Glide.with(getContext()).load(isOn ? R.drawable.ic_switch_on_vpn : R.drawable.ic_vpn_off).into(binding.ivStart);
     }
@@ -216,7 +218,8 @@ public class ChangeVpnFragment extends Fragment {
                         dialogInformationVpn.show();
                         dialogInformationVpn.setState(DialogInformationVpn.TYPE_INFO.SUCCESS_VPN);
                     }
-                    viewModel.setServerCahce(server);
+                    if (viewModel != null)
+                        viewModel.setServerCahce(server);
                     updateStatus(true);
                     break;
                 case "WAIT":

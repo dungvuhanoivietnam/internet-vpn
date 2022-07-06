@@ -8,6 +8,7 @@ import android.net.VpnService
 import android.os.Bundle
 import android.os.RemoteException
 import android.provider.Settings
+import android.util.Log
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
@@ -18,6 +19,7 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.example.wise_memory_optimizer.MainActivity
@@ -237,7 +239,7 @@ class HomeFragment : Fragment() {
                 super.onReceive(context, intent)
                 if (intent!!.action == "android.net.conn.CONNECTIVITY_CHANGE") {
                     val status = intent.getIntExtra("status", 0)
-                    if (status != NETWORK_STATUS_NOT_CONNECTED ) {
+                    if (status != NETWORK_STATUS_NOT_CONNECTED) {
                         activity!!.runOnUiThread({
                             initData()
                         })
@@ -328,12 +330,12 @@ class HomeFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         drawerLayout?.closeDrawer(GravityCompat.END);
-//        LocalBroadcastManager.getInstance(requireActivity())
-//            .registerReceiver(broadcastReceiver, IntentFilter("connectionState"))
+        LocalBroadcastManager.getInstance(requireActivity())
+            .registerReceiver(broadcastReceiver, IntentFilter("connectionState"))
     }
 
     override fun onPause() {
-//        LocalBroadcastManager.getInstance(requireActivity()!!).unregisterReceiver(broadcastReceiver)
+        LocalBroadcastManager.getInstance(requireActivity()!!).unregisterReceiver(broadcastReceiver)
         super.onPause()
     }
 
@@ -411,6 +413,9 @@ class HomeFragment : Fragment() {
     }
 
     fun updateStatus(isOn: Boolean) {
+        binding.txtFaster.setText(getString(if (isOn) R.string.cancel else R.string.faster))
+        binding.txtContentSuccess.setText(getString(if (isOn) R.string.optimization_time_is_maintained_in else R.string.optimize_current_network_speed))
+        binding.txtCountDown.visibility = if (!isOn) View.GONE else View.VISIBLE
     }
 
     fun setStatus(connectionState: String?) {
@@ -421,13 +426,14 @@ class HomeFragment : Fragment() {
             }
             "CONNECTED" -> {
                 vpnStart = true
+                updateStatus(true)
                 if (dialogLoadingVpn != null && dialogLoadingVpn!!.isShowing) dialogLoadingVpn!!.dismiss()
                 if (dialogInformationVpn != null && !dialogInformationVpn!!.isShowing) {
                     dialogInformationVpn!!.show()
                     dialogInformationVpn!!.setState(DialogInformationVpn.TYPE_INFO.SUCCESS_VPN_HOME)
                 }
                 viewModel!!.serverCahce = server
-                updateStatus(true)
+
             }
             "WAIT" -> if (dialogLoadingVpn != null && dialogLoadingVpn!!.isShowing) dialogLoadingVpn!!.setStatus(
                 requireContext().getString(R.string.waiting_for_server_connection)
@@ -447,7 +453,9 @@ class HomeFragment : Fragment() {
     var broadcastReceiver: BroadcastReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
             try {
-                setStatus(intent.getStringExtra("state"))
+                requireActivity().runOnUiThread {
+                    setStatus(intent.getStringExtra("state"))
+                }
             } catch (e: java.lang.Exception) {
                 e.printStackTrace()
             }
@@ -460,6 +468,9 @@ class HomeFragment : Fragment() {
                 if (lastPacketReceive == null) lastPacketReceive = "0"
                 if (byteIn == null) byteIn = ""
                 if (byteOut == null) byteOut = ""
+                if ("".equals(duration))
+                    updateStatus(false)
+                binding.txtCountDown.setText("" + duration)
             } catch (e: java.lang.Exception) {
                 e.printStackTrace()
             }
