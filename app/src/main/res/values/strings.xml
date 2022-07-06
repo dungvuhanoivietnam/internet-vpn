@@ -301,5 +301,6 @@ No amendment, modification, waiver or discharge of any provision of these TOS sh
     <string name="next">Next</string>
     <string name="boosting_your_internet">Boosting your internet speed Please wait a moment!</string>
     <string name="your_network_speed_has_improved">Your network speed has improved</string>
+    <string name="select_language">Select language</string>
 
 </resources>

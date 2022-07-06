@@ -14,6 +14,32 @@
         android:layout_height="wrap_content"
         android:background="@color/transparent">
 
+        <LinearLayout
+            android:visibility="gone"
+            android:layout_marginTop="@dimen/_44sdp"
+            android:id="@+id/ll_first_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_galaxy" />
+
+            <com.example.wise_memory_optimizer.custom.ExtTextView
+                android:layout_marginTop="@dimen/_8sdp"
+                android:textSize="@dimen/_16sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/select_language"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+
         <com.example.wise_memory_optimizer.custom.ToolbarCustomer
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
@@ -67,7 +93,7 @@
             android:padding="2dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toTopOf="@id/save"
-            app:layout_constraintTop_toBottomOf="@+id/cbb"
+            app:layout_constraintTop_toBottomOf="@+id/ll_first_time"
             tools:itemCount="5"
             tools:listitem="@layout/item_language" />
 
