@@ -1,0 +1,271 @@
+<resources>
+    <string name="app_name">wise-memory-optimizer</string>
+    <string name="navigation_drawer_open">Đóng ngăn điều hướng</string>
+    <string name="navigation_drawer_close">Đóng ngăn điều hướng</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Tiêu đề điều hướng</string>
+    <string name="action_settings">Cài đặt</string>
+
+    <!--FONT-->
+    <string name="font_italic">fonts/Poppins-BlackItalic.ttf</string>
+    <string name="font_bold">fonts/Poppins-Bold.ttf</string>
+    <string name="font_regular">fonts/Poppins-Regular.ttf</string>
+    <string name="font_black">fonts/Poppins-Black.ttf</string>
+    <string name="font_medium">font/Poppins_medium500.ttf</string>
+
+    <string name="menu_home">Trang chủ</string>
+    <string name="menu_gallery">Bộ sưu tập</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="tv_batter_obtimize">Tối ưu hóa pin</string>
+    <string name="tv_ram_obtimize">Tối ưu hóa Ram</string>
+    <string name="tv_cpu_booster">CPU Booster</string>
+    <string name="tv_internet_speed">Tốc độ Internet</string>
+    <string name="tv_delete_duplicate">Xóa trùng lặp</string>
+    <string name="tv_change_vpn">Thay đổi VPN</string>
+    <string name="connecting_time">Thời gian kết nối</string>
+    <string name="overall">Tổng thể</string>
+    <string name="txt_optimizer">Trình tối ưu hóa</string>
+    <string name="ram_currently_used">Ram hiện đang được sử dụng</string>
+    <string name="ram_total">Tổng dung lượng RAM</string>
+    <string name="ram_usage">Sử dụng Ram</string>
+    <string name="download_mbps">TẢI XUỐNG Mbps</string>
+    <string name="upload_mbps">TẢI LÊN Mbps</string>
+    <string name="ping_ms">PING/giây</string>
+    <string name="check">Kiểm tra</string>
+    <string name="location_checked">Vị trí đã được kiểm tra</string>
+    <string name="internet_speed">Tốc độ Internet</string>
+    <string name="cancel">Hủy bỏ</string>
+    <string name="ok">Đồng ý</string>
+    <string name="ex_living_room">Ví dụ: Phòng khách</string>
+    <string name="name_location">Đặt tên cho vị trí</string>
+    <string name="tv_application">Ứng dụng được phát triển</string>
+    <string name="tv_by_company">bởi MerryBlue</string>
+    <string name="tv_looking_duplicate">Tìm kiếm các tệp trùng lặp</string>
+    <string name="tv_used_storage">Bộ nhớ đã sử dụng</string>
+    <string name="tv_title_delete_duplicate">Xóa trùng lặp</string>
+    <string name="tv_title_android">Android</string>
+    <string name="tv_title_obtimze">Tối ưu hóa</string>
+    <string name="tv_available">Hiện có:</string>
+    <string name="tv_total">Tổng cộng:</string>
+    <string name="tv_used">Đã sử dụng</string>
+    <string name="tv_can_deleted">Có thể xóa</string>
+    <string name="tv_analysis">Phân tích</string>
+    <string name="tv_same_photo">Ảnh giống nhau</string>
+    <string name="tv_low_quality">Ảnh chất lượng thấp</string>
+    <string name="tv_same_video">Video giống nhau</string>
+    <string name="tv_same_file">Tệp giống nhau</string>
+    <string name="tv_optimize_memory">Bạn có thể tối ưu bộ nhớ</string>
+    <string name="tv_delete_image">Xóa hình ảnh</string>
+    <string name="tv_delete_file">Xóa tài liệu</string>
+    <string name="tv_delete_video">Xóa video</string>
+    <string name="tv_des_delete_image">Bạn có thể xóa những bức ảnh không cần thiết</string>
+    <string name="tv_des_delete_file">Bạn có thể xóa các tập tin</string>
+    <string name="tv_des_delete_video">Bạn có thể xóa video</string>
+
+    <!--vpn-->
+    <string name="download">Tải xuống</string>
+    <string name="upload">Tải lên</string>
+    <string name="ip">IP: </string>
+    <string name="speed_down_up">KB/s</string>
+    <string name="vpn">VPN</string>
+    <string name="done">Hoàn thành</string>
+    <string name="vpn_being_change">VPN đang được thay đổi</string>
+    <string name="rename">Đổi tên</string>
+    <string name="there_are_currently_no_checked_locations">Hiện tại không có địa điểm nào được kiểm tra</string>
+    <string name="location">Địa điểm:</string>
+    <string name="connect">Liên kết</string>
+    <string name="connecting">Đang kết nối…</string>
+    <string name="waiting_for_server_connection">Đang chờ kết nối máy chủ !!</string>
+    <string name="server_authenticating">Đang xác thực máy chủ !!</string>
+    <string name="reconnecting">Đang kết nối lại …</string>
+    <string name="no_network_connection">Không có kết nối mạng</string>
+    <string name="location_vpn">Địa điểm</string>
+    <string name="smart_location">Vị trí thông minh</string>
+    <string name="all_server">Tất cả máy chủ</string>
+    <string name="dot">●</string>
+    <string name="error_connect_vpn">Đã xảy ra lỗi khi thay đổi máy chủ. Vui lòng chọn một máy chủ khác</string>
+    <string name="success_connect_vpn">Địa chỉ VPN đã được thay đổi thành công</string>
+    <string name="error_network_vpn">Vui lòng kích hoạt kết nối mạng cho chức năng này</string>
+    <string name="error_load_server">Máy chủ tải không thành công. Vui lòng chọn một máy chủ khác</string>
+    <string name="getting_vpn_information">Nhận thông tin VPN</string>
+    <string name="ok_vpn">Đồng ý</string>
+    <string name="on_vpn">BẬT</string>
+    <string name="off_vpn">TẮT</string>
+    <string name="ms">mili giây</string>
+    <string name="total_location">% s Vị trí</string>
+
+    <string name="toast_could_not_clean_reason">Không thể xóa bộ nhớ cache:% 1 $ s</string>
+    <!-- Rationales -->
+    <string name="rationale_title">Không đủ quyền</string>
+
+    <!-- Progress dialog -->
+    <string name="cleaning_cache">Làm sạch bộ nhớ cache</string>
+    <string name="cleaning_in_progress">Đang dọn dẹp…</string>
+
+    <!-- Clean on app startup preference -->
+    <string name="clean_on_app_startup">Làm sạch khi khởi động ứng dụng</string>
+    <string name="clean_on_app_startup_summary">Tự động làm sạch bộ nhớ cache khi khởi động ứng dụng</string>
+    <string name="clean_on_app_startup_key" translatable="false">clean_on_app_startup</string>
+
+    <!-- Exit after clean up -->
+    <string name="exit_after_clean">Thoát ra_sau khi_làm sạch</string>
+    <string name="exit_after_clean_summary">Exit after Clean button is clicked and clean up is completed</string>
+    <string name="exit_after_clean_key" translatable="false">exit_after_clean</string>
+    <string name="clean_on_system_startup_key" translatable="false">clean_on_device_startup</string>
+
+    <!-- Toasts -->
+    <string name="cleaned">Bộ nhớ đệm đã được làm sạch</string>
+    <string name="toast_could_not_clean">Không thể làm sạch bộ nhớ cache</string>
+    <string name="pc_charging_status">Trạng thái sạc</string>
+    <string name="all_charging_problem_was_fixed">Tất cả sự cố sạc đã được khắc phục</string>
+    <string name="txt_battery">Pin</string>
+    <string name="power_full">Pin đầy</string>
+    <string name="noti_battery_charging_timer_left">sạc còn lại</string>
+    <string name="time_left">Thời gian còn lại</string>
+    <string name="fahrenheit">°F</string>
+    <string name="celsius">°C</string>
+    <string name="toast_mode_title">Đã chuyển thành</string>
+    <string name="super_saving">Kéo dài</string>
+    <string name="normal">Bình thường</string>
+    <string name="custom">Ngủ</string>
+    <string name="my_mode">Chế độ của tôi</string>
+    <string name="battery_full_des">Đã sạc xong. Vui lòng rút nguồn điện.</string>
+    <string name="du_home_digital_time_hour">giờ</string>
+    <string name="du_home_digital_time_minute">phút</string>
+    <string name="battery_life_time">Tuổi thọ pin</string>
+    <string name="estimate_time">Thời gian dự kiến</string>
+    <string name="txt_title_history_of_battery_usage">Lịch sử sử dụng pin</string>
+    <string name="optimizing">Tối ưu hóa</string>
+    <string name="optimizing1">Tối ưu hóa.</string>
+    <string name="optimizing2">Tối ưu hóa..</string>
+    <string name="optimizing3">Tối ưu hóa...</string>
+    <string name="optimizing4">Tối ưu hóa....</string>
+    <string name="txt_option_ram">RAM</string>
+    <string name="txt_option_cpu">Bộ tăng cường CPU</string>
+    <string name="txt_option_pin">PIN</string>
+    <string name="delete">Xóa bỏ</string>
+    <string name="same_photo">Ảnh giống nhau</string>
+    <string name="same_video">Video giống nhau</string>
+    <string name="same_file">Tệp giống nhau</string>
+    <string name="low_quality">Chất lượng thấp</string>
+
+
+    // multi language
+    <string name="txt_auto_optimize_ram">Tự động tối ưu hóa RAM</string>
+    <string name="txt_ram_exceeds">Tự động tối ưu hóa nếu Ram vượt quá:</string>
+    <string name="txt_auto_optimize_cpu">Tự động tối ưu hóa CPU</string>
+    <string name="txt_cpu_exceeds">Tự động tối ưu hóa nếu CPU vượt quá:</string>
+    <string name="txt_auto_optimize_pin">Tự động tối ưu hóa mã PIN</string>
+    <string name="txt_battery_is_even_lower">Tự động tối ưu hóa nếu Pin thậm chí còn thấp hơn:</string>
+    <string name="txt_description_abount_app">"Bạn sắp hết dung lượng lưu trữ ứng dụng?
+Bạn đang tìm kiếm một máy đo tốc độ Internet để giám sát?
+Bạn có muốn bảo vệ vị trí của bạn khỏi bị theo dõi?
+
+Bạn thật may mắn! Smart Optimizer - Phone Cleaner là câu trả lời hoàn hảo nhất cho mọi lo lắng của bạn. Không chỉ là một ứng dụng tối ưu hóa bộ nhớ, ứng dụng này còn mang đến cho bạn nhiều công dụng nữa:
+★ Tối ưu hóa Ram
+★ Tối ưu hóa pin
+★ CPU Booster
+★ Tốc độ Internet
+★ Xóa trùng lặp
+★ Thay đổi VPN
+6 chức năng trong MỘT ứng dụng - Không quá lời khi nói rằng đây là ứng dụng tốt nhất cho điện thoại của bạn!"</string>
+    <string name="txt_label_abount_app">Trình tối ưu hóa pin Ram, Bộ làm mát CPU, Tốc độ Internet, Xóa trùng lặp và Thay đổi VPN</string>
+    <string name="txt_version_abount_app">Phiên bản 1.0.22</string>
+    <string name="txt_dialog_automatic_optiomization">Chế độ tối ưu hóa tự động \n đã được kích hoạt</string>
+    <string name="txt_language_en">Tiếng Anh</string>
+    <string name="txt_language_chinese_Simplified">Tiếng Trung (Giản thể)</string>
+    <string name="txt_language_chinese_Traditional">Tiếng Trung (Phồn thể)</string>
+    <string name="txt_language_in">Indonesian</string>
+    <string name="txt_language_ja">Tiếng Nhật</string>
+    <string name="txt_language_vi">Tiếng Việt</string>
+    <string name="txt_language_thai">Thai</string>
+    <string name="txt_language_malay">Malaysian</string>
+    <string name="txt_language_spanish">Tiếng Tây Ban Nha</string>
+    <string name="txt_language_portuguese">Tiếng Bồ đào nha</string>
+    <string name="txt_language_russiane">Tiếng Nga</string>
+    <string name="txt_language_korean">Hàn Quốc</string>
+    <string name="txt_language_french">Tiếng Pháp</string>
+    <string name="txt_language_german">Tiếng Đức</string>
+    <string name="txt_language_arabic">Tiếng Ả Rập</string>
+    <string name="txt_description_privacy">"Đối với các mục đích của Điều khoản dịch vụ này (“TOS”), “Nền tảng trình tối ưu hóa Android” được xác định để bao gồm (i) Môi trường máy chủ ứng dụng, (ii) Môi trường phát triển ứng dụng, (iii) Trình xem trước trình tối ưu hóa Android (có thể là được tải xuống từ App Store) và (iv) bất kỳ Ứng dụng nào được tạo hoặc phát triển bằng cách sử dụng ba khía cạnh khác này của Nền tảng Trình tối ưu hóa Android. Như được sử dụng ở đây, Nền tảng Trình tối ưu hóa Android được xác định bao gồm bốn phần này cũng như tất cả các thành phần của chúng và tất cả các bản cập nhật, bản vá, bản sửa lỗi, sửa đổi và cải tiến trong đó, bao gồm cả việc phát hành các phiên bản mới, cho dù được cung cấp cho bạn thông qua tải xuống, tự động mà không cần bổ sung sự đồng ý hoặc hành động từ phía bạn hoặc theo cách khác, và bất kỳ và tất cả các tài liệu, tệp và tài liệu kèm theo. Nền tảng Trình tối ưu hóa Android do MerryBlue LLC sở hữu và điều hành. Nền tảng Trình tối ưu hóa Android được cung cấp tùy thuộc vào sự chấp nhận của bạn mà không cần sửa đổi tất cả các điều khoản và điều kiện có trong tài liệu này cũng như tất cả các quy tắc hoạt động, chính sách và thủ tục có thể được xuất bản bất kỳ lúc nào trên Trang web này bởi Trình tối ưu hóa Android (gọi chung là “Thỏa thuận ”).
+Vui lòng đọc kỹ Thỏa thuận này trước khi truy cập hoặc sử dụng Nền tảng Trình tối ưu hóa Android. Bằng cách truy cập hoặc sử dụng bất kỳ phần nào của Nền tảng Trình tối ưu hóa Android, bạn đồng ý bị ràng buộc bởi các điều khoản và điều kiện của ĐKDV này. Nếu bạn không đồng ý với tất cả các điều khoản và điều kiện trong ĐKDV này, thì bạn không thể truy cập hoặc sử dụng Nền tảng Trình tối ưu hóa Android hoặc bất kỳ dịch vụ Trình tối ưu hóa Android nào khác.
+
+Trách nhiệm của Người dùng / Người đóng góp
+Nếu bạn cung cấp (hoặc cho phép bất kỳ bên thứ ba nào tạo) tài liệu bằng Trình tối ưu hóa Android hoặc một ứng dụng được tạo và / hoặc xuất bản thông qua Trình tối ưu hóa Android (tất cả tài liệu như vậy sau đây được gọi là “Nội dung”), bạn hoàn toàn chịu trách nhiệm về nội dung và mọi tác hại do Nội dung đó gây ra, bất kể Nội dung được đề cập có cấu thành văn bản, đồ họa, tranh ảnh, hình ảnh, tệp dữ liệu, ảnh, liên kết, thiết kế, tệp âm thanh hoặc video hay bất kỳ hình thức nào khác như vật liệu được sử dụng trong một ứng dụng.
+
+Bằng cách cung cấp Nội dung, bạn tuyên bố và đảm bảo rằng:
+
+việc tải xuống, sao chép và sử dụng Nội dung sẽ không vi phạm quyền sở hữu, bao gồm nhưng không giới hạn ở bản quyền, bằng sáng chế, nhãn hiệu hoặc quyền bí mật thương mại, của bất kỳ bên thứ ba nào;
+
+nếu chủ lao động của bạn có quyền đối với tài sản trí tuệ mà bạn tạo ra, bạn đã (i) được chủ lao động cho phép đăng hoặc cung cấp Nội dung, hoặc (ii) được chủ sở hữu bảo đảm từ bỏ mọi quyền đối với hoặc đối với Nội dung;
+
+bạn đã hoàn toàn tuân thủ mọi giấy phép của bên thứ ba liên quan đến Nội dung và đã thực hiện tất cả những điều cần thiết để chuyển thành công cho người dùng cuối bất kỳ điều khoản bắt buộc nào;
+
+Nội dung không chứa hoặc cài đặt bất kỳ vi rút, sâu, phần mềm độc hại, ngựa Trojan hoặc bất kỳ mã máy tính, tệp hoặc chương trình nào khác được thiết kế để làm gián đoạn, phá hủy hoặc hạn chế chức năng của bất kỳ máy tính, thiết bị phần cứng hoặc viễn thông nào của Android Optimizer;
+
+Nội dung không phải là spam, không phải do máy móc hoặc được tạo ngẫu nhiên và không chứa nội dung thương mại phi đạo đức hoặc không mong muốn được thiết kế để hướng lưu lượng truy cập đến các trang web của bên thứ ba hoặc tăng thứ hạng công cụ tìm kiếm của các trang web của bên thứ ba hoặc các hành vi trái pháp luật khác (chẳng hạn như như lừa đảo) hoặc đánh lừa người nhận về nguồn của tài liệu (chẳng hạn như giả mạo);
+
+Nội dung không trái pháp luật, có hại, đe dọa, lăng mạ, xúc phạm, nói xấu, bôi nhọ, thô tục, tục tĩu, khiêu dâm trẻ em, dâm ô, tục tĩu, xâm phạm quyền riêng tư của người khác, mang tính thù địch hoặc phân biệt chủng tộc, sắc tộc hoặc có thể bị phản đối;
+
+ứng dụng của bạn không được quảng cáo qua các tin nhắn điện tử không mong muốn, chẳng hạn như liên kết spam trên các nhóm tin, danh sách email, các blog và trang web khác, cũng như các phương pháp quảng cáo không được yêu cầu tương tự;
+
+và ứng dụng của bạn không được đặt tên theo cách khiến người đọc hiểu nhầm rằng bạn là một người hoặc một công ty khác.
+
+
+Hạn chế sử dụng
+Bạn không được sử dụng Nền tảng Trình tối ưu hoá Android hoặc Trình tối ưu hoá Android để sao chép về cơ bản Nền tảng Trình tối ưu hoá Android hoặc các dịch vụ do Trình tối ưu hoá Android cung cấp, bao gồm việc công bố nội dung Trình tối ưu hoá Android hoặc tạo Trình tối ưu hoá Android riêng biệt hoặc công cụ quản lý nội dung về cơ bản tương tự như Trình tối ưu hoá Android. Nếu Android Optimizer xác định hoặc tin rằng, theo quyết định riêng của mình, rằng bạn đã vi phạm hoặc cố gắng vi phạm các điều kiện này hoặc tinh thần của các điều khoản này, khả năng sử dụng và truy cập Nền tảng Android Optimizer của bạn có thể bị thu hồi tạm thời hoặc vĩnh viễn, có hoặc không có thông báo .
+
+
+Quyền sở hữu
+Android Optimizer sở hữu tất cả các quyền, quyền sở hữu và lợi ích trong và đối với Nền tảng Android Optimizer bao gồm nhưng không giới hạn, tất cả các quyền sở hữu trí tuệ và quyền sở hữu đối với nó, và, ngoại trừ giấy phép hạn chế được cấp cho bạn ở đây, không có gì trong TOS này sẽ được hiểu là chuyển giao , truyền đạt, làm suy yếu hoặc ảnh hưởng xấu đến chính Trình tối ưu hóa Android quyền sở hữu hoặc quyền sở hữu trong đó hoặc bất kỳ thông tin hoặc tài liệu nào khác của Trình tối ưu hóa Android, hữu hình hoặc vô hình, dưới bất kỳ hình thức nào và trong bất kỳ phương tiện nào. Trình tối ưu hóa Android và biểu trưng Trình tối ưu hóa Android, và tất cả các nhãn hiệu, nhãn hiệu dịch vụ, đồ họa và biểu trưng khác được sử dụng liên quan đến Nền tảng Trình tối ưu hóa Android, là các nhãn hiệu hoặc nhãn hiệu đã đăng ký của Trình tối ưu hóa Android hoặc người cấp phép của Trình tối ưu hóa Android. Các nhãn hiệu, nhãn hiệu dịch vụ, đồ hoạ và biểu trưng khác được sử dụng liên quan đến Nền tảng Trình tối ưu hoá Android có thể là nhãn hiệu của các bên thứ ba khác. Việc bạn sử dụng Nền tảng Trình tối ưu hóa Android không cấp cho bạn quyền hoặc giấy phép để sao chép hoặc sử dụng bất kỳ Trình tối ưu hóa Android nào hoặc các nhãn hiệu của bên thứ ba.
+
+
+Các thay đổi
+Android Optimizer bảo lưu quyền, theo quyết định riêng của mình, sửa đổi hoặc thay thế bất kỳ phần nào của các ĐKDV này. Bạn có trách nhiệm kiểm tra các ĐKDV này định kỳ để biết các thay đổi. Việc bạn tiếp tục sử dụng hoặc truy cập vào Nền tảng Trình tối ưu hóa Android sau khi đăng bất kỳ thay đổi nào đối với các ĐKDV này đồng nghĩa với việc bạn chấp nhận những thay đổi đó. Trong tương lai, Trình tối ưu hóa Android cũng có thể cung cấp các dịch vụ và / hoặc tính năng mới thông qua trang web Trình tối ưu hóa Android hoặc kết hợp với Nền tảng Trình tối ưu hóa Android (bao gồm cả việc phát hành các công cụ và tài nguyên mới). Các tính năng và / hoặc dịch vụ mới như vậy sẽ phải tuân theo các điều khoản và điều kiện của ĐKDV này.
+
+Thu thập và sử dụng dữ liệu
+Theo đó, bạn đồng ý rằng Trình tối ưu hóa Android, công ty mẹ, công ty con, công ty liên kết và những người kế thừa và chuyển nhượng tương ứng của họ, có thể thu thập và sử dụng một số thông tin kỹ thuật liên quan đến việc bạn sử dụng Trình tối ưu hóa Android, bao gồm nhưng không giới hạn, bất kỳ thông tin nào được cung cấp liên quan đến bất kỳ hỗ trợ nào hoặc các dịch vụ kỹ thuật cho Trình tối ưu hóa Android.
+
+Sửa đổi Trình tối ưu hóa Android
+Android Optimizer có thể bất cứ lúc nào và bất cứ lúc nào có thể sửa đổi hoặc ngừng hoạt động, tạm thời hoặc vĩnh viễn, Nền tảng Trình tối ưu hoá Android hoặc Trình tối ưu hoá Android, hoặc bất kỳ phần nào của chúng, có hoặc không có thông báo. Là một phần của Nền tảng Trình tối ưu hóa Android, đôi khi bạn có thể nhận được các bản cập nhật cho Trình tối ưu hóa Android từ Trình tối ưu hóa Android. Bản cập nhật này có thể được tự động tải xuống và cài đặt vào thiết bị của bạn. Các bản cập nhật này có thể bao gồm các bản sửa lỗi, cải tiến hoặc nâng cao tính năng hoặc các phiên bản hoàn toàn mới của Trình tối ưu hóa Android. Bạn đồng ý rằng Trình tối ưu hóa Android có thể tự động cung cấp các bản cập nhật như vậy cho bạn như một phần của Dịch vụ và bạn sẽ nhận và cài đặt chúng theo yêu cầu. Bạn đồng ý rằng Trình tối ưu hóa Android sẽ không chịu trách nhiệm với bạn hoặc bất kỳ bên thứ ba nào đối với bất kỳ cập nhật, sửa đổi, tạm ngưng hoặc ngừng cung cấp Nền tảng Trình tối ưu hóa Android hoặc Trình tối ưu hóa Android nào như vậy.
+
+Chấm dứt
+Trình tối ưu hóa Android có quyền chấm dứt giấy phép này và quyền sử dụng Trình tối ưu hóa Android của bạn bất kỳ lúc nào vì bất kỳ lý do gì, kể cả trong trường hợp Trình tối ưu hóa Android tin rằng bạn đã không tuân thủ bất kỳ điều khoản hoặc điều kiện nào của ĐKDV này. Nếu giấy phép này hoặc quyền sử dụng Trình tối ưu hóa Android của bạn chấm dứt vì bất kỳ lý do gì, bạn phải ngừng tất cả việc sử dụng Trình tối ưu hóa Android và quay lại Trình tối ưu hóa Android hoặc hủy Trình tối ưu hóa Android và tất cả các bản sao của Trình tối ưu hóa Android mà bạn sở hữu trở xuống kiểm soát của bạn. Trình tối ưu hoá Android có thể yêu cầu bạn chứng nhận sự tuân thủ của bạn bằng văn bản đã nói ở trên và bạn đồng ý làm như vậy nếu Trình tối ưu hoá Android đưa ra yêu cầu như vậy.
+
+Từ chối bảo hành
+KHÔNG CÓ TUYÊN BỐ HOẶC BẢO ĐẢM NÀO ÁP DỤNG HOẶC ĐỐI VỚI BẠN THEO BẤT KỲ CÁCH NÀO KHI KẾT NỐI VỚI Trình Tối ưu hóa Android HOẶC CÁC TOS NÀY. ĐỐI VỚI MỞ RỘNG TỐI ĐA ĐƯỢC PHÁP LUẬT CHO PHÉP, CHÚNG TÔI TỪ CHỐI TẤT CẢ CÁC TUYÊN BỐ VÀ BẢO ĐẢM LIÊN QUAN ĐẾN Trình tối ưu hóa Android VÀ VIỆC BẠN TRUY CẬP VÀ SỬ DỤNG TỪNG NHƯ VẬY, BAO GỒM, KHÔNG GIỚI HẠN, CÁC BẢO ĐẢM NGAY LẬP TỨC MỘT MỤC ĐÍCH THỰC HIỆN BẤT KỲ BẢO ĐẢM NÀO VỀ TITLE, KHÔNG XÂM PHẠM VÀ / HOẶC PHÁT SINH TỪ KHÓA HỌC KINH DOANH HOẶC SỬ DỤNG THƯƠNG MẠI.
+
+KHÔNG GIỚI HẠN TÍNH THỂ LOẠI CỦA VIỆC BẮT ĐẦU, Trình tối ưu hóa Android CÓ SN CHO BẠN TRÊN CƠ SỞ “NGUYÊN TRẠNG” VÀ “NHƯ SN CÓ” VÀ Trình tối ưu hóa Android KHÔNG ĐẢM BẢO, BẢO ĐẢM HOẶC ĐẠI DIỆN RẰNG Trình tối ưu hóa Android SẼ ĐÁP ỨNG YÊU CẦU CỦA BẠN HOẶC VIỆC SỬ DỤNG CỦA BẠN , VẬN HÀNH HOẶC KẾT QUẢ SỬ DỤNG NỀN TẢNG của Trình tối ưu hóa Android HOẶC Trình tối ưu hóa Android SẼ KHÔNG ĐƯỢC SỬA CHỮA, HOÀN THÀNH, TIN CẬY, CHÍNH XÁC, HIỆN TẠI, KHÔNG LỖI, KHÔNG CÓ VIRUS MÁY TÍNH HOẶC BẢO MẬT KHÁC. BẠN ĐÁNH GIÁ TOÀN BỘ RỦI RO KHI TẢI XUỐNG, CÀI ĐẶT, SAO CHÉP, VẬN HÀNH, SỬ DỤNG VÀ / HOẶC PHÂN PHỐI NỀN TẢNG Trình tối ưu hóa Android VÀ / HOẶC Trình tối ưu hóa Android.
+
+
+Đại diện và Bảo hành Chung
+Bạn tuyên bố và đảm bảo rằng (i) việc bạn sử dụng Nền tảng Trình tối ưu hóa Android và Trình tối ưu hóa Android sẽ tuân thủ nghiêm ngặt tất cả các luật và quy định hiện hành (bao gồm nhưng không giới hạn bất kỳ luật hoặc quy định địa phương nào ở quốc gia, tiểu bang, thành phố của bạn hoặc khu vực chính phủ khác , về hành vi trực tuyến và nội dung được chấp nhận, và bao gồm tất cả các luật hiện hành liên quan đến việc truyền dữ liệu kỹ thuật được xuất từ ​​Hoa Kỳ hoặc quốc gia mà bạn cư trú) và (ii) việc bạn sử dụng Nền tảng Trình tối ưu hóa Android và Trình tối ưu hóa Android sẽ không vi phạm hoặc chiếm đoạt quyền sở hữu trí tuệ của bất kỳ bên thứ ba nào .
+
+Sự bồi thường
+Bạn đồng ý bảo vệ Trình tối ưu hóa Android, công ty mẹ, công ty con, chi nhánh và / hoặc người kế nhiệm và chỉ định tương ứng của họ, cán bộ, giám đốc, nhân viên, đại lý, người cấp phép, đại diện, nhà quảng cáo, đối tác kinh doanh và khuyến mại, nhà cung cấp dịch vụ hoạt động, nhà cung cấp, người bán lại và nhà thầu (“Các bên được bồi thường của Trình tối ưu hóa Android”) chống lại bất kỳ và tất cả các khiếu nại, yêu cầu và / hoặc hành động và bồi thường và giữ các Bên được bồi thường của Trình tối ưu hóa Android vô hại khỏi và chống lại bất kỳ và tất cả tổn thất, thiệt hại, chi phí và chi phí (bao gồm cả phí luật sư hợp lý) , do bất kỳ vi phạm hoặc vi phạm nào đối với các ĐKDV này, vi phạm, chiếm đoạt hoặc vi phạm quyền của bất kỳ bên nào khác, vi phạm hoặc không tuân thủ bất kỳ luật hoặc quy định nào, vi phạm hoặc vi phạm bất kỳ điều khoản hoặc điều kiện nào của các ĐKDV này, bất kỳ sử dụng, thay đổi hoặc xuất Nền tảng Trình tối ưu hóa Android hoặc Trình tối ưu hóa Android hoặc liên quan đến các TOS này. Android Optimizer bảo lưu quyền giả định, bằng chi phí của mình, sự bảo vệ và kiểm soát độc quyền đối với bất kỳ khiếu nại hoặc hành động nào và tất cả các cuộc đàm phán để dàn xếp hoặc thỏa hiệp và bạn đồng ý hợp tác đầy đủ với chúng tôi theo yêu cầu của chúng tôi.
+
+
+Điều khoản chung
+Không có sửa đổi, điều chỉnh, từ bỏ hoặc hủy bỏ bất kỳ điều khoản nào trong ĐKDV này sẽ có hiệu lực trừ khi được thực hiện bằng văn bản và có chữ ký của đại diện được ủy quyền của Android Optimizer. Việc Android Optimizer không thực hiện bất kỳ quyền nào hoặc thực thi bất kỳ nghĩa vụ nào sẽ không ảnh hưởng hoặc được hiểu là sự từ bỏ hoặc đang tiếp tục từ bỏ điều đó hoặc bất kỳ hoặc quyền hoặc quyền lực nào khác, trừ khi được thực hiện bằng văn bản và có chữ ký của Android Optimizer. Các ĐKDV này cấu thành toàn bộ thỏa thuận giữa Trình tối ưu hóa Android và bạn về quyền truy cập hoặc sử dụng Nền tảng Trình tối ưu hóa Android và / hoặc Trình tối ưu hóa Android và thay thế mọi thỏa thuận trước đây giữa bạn và Trình tối ưu hóa Android về chủ đề đó. Bạn không được chỉ định hoặc chuyển nhượng các ĐKDV này hoặc bất kỳ quyền nào được cấp dưới đây mà không có sự đồng ý bằng văn bản của Trình tối ưu hóa Android. Các quyền của Trình tối ưu hóa Android theo ĐKDV này có thể tự do chuyển nhượng bởi Trình tối ưu hóa Android. Nếu bất kỳ điều khoản nào trong ĐKDV này được coi là bất hợp pháp, không hợp lệ hoặc không thể thi hành, thì các điều khoản còn lại của ĐKDV này sẽ không bị thay đổi và vẫn có hiệu lực đầy đủ. Các ĐKDV này sẽ ràng buộc và đảm bảo lợi ích của các bên, người kế thừa và người được chuyển nhượng được phép."</string>
+    <string name="txt_label_privacy">Các điều khoản và điều kiện sau đây chi phối tất cả việc sử dụng Nền tảng Trình tối ưu hóa Android.</string>
+    <string name="txt_verstion_privacy">Version 1.0.22</string>
+    <string name="title_privacy">Quyền riêng tư</string>
+    <string name="txt_current_language">Ngôn ngữ hiện tại</string>
+    <string name="title_language">Ngôn ngữ</string>
+    <string name="title_about_app">Giới thiệu về ứng dụng</string>
+    <string name="txt_option_kbs">kbs</string>
+    <string name="txt_no_data">Không có dữ liệu</string>
+    <string name="cpu_temp_c">Nhiệt độ CPU (° C)</string>
+    <string name="cooler">Mát hơn</string>
+    <string name="amount_of_processor_used">Số lượng bộ xử lý được sử dụng</string>
+    <string name="kill_process">Quá trình xóa</string>
+    <string name="off_bluetooth">Bluetooth đã tắt</string>
+    <string name="off_rotate">Xoay vòng đã tắt</string>
+    <string name="clear_ram">Ram đã sạch</string>
+    <string name="amount_of_processor_free">Số lượng bộ vi xử lý còn trống</string>
+    <string name="automatically_optimize_in">Tự động tối ưu hóa trong:</string>
+    <string name="plesase_check_the_connection">Vui lòng kiểm tra kết nối</string>
+    <string name="yes">Đồng ý</string>
+
+</resources>

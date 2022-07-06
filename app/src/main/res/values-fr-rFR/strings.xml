@@ -1,0 +1,272 @@
+<resources>
+    <string name="app_name">wise-memory-optimizer</string>
+    <string name="navigation_drawer_open">Ouvrir le tiroir de navigation</string>
+    <string name="navigation_drawer_close">Fermer le tiroir de navigation</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">En-tête de navigation</string>
+    <string name="action_settings">Réglages</string>
+
+    <!--FONT-->
+    <string name="font_italic">fonts/Poppins-BlackItalic.ttf</string>
+    <string name="font_bold">fonts/Poppins-Bold.ttf</string>
+    <string name="font_regular">fonts/Poppins-Regular.ttf</string>
+    <string name="font_black">fonts/Poppins-Black.ttf</string>
+    <string name="font_medium">font/Poppins_medium500.ttf</string>
+
+    <string name="menu_home">Maison</string>
+    <string name="menu_gallery">Galerie</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="tv_batter_obtimize">Optimiser la batterie</string>
+    <string name="tv_ram_obtimize">Ram optimiser</string>
+    <string name="tv_cpu_booster">Amplificateur de processeur</string>
+    <string name="tv_internet_speed">Vitesse Internet</string>
+    <string name="tv_delete_duplicate">Supprimer le doublon</string>
+    <string name="tv_change_vpn">Changer de VPN</string>
+    <string name="connecting_time">Temps de connexion</string>
+    <string name="overall">Globalement</string>
+    <string name="txt_optimizer">Optimiseur</string>
+    <string name="ram_currently_used">Bélier actuellement utilisé</string>
+    <string name="ram_total">Quantité totale de RAM</string>
+    <string name="ram_usage"></string>
+    <string name="download_mbps">TÉLÉCHARGER Mbit/ss</string>
+    <string name="upload_mbps">TÉLÉCHARGEMENT Mbit/s</string>
+    <string name="ping_ms">PING ms</string>
+    <string name="check">Vérifier</string>
+    <string name="location_checked">Emplacement coché</string>
+    <string name="internet_speed">Vitesse Internet</string>
+    <string name="cancel">Annuler</string>
+    <string name="ok">"D'ACCORD"</string>
+    <string name="ex_living_room">Ex: Salon</string>
+    <string name="name_location">Emplacement du nom</string>
+    <string name="tv_application">Application développée</string>
+    <string name="tv_by_company">par Merry Blue</string>
+    <string name="tv_looking_duplicate">Recherche de fichiers en double</string>
+    <string name="tv_used_storage">Stockage utilisé</string>
+    <string name="tv_title_delete_duplicate">Supprimer le doublon</string>
+    <string name="tv_title_android">Android</string>
+    <string name="tv_title_obtimze">Optimiser</string>
+    <string name="tv_available">Disponible:</string>
+    <string name="tv_total">Total:</string>
+    <string name="tv_used">Utilisé</string>
+    <string name="tv_can_deleted">Peut être supprimé</string>
+    <string name="tv_analysis">Une analyse</string>
+    <string name="tv_same_photo">Même photo</string>
+    <string name="tv_low_quality">Photo de mauvaise qualité</string>
+    <string name="tv_same_video">Même vidéo</string>
+    <string name="tv_same_file">Même fichier</string>
+    <string name="tv_optimize_memory">Vous pouvez optimiser la mémoire</string>
+    <string name="tv_delete_image">"Supprimer l'image"</string>
+    <string name="tv_delete_file">Supprimer le fichier</string>
+    <string name="tv_delete_video">Supprimer la vidéo</string>
+    <string name="tv_des_delete_image">Vous pouvez supprimer les photos inutiles</string>
+    <string name="tv_des_delete_file">Vous pouvez supprimer des fichiers</string>
+    <string name="tv_des_delete_video">Vous pouvez supprimer la vidéo</string>
+
+    <!--vpn-->
+    <string name="download">Télécharger</string>
+    <string name="upload">Télécharger</string>
+    <string name="ip">IP: </string>
+    <string name="speed_down_up">VPN</string>
+    <string name="vpn">VPN</string>
+    <string name="done">Fait</string>
+    <string name="vpn_being_change">Le VPN est en cours de modification</string>
+    <string name="rename">Renommer</string>
+    <string name="there_are_currently_no_checked_locations">"Il n'y a actuellement aucun emplacement coché"</string>
+    <string name="location">Emplacement:</string>
+    <string name="connect">Relier</string>
+    <string name="connecting">De liaison...</string>
+    <string name="waiting_for_server_connection">En attente de connexion au serveur !!</string>
+    <string name="server_authenticating">Authentification du serveur !!</string>
+    <string name="reconnecting">Reconnexion...</string>
+    <string name="no_network_connection">Pas de connexion réseau</string>
+    <string name="location_vpn">Emplacement</string>
+    <string name="smart_location">Localisation intelligente</string>
+    <string name="all_server">Tous les serveurs</string>
+    <string name="dot">●</string>
+    <string name="error_connect_vpn">"Une erreur s'est produite lors du changement de serveur. Veuillez choisir un autre serveur"</string>
+    <string name="success_connect_vpn">"L'adresse VPN a été modifiée avec succès"</string>
+    <string name="error_network_vpn">Veuillez activer la connexion réseau pour cette fonction</string>
+    <string name="error_load_server">Le chargement du serveur a échoué. Veuillez choisir un autre serveur</string>
+    <string name="getting_vpn_information">Obtenir des informations VPN</string>
+    <string name="ok_vpn">"D'accord"</string>
+    <string name="on_vpn">ACTIVER</string>
+    <string name="off_vpn">DÉSACTIVER</string>
+    <string name="ms">Mme</string>
+    <string name="total_location">Emplacements %s</string>
+
+    <string name="toast_could_not_clean_reason">Impossible de nettoyer le cache: %1$s</string>
+    <!-- Rationales -->
+    <string name="rationale_title">Permissions insuffisantes</string>
+
+    <!-- Progress dialog -->
+    <string name="cleaning_cache">Cache de nettoyage</string>
+    <string name="cleaning_in_progress">Nettoyage en cours…</string>
+
+    <!-- Clean on app startup preference -->
+    <string name="clean_on_app_startup">"Nettoyer au démarrage de l'application"</string>
+    <string name="clean_on_app_startup_summary">"Nettoyer automatiquement le cache au démarrage de l'application"</string>
+    <string name="clean_on_app_startup_key" translatable="false">clean_on_app_startup</string>
+
+    <!-- Exit after clean up -->
+    <string name="exit_after_clean">sortie après nettoyage</string>
+    <string name="exit_after_clean_summary">Exit after Clean button is clicked and clean up is completed</string>
+    <string name="exit_after_clean_key" translatable="false">exit_after_clean</string>
+    <string name="clean_on_system_startup_key" translatable="false">clean_on_device_startup</string>
+
+    <!-- Toasts -->
+    <string name="cleaned">Cache nettoyé</string>
+    <string name="toast_could_not_clean">Impossible de nettoyer le cache</string>
+    <string name="pc_charging_status">État de charge</string>
+    <string name="all_charging_problem_was_fixed">Tous les problèmes de charge ont été résolus</string>
+    <string name="txt_battery">La batterie</string>
+    <string name="power_full">Pleine puissance</string>
+    <string name="noti_battery_charging_timer_left">Charge restante</string>
+    <string name="time_left">Temps restant</string>
+    <string name="fahrenheit">°C</string>
+    <string name="celsius">°C</string>
+    <string name="toast_mode_title">est passé à</string>
+    <string name="super_saving">Prolonger</string>
+    <string name="normal">Normal</string>
+    <string name="custom">Dormir</string>
+    <string name="my_mode">Mon mode</string>
+    <string name="battery_full_des">"Chargement terminé. Veuillez débrancher l'alimentation."</string>
+    <string name="du_home_digital_time_hour">h</string>
+    <string name="du_home_digital_time_minute">m</string>
+    <string name="battery_life_time">Durée de vie de la batterie</string>
+    <string name="estimate_time">Temps estimé</string>
+    <string name="txt_title_history_of_battery_usage">"Historique d'utilisation de la batterie"</string>
+    <string name="optimizing">Optimisation</string>
+    <string name="optimizing1">Optimisation.</string>
+    <string name="optimizing2">Optimisation..</string>
+    <string name="optimizing3">Optimisation...</string>
+    <string name="optimizing4">Optimisation....</string>
+    <!--    <string name="txt_option_ram">CPU</string>-->
+    <string name="txt_option_ram">RAM</string>
+    <string name="txt_option_cpu">Amplificateur de processeur</string>
+    <string name="txt_option_pin">BROCHE</string>
+    <string name="delete">Effacer</string>
+    <string name="same_photo">Même photo</string>
+    <string name="same_video">Même vidéo</string>
+    <string name="same_file">Même fichier</string>
+    <string name="low_quality">Basse qualité</string>
+    <string name="unit_mb_per_s">Mo/s</string>
+    <string name="unit_empty" translatable="false"></string>
+
+    // multi language
+    <string name="txt_auto_optimize_ram">Optimiser automatiquement la RAM</string>
+    <string name="txt_ram_exceeds">Optimisation automatique si Ram dépasse:</string>
+    <string name="txt_auto_optimize_cpu">Optimisation automatique du processeur</string>
+    <string name="txt_cpu_exceeds">Optimisation automatique si le processeur dépasse:</string>
+    <string name="txt_auto_optimize_pin">"Code PIN d'optimisation automatique"</string>
+    <string name="txt_battery_is_even_lower">Optimiser automatiquement si la batterie est encore plus faible :</string>
+    <string name="txt_description_abount_app">"Vous manquez de stockage d'applications ?
+Vous cherchez un compteur de vitesse Internet à surveiller ?
+Voulez-vous protéger votre emplacement contre le suivi?
+
+Tu es si chanceux! Smart Optimizer - Phone Cleaner est la réponse la plus parfaite à tous vos soucis. Non seulement est une application pour optimiser la mémoire, mais cette application vous offre également de nombreuses autres utilisations :
+★ Ram optimiser
+★ Optimiser la batterie
+★ Amplificateur de processeur
+★ Vitesse Internet
+★ Supprimer le doublon
+★ Changer de VPN
+6 fonctions dans UNE seule application - Il n'est pas exagéré de dire que c'est la meilleure application pour votre téléphone !"</string>
+    <string name="txt_label_abount_app">Optimiseur de batterie RAM, refroidisseur de processeur, vitesse Internet, supprimer les doublons et modifier le VPN</string>
+    <string name="txt_version_abount_app">Variante 1.0.22</string>
+    <string name="txt_dialog_automatic_optiomization">"Le mode d'optimisation automatique \n a été activé"</string>
+    <string name="txt_language_in">Indonesian</string>
+    <string name="txt_language_thai">Thai</string>
+    <string name="txt_language_malay">Malaysian</string>
+    <string name="txt_language_en">Anglais</string>
+    <string name="txt_language_vi">Vietnamien</string>
+    <string name="txt_language_spanish">Espagnol</string>
+    <string name="txt_language_portuguese">Portugais</string>
+    <string name="txt_language_russiane">Russe</string>
+    <string name="txt_language_ja">Japonais</string>
+    <string name="txt_language_korean">Coréen</string>
+    <string name="txt_language_french">Français</string>
+    <string name="txt_language_german">Allemand</string>
+    <string name="txt_language_arabic">Arabe</string>
+    <string name="txt_language_chi">Chinese</string>
+    <string name="txt_language_chinese_Simplified">Chinois (simplifié)</string>
+    <string name="txt_language_chinese_Traditional">Chinois (Traditionnel)</string>
+    <string name="txt_description_privacy">"Aux fins des présentes conditions d'utilisation (« CGU »), la « plate-forme Android Optimizer » est définie comme incluant (i) l'environnement de serveur d'applications, (ii) l'environnement de développement d'applications, (iii) l'outil de prévisualisation d'Android Optimizer (qui peut être téléchargé depuis l'App Store) et (iv) toute application créée ou développée à l'aide de ces trois autres aspects de la plate-forme Android Optimizer. Tel qu'utilisé ici, la plate-forme Android Optimizer est définie pour inclure ces quatre parties ainsi que tous les composants de celles-ci et toutes les mises à jour, correctifs, correctifs, modifications et améliorations, y compris les versions de nouvelles versions, qu'elles vous soient fournies par téléchargement, automatiquement sans autre consentement ou action de votre part ou autrement, et tous les documents, fichiers et matériaux qui les accompagnent. La plate-forme Android Optimizer est détenue et exploitée par MerryBlue LLC. La plate-forme Android Optimizer est proposée sous réserve de votre acceptation sans modification de tous les termes et conditions contenus dans les présentes et de toutes les autres règles, politiques et procédures d'exploitation qui peuvent être publiées de temps à autre sur ce site par Android Optimizer (collectivement, le ""Contrat ”).
+Veuillez lire attentivement cet accord avant d'accéder ou d'utiliser la plate-forme Android Optimizer. En accédant ou en utilisant n'importe quelle partie de la plate-forme Android Optimizer, vous acceptez d'être lié par les termes et conditions de ces TOS. Si vous n'acceptez pas tous les termes et conditions de ces TOS, vous ne pouvez pas accéder ou utiliser la plate-forme Android Optimizer ou tout autre service Android Optimizer.
+
+Responsabilité des Utilisateurs/Contributeurs
+Si vous rendez (ou permettez à un tiers de rendre) du matériel disponible au moyen d'Android Optimizer ou d'une application créée et/ou publiée par le biais d'Android Optimizer (tous ces documents devant être ci-après dénommés ""Contenu""), vous êtes entièrement responsable du contenu et de tout dommage résultant de ce contenu, que le contenu en question constitue du texte, des graphiques, des images, des fichiers de données, des photographies, des liens, des dessins, un fichier audio ou vidéo, ou tout autre élément similaire matériaux à utiliser dans une application.
+
+En rendant le Contenu disponible, vous déclarez et garantissez que :
+
+Le téléchargement, la copie et l'utilisation du contenu n'enfreindront pas les droits de propriété, y compris, mais sans s'y limiter, les droits d'auteur, de brevet, de marque ou de secret commercial, d'un tiers ;
+
+Si votre employeur a des droits sur la propriété intellectuelle que vous créez, vous avez soit (i) reçu l'autorisation de votre employeur de publier ou de rendre disponible le Contenu, soit (ii) obtenu de votre employeur une renonciation à tous les droits sur le Contenu ;
+
+Vous vous êtes pleinement conformé à toutes les licences de tiers relatives au contenu et avez fait tout ce qui était nécessaire pour transmettre avec succès aux utilisateurs finaux toutes les conditions requises ;
+
+Le Contenu ne contient ni n'installe de virus, vers, logiciels malveillants, chevaux de Troie ou tout autre code informatique, fichier ou programme conçu pour interrompre, détruire ou limiter la fonctionnalité de tout ordinateur Android Optimizer, matériel ou équipement de télécommunication ;
+
+Le contenu n'est pas un spam, n'est pas généré par une machine ou de manière aléatoire, et ne contient pas de contenu commercial contraire à l'éthique ou indésirable conçu pour générer du trafic vers des sites tiers ou améliorer le classement des moteurs de recherche de sites tiers, ou pour favoriser des actes illégaux (tels que comme hameçonnage) ou tromper les destinataires quant à la source du matériel (comme l'usurpation d'identité );
+
+Le Contenu n'est pas illégal, préjudiciable, menaçant, abusif, délictuel, diffamatoire, diffamatoire, vulgaire, obscène, pédopornographique, obscène, profane, envahissant la vie privée d'autrui, haineux ou racialement, ethniquement ou autrement répréhensible ;
+
+Votre application ne fait pas l'objet de publicité via des messages électroniques indésirables tels que des liens de spam sur des groupes de discussion, des listes de diffusion, d'autres blogs et sites Web, et des méthodes promotionnelles non sollicitées similaires ;
+
+Et votre application n'est pas nommée de manière à induire vos lecteurs en erreur en leur faisant croire que vous êtes une autre personne ou entreprise.
+
+
+Utilisation restreinte
+Vous ne pouvez pas utiliser la plate-forme Android Optimizer ou Android Optimizer pour répliquer en grande partie les plates-formes Android Optimizer ou les services proposés par Android Optimizer, y compris la republication du contenu Android Optimizer ou la création d'un outil Android Optimizer ou d'un outil de gestion de contenu sensiblement similaire à Android Optimizer. Si Android Optimizer détermine ou estime, à sa seule discrétion, que vous avez violé ou tenté de violer ces conditions ou l'esprit de ces termes, votre capacité à utiliser et à accéder à la plate-forme Android Optimizer peut être temporairement ou définitivement révoquée, avec ou sans préavis. .
+
+Droits de propriété
+Android Optimizer détient tous les droits, titres et intérêts relatifs à la plate-forme Android Optimizer, y compris, sans s'y limiter, tous les droits intellectuels et de propriété qui s'y rapportent, et, à l'exception de la licence limitée qui vous est accordée ici, rien dans les présentes CGU ne doit être interprété comme transférant , transmettre, détériorer ou porter autrement atteinte à la propriété ou aux droits de propriété d'Android Optimizer ou de toute autre information ou matériel d'Android Optimizer, tangibles ou intangibles, sous quelque forme et sur quelque support que ce soit. Android Optimizer et le logo Android Optimizer, ainsi que toutes les autres marques commerciales, marques de service, graphiques et logos utilisés en relation avec la plate-forme Android Optimizer, sont des marques commerciales ou des marques déposées d'Android Optimizer ou des concédants de licence d'Android Optimizer. Les autres marques commerciales, marques de service, graphiques et logos utilisés en relation avec la plate-forme Android Optimizer peuvent être des marques commerciales d'autres tiers. Votre utilisation de la plate-forme Android Optimizer ne vous accorde aucun droit ou licence pour reproduire ou utiliser de quelque manière que ce soit Android Optimizer ou des marques tierces.
+
+
+Changements
+Android Optimizer se réserve le droit, à sa seule discrétion, de modifier ou de remplacer toute partie de ces CGU. Il est de votre responsabilité de vérifier ces TOS périodiquement pour les changements. Votre utilisation continue ou votre accès à la plate-forme Android Optimizer après la publication de toute modification apportée aux présentes conditions d'utilisation constitue une acceptation de ces modifications. Android Optimizer peut également, à l'avenir, proposer de nouveaux services et/ou fonctionnalités via le site Web d'Android Optimizer ou en conjonction avec la plate-forme Android Optimizer (y compris la publication de nouveaux outils et ressources). Ces nouvelles fonctionnalités et/ou services seront soumis aux termes et conditions des présentes CGU.
+
+Collecte et utilisation des données
+Vous acceptez par la présente qu'Android Optimizer, sa société mère, ses filiales, ses sociétés affiliées et leurs successeurs et ayants droit respectifs puissent collecter et utiliser certaines informations techniques associées à votre utilisation d'Android Optimizer, y compris, sans s'y limiter, toute information fournie dans le cadre de toute assistance ou des services techniques pour Android Optimizer.
+
+Modification de l'optimiseur Android
+Android Optimizer peut, à tout moment et de temps à autre, modifier ou interrompre, temporairement ou définitivement, la plate-forme Android Optimizer ou Android Optimizer, ou toute partie de celle-ci, avec ou sans préavis. Dans le cadre de la plate-forme Android Optimizer, vous pouvez de temps à autre recevoir des mises à jour d'Android Optimizer de la part d'Android Optimizer, qui peuvent être automatiquement téléchargées et installées sur votre appareil. Ces mises à jour peuvent inclure des corrections de bogues, des améliorations ou des améliorations de fonctionnalités, ou des versions entièrement nouvelles de l'optimiseur Android. Vous acceptez qu'Android Optimizer puisse vous fournir automatiquement ces mises à jour dans le cadre du Service et que vous les receviez et les installiez au besoin. Vous acceptez qu'Android Optimizer ne soit pas responsable envers vous ou un tiers pour une telle mise à jour, modification, suspension ou interruption de la plate-forme Android Optimizer ou d'Android Optimizer.
+
+Résiliation
+Android Optimizer a le droit de résilier cette licence et votre droit d'utiliser Android Optimizer à tout moment pour quelque raison que ce soit, y compris dans le cas où Android Optimizer pense raisonnablement que vous n'avez pas respecté les termes ou conditions des présentes CGU. Si cette licence ou votre droit d'utiliser Android Optimizer prend fin pour quelque raison que ce soit, vous devez arrêter toute utilisation d'Android Optimizer et soit retourner à Android Optimizer, soit détruire Android Optimizer et toutes les copies d'Android Optimizer qui sont en votre possession ou sous votre contrôle. Android Optimizer peut vous demander de certifier par écrit votre conformité avec ce qui précède, et vous acceptez de le faire si Android Optimizer fait une telle demande.
+
+Exclusion de garanties
+IL N'EXISTE AUCUNE DÉCLARATION OU GARANTIE QUI S'APPLIQUE OU QUI VOUS EST FAITE DE QUELQUE MANIÈRE QUE CE SOIT EN RELATION AVEC L'Optimiseur Android OU CES CGU. DANS LA MESURE MAXIMALE AUTORISÉE PAR LA LOI, NOUS DÉCLINONS TOUTE DÉCLARATION ET GARANTIE CONCERNANT L'Optimiseur Android ET VOTRE ACCÈS ET UTILISATION DE CELUI-CI, EXPRESSE OU IMPLICITE, Y COMPRIS, SANS S'Y LIMITER, LES GARANTIES IMPLICITES DE QUALITÉ MARCHANDE OU D'ADÉQUATION À UN USAGE PARTICULIER OU TOUTE GARANTIE DE TITRE, D'ABSENCE DE CONTREFAÇON ET/OU DÉCOULANT D'UNE CONDUITE COMMERCIALE OU D'UN USAGE COMMERCIAL.
+
+SANS LIMITER LA GÉNÉRALITÉ DE CE QUI PRÉCÈDE, L'Optimiseur Android EST MIS À VOTRE DISPOSITION SUR UNE BASE « EN L'ÉTAT » ET « SELON LA DISPONIBILITÉ » ET Android Optimizer NE GARANTIT PAS NI NE REPRÉSENTE QUE L'Optimiseur Android RÉPONDRA À VOS EXIGENCES OU QUE VOTRE UTILISATION , LE FONCTIONNEMENT OU LES RÉSULTATS DE L'UTILISATION DE LA PLATEFORME Android Optimizer OU Android Optimizer DOIVENT ÊTRE ININTERROMPUS, COMPLETS, FIABLES, PRÉCIS, À JOUR, SANS ERREUR, EXEMPTS DE VIRUS INFORMATIQUES OU AUTREMENT SÉCURISÉS. VOUS ASSUMEZ TOUS LES RISQUES LIÉS AU TÉLÉCHARGEMENT, À L'INSTALLATION, À LA COPIE, À L'EXPLOITATION, À L'UTILISATION ET/OU À LA DISTRIBUTION DE LA PLATEFORME Android Optimizer ET/OU Android Optimizer.
+
+Représentation générale et garantie
+Vous déclarez et garantissez que (i) votre utilisation de la plate-forme Android Optimizer et d'Android Optimizer sera strictement conforme à toutes les lois et réglementations applicables (y compris, sans s'y limiter, les lois ou réglementations locales de votre pays, état, ville ou autre zone gouvernementale , concernant la conduite en ligne et le contenu acceptable, et y compris toutes les lois applicables concernant la transmission de données techniques exportées des États-Unis ou du pays dans lequel vous résidez) et (ii) votre utilisation de la plate-forme Android Optimizer et d'Android Optimizer n'enfreindra pas ou détourner les droits de propriété intellectuelle d'un tiers.
+
+Indemnité
+Vous acceptez de défendre Android Optimizer, ses sociétés mères, filiales, sociétés affiliées et/ou leurs successeurs et ayants droit respectifs, dirigeants, administrateurs, employés, agents, concédants, représentants, annonceurs, partenaires commerciaux et promotionnels, prestataires de services opérationnels, fournisseurs, revendeurs et sous-traitants. (les ""Parties indemnisées d'Android Optimizer"") contre toutes les réclamations, demandes et/ou actions et indemniseront et dégageront les Parties indemnisées d'Android Optimizer de et contre toutes pertes, dommages, coûts et dépenses (y compris les honoraires d'avocat raisonnables) , résultant de tout manquement ou violation des présentes CGU, contrefaçon, détournement ou toute violation des droits de toute autre partie, violation ou non-respect de toute loi ou réglementation, du manquement ou de la violation de tout terme ou condition des présentes CGU, de tout l'utilisation, la modification ou l'exportation de la plate-forme Android Optimizer ou Android Optimizer ou autrement en relation avec ces CGU. Android Optimizer se réserve le droit d'assumer, à ses frais, la défense et le contrôle exclusifs de toute réclamation ou action et de toutes les négociations de règlement ou de compromis, et vous acceptez de coopérer pleinement avec nous à notre demande.
+
+
+Conditions générales
+Aucun amendement, modification, renonciation ou décharge de toute disposition de ces CGU ne sera valide à moins d'être fait par écrit et signé par un représentant autorisé d'Android Optimizer. Aucun manquement ou retard d'Android Optimizer à exercer un droit ou à faire respecter une obligation ne doit porter atteinte ou être interprété comme une renonciation ou une renonciation continue à ce droit ou à tout autre droit ou pouvoir, sauf stipulation écrite et signée par Android Optimizer. Ces CGU constituent l'intégralité de l'accord entre Android Optimizer et vous en ce qui concerne votre accès ou votre utilisation de la plate-forme Android Optimizer et/ou d'Android Optimizer et remplacent tout accord antérieur entre vous et Android Optimizer à ce sujet. Vous ne pouvez pas céder ou autrement transférer ces CGU, ou tout droit accordé en vertu des présentes, sans le consentement écrit d'Android Optimizer. Les droits d'Android Optimizer en vertu des présentes CGU sont librement transférables par Android Optimizer. Si une disposition de ces CGU est jugée illégale, invalide ou inapplicable, les autres dispositions de ces CGU ne seront pas affectées et resteront en vigueur et de plein effet. Ces CGU lieront et assureront le bénéfice des parties, de leurs successeurs et ayants droit autorisés."</string>
+    <string name="txt_label_privacy">Les termes et conditions suivants régissent toute utilisation de la plate-forme Android Optimizer.</string>
+    <string name="txt_verstion_privacy">Variante 1.0.22</string>
+    <string name="title_privacy">Intimité</string>
+    <string name="txt_current_language">Langue courante</string>
+    <string name="title_language">Langue</string>
+    <string name="title_about_app">À propos de "\l'application"</string>
+    <string name="txt_option_kbs">Ko/s</string>
+    <string name="txt_no_data">Pas de données</string>
+    <string name="cpu_temp_c">Température du processeur (°C)</string>
+    <string name="cooler">Glacière</string>
+    <string name="amount_of_processor_used">Quantité de processeur utilisé</string>
+    <string name="kill_process">Processus tué</string>
+    <string name="off_bluetooth">Le Bluetooth était désactivé</string>
+    <string name="off_rotate">La rotation était désactivée</string>
+    <string name="clear_ram">Ram était clair</string>
+    <string name="amount_of_processor_free">Quantité de processeur libre</string>
+    <string name="automatically_optimize_in">Optimiser automatiquement sur:</string>
+    <string name="plesase_check_the_connection">Veuillez vérifier la connexion</string>
+    <string name="yes">Oui</string>
+
+</resources>

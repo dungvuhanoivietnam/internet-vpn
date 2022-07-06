@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">wise-memory-optimizer</string>
+    <string name="navigation_drawer_open">افتح درج التنقل</string>
+    <string name="navigation_drawer_close">أغلق درج التنقل</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">رأس التنقل</string>
+    <string name="action_settings">إعدادات</string>
+
+    <!--FONT-->
+    <string name="font_italic">fonts/Poppins-BlackItalic.ttf</string>
+    <string name="font_bold">fonts/Poppins-Bold.ttf</string>
+    <string name="font_regular">fonts/Poppins-Regular.ttf</string>
+    <string name="font_black">fonts/Poppins-Black.ttf</string>
+    <string name="font_medium">font/Poppins_medium500.ttf</string>
+
+    <string name="menu_home">مسكن</string>
+    <string name="menu_gallery">صالة عرض</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="tv_batter_obtimize">تحسين البطارية</string>
+    <string name="tv_ram_obtimize">تحسين ذاكرة الوصول العشوائي</string>
+    <string name="tv_cpu_booster">الداعم وحدة المعالجة المركزية</string>
+    <string name="tv_internet_speed">سرعة الإنترنت</string>
+    <string name="tv_delete_duplicate">حذف مكرر</string>
+    <string name="tv_change_vpn">تغيير VPN</string>
+    <string name="connecting_time">ربط الوقت</string>
+    <string name="overall">شاملة</string>
+    <string name="txt_optimizer">محسن</string>
+    <string name="ram_currently_used">ذاكرة الوصول العشوائي المستخدمة حاليا</string>
+    <string name="ram_total">إجمالي كمية ذاكرة الوصول العشوائي</string>
+    <string name="ram_usage">استخدام ذاكرة الوصول العشوائي</string>
+    <string name="download_mbps">تنزيل ميغابت في الثانية</string>
+    <string name="upload_mbps">تحميل ميغابت في الثانية</string>
+    <string name="ping_ms">PING مللي ثانية</string>
+    <string name="check">يفحص</string>
+    <string name="location_checked">تم فحص الموقع</string>
+    <string name="internet_speed">سرعة الإنترنت</string>
+    <string name="cancel">يلغي</string>
+    <string name="ok">نعم</string>
+    <string name="ex_living_room">مثال: غرفة المعيشة</string>
+    <string name="name_location">اسم الموقع</string>
+    <string name="tv_application">تم تطوير التطبيق</string>
+    <string name="tv_by_company">by Merry Blue</string>
+    <string name="tv_looking_duplicate">البحث عن الملفات المكررة</string>
+    <string name="tv_used_storage">التخزين المستخدم</string>
+    <string name="tv_title_delete_duplicate">حذف مكرر</string>
+    <string name="tv_title_android">ذكري المظهر</string>
+    <string name="tv_title_obtimze">تحسين</string>
+    <string name="tv_available">متوفرة:</string>
+    <string name="tv_total">المجموع:</string>
+    <string name="tv_used">تستخدم</string>
+    <string name="tv_can_deleted">يمكن حذفها</string>
+    <string name="tv_analysis">التحليلات</string>
+    <string name="tv_same_photo">نفس الصورة</string>
+    <string name="tv_low_quality">صورة منخفضة الجودة</string>
+    <string name="tv_same_video">نفس الفيديو</string>
+    <string name="tv_same_file">نفس الملف</string>
+    <string name="tv_optimize_memory">يمكنك تحسين الذاكرة</string>
+    <string name="tv_delete_image">حذف صورة</string>
+    <string name="tv_delete_file">حذف ملف</string>
+    <string name="tv_delete_video">حذف الفيديو</string>
+    <string name="tv_des_delete_image">يمكنك حذف الصور غير الضرورية</string>
+    <string name="tv_des_delete_file">يمكنك حذف الملفات</string>
+    <string name="tv_des_delete_video">يمكنك حذف الفيديو</string>
+
+    <!--vpn-->
+    <string name="download">تحميل</string>
+    <string name="upload">تحميل</string>
+    <string name="ip">IP: </string>
+    <string name="speed_down_up">كيلو بايت / ثانية</string>
+    <string name="vpn">VPN</string>
+    <string name="done">فعله</string>
+    <string name="vpn_being_change">يتم تغيير VPN</string>
+    <string name="rename">إعادة تسمية</string>
+    <string name="there_are_currently_no_checked_locations">لا يوجد حاليا أي مواقع محددة</string>
+    <string name="location">موقع:</string>
+    <string name="connect">الاتصال</string>
+    <string name="connecting">توصيل...</string>
+    <string name="waiting_for_server_connection">في انتظار اتصال الخادم !!</string>
+    <string name="server_authenticating">مصادقة الخادم !!</string>
+    <string name="reconnecting">جاري إعادة الاتصال ...</string>
+    <string name="no_network_connection">لا يوجد اتصال شبكة</string>
+    <string name="location_vpn">موقع</string>
+    <string name="smart_location">موقع ذكي</string>
+    <string name="all_server">كل الخادم</string>
+    <string name="dot">●</string>
+    <string name="error_connect_vpn">حدث خطأ أثناء تغيير الخادم. الرجاء اختيار خادم آخر</string>
+    <string name="success_connect_vpn">تم تغيير عنوان VPN بنجاح</string>
+    <string name="error_network_vpn">يرجى تمكين اتصال الشبكة لهذه الوظيفة</string>
+    <string name="error_load_server">فشل تحميل الخادم. الرجاء اختيار خادم آخر</string>
+    <string name="getting_vpn_information">الحصول على معلومات VPN</string>
+    <string name="ok_vpn">موافق</string>
+    <string name="on_vpn">تفعيل</string>
+    <string name="off_vpn">تعطيل</string>
+    <string name="ms">تصلب متعدد</string>
+    <string name="total_location">مواقع٪ s</string>
+
+    <string name="toast_could_not_clean_reason">تعذر تنظيف ذاكرة التخزين المؤقت:٪ 1 $ s</string>
+    <!-- Rationales -->
+    <string name="rationale_title">أذونات غير كافية</string>
+
+    <!-- Progress dialog -->
+    <string name="cleaning_cache">تنظيف ذاكرة التخزين المؤقت</string>
+    <string name="cleaning_in_progress">جاري التنظيف…</string>
+
+    <!-- Clean on app startup preference -->
+    <string name="clean_on_app_startup">تنظيف عند بدء تشغيل التطبيق</string>
+    <string name="clean_on_app_startup_summary">تنظيف ذاكرة التخزين المؤقت تلقائيًا عند بدء تشغيل التطبيق</string>
+    <string name="clean_on_app_startup_key" translatable="false">clean_on_app_startup</string>
+
+    <!-- Exit after clean up -->
+    <string name="exit_after_clean">الخروج بعد التنظيف</string>
+    <string name="exit_after_clean_summary">Exit after Clean button is clicked and clean up is completed</string>
+    <string name="exit_after_clean_key" translatable="false">exit_after_clean</string>
+    <string name="clean_on_system_startup_key" translatable="false">clean_on_device_startup</string>
+
+    <!-- Toasts -->
+    <string name="cleaned">تنظيف ذاكرة التخزين المؤقت</string>
+    <string name="toast_could_not_clean">تعذر تنظيف ذاكرة التخزين المؤقت</string>
+    <string name="pc_charging_status">حالة الشحن</string>
+    <string name="all_charging_problem_was_fixed">تم إصلاح جميع مشاكل الشحن</string>
+    <string name="txt_battery">بطارية</string>
+    <string name="power_full">القوة ممتلئة</string>
+    <string name="noti_battery_charging_timer_left">غادر الشحن</string>
+    <string name="time_left">الوقت المتبقي</string>
+    <string name="fahrenheit">درجة فهرنهايت</string>
+    <string name="celsius">درجة مئوية</string>
+    <string name="toast_mode_title">لقد تحولت إلى</string>
+    <string name="super_saving">إطالة</string>
+    <string name="normal">طبيعي</string>
+    <string name="custom">ينام</string>
+    <string name="my_mode">مزاجي</string>
+    <string name="battery_full_des">انتهى الشحن. الرجاء فصل الطاقة.</string>
+    <string name="du_home_digital_time_hour">حح</string>
+    <string name="du_home_digital_time_minute">م</string>
+    <string name="battery_life_time">عمر البطارية</string>
+    <string name="estimate_time">الوقت المقدر</string>
+    <string name="txt_title_history_of_battery_usage">تاريخ استخدام البطارية</string>
+    <string name="optimizing">التحسين</string>
+    <string name="optimizing1">التحسين.</string>
+    <string name="optimizing2">التحسين..</string>
+    <string name="optimizing3">التحسين...</string>
+    <string name="optimizing4">التحسين....</string>
+    <!--    <string name="txt_option_ram">CPU</string>-->
+    <string name="txt_option_ram">الرامات " الذاكرة العشوائية في الهواتف والحواسيب "</string>
+    <string name="txt_option_cpu">الداعم وحدة المعالجة المركزية</string>
+    <string name="txt_option_pin">دبوس</string>
+    <string name="delete">حذف</string>
+    <string name="same_photo">نفس الصورة</string>
+    <string name="same_video">نفس الفيديو</string>
+    <string name="same_file">نفس الملف</string>
+    <string name="low_quality">جودة منخفضة</string>
+    <string name="unit_mb_per_s">ميغا بايت / ثانية</string>
+    <string name="unit_empty" translatable="false"></string>
+
+    // multi language
+    <string name="txt_auto_optimize_ram">تحسين تلقائي لذاكرة الوصول العشوائي</string>
+    <string name="txt_ram_exceeds">التحسين التلقائي إذا تجاوز ذاكرة الوصول العشوائي:</string>
+    <string name="txt_auto_optimize_cpu">تحسين وحدة المعالجة المركزية تلقائيًا</string>
+    <string name="txt_cpu_exceeds">تحسين تلقائي إذا تجاوزت وحدة المعالجة المركزية:</string>
+    <string name="txt_auto_optimize_pin">التحسين التلقائي لرقم التعريف الشخصي</string>
+    <string name="txt_battery_is_even_lower">التحسين التلقائي إذا كانت البطارية أقل من ذلك:</string>
+    <string name="txt_description_abount_app">"هل نفدت مساحة تخزين التطبيق؟
+هل تبحث عن عداد سرعة الإنترنت لمراقبة؟
+هل تريد حماية موقعك من التعقب؟
+
+أنت محظوظ جدا! المحسن الذكي - منظف الهاتف هو الحل الأمثل لجميع ما يقلقك. ليس تطبيقًا لتحسين الذاكرة فحسب ، بل يمنحك هذا التطبيق أيضًا العديد من الاستخدامات:
+★ تحسين ذاكرة الوصول العشوائي
+★ تحسين البطارية
+★ الداعم وحدة المعالجة المركزية
+★ سرعة الإنترنت
+★ حذف مكرر
+★ تغيير VPN
+6 وظائف في تطبيق واحد - ليس من المبالغة القول إن هذا هو أفضل تطبيق لهاتفك!"</string>
+    <string name="txt_label_abount_app">محسن بطارية ذاكرة الوصول العشوائي ، مبرد وحدة المعالجة المركزية ، سرعة الإنترنت ، حذف النسخ المكررة وتغيير VPN</string>
+    <string name="txt_version_abount_app">الإصدار 1.0.22</string>
+    <string name="txt_dialog_automatic_optiomization">وضع التحسين التلقائي \ n تم تنشيطه</string>
+    <string name="txt_language_in">Indonesian</string>
+    <string name="txt_language_thai">Thai</string>
+    <string name="txt_language_malay">Malaysian</string>
+    <string name="txt_language_en">إنجليزي</string>
+    <string name="txt_language_vi">فيتنامي</string>
+    <string name="txt_language_spanish">الأسبانية</string>
+    <string name="txt_language_portuguese">البرتغالية</string>
+    <string name="txt_language_russiane">الروسية</string>
+    <string name="txt_language_ja">اليابانية</string>
+    <string name="txt_language_korean">الكورية</string>
+    <string name="txt_language_french">فرنسي</string>
+    <string name="txt_language_german">ألمانية</string>
+    <string name="txt_language_arabic">عربي</string>
+    <string name="txt_language_chi">Chinese</string>
+    <string name="txt_language_chinese_Simplified">الصينية (المبسطة)</string>
+    <string name="txt_language_chinese_Traditional">الصينية (تقليدية))</string>
+    <string name="txt_description_privacy">"لأغراض شروط الخدمة هذه (""TOS"") ، تم تعريف ""Android Optimizer Platform"" ليشمل (1) بيئة خادم التطبيقات ، (2) بيئة تطوير التطبيقات ، (3) مُعاين مُحسِّن Android (والذي قد يكون تم تنزيله من App Store) ، و (4) أي تطبيق تم إنشاؤه أو تطويره باستخدام هذه الجوانب الثلاثة الأخرى من Android Optimizer Platform. كما هو مستخدم هنا ، تم تعريف نظام Android Optimizer Platform ليشمل هذه الأجزاء الأربعة بالإضافة إلى جميع مكوناتها وجميع التحديثات والتصحيحات والإصلاحات والتعديلات والتحسينات عليها ، بما في ذلك إصدارات الإصدارات الجديدة ، سواء تم توفيرها لك عبر التنزيل ، تلقائيًا دون الحاجة إلى إضافات. الموافقة أو الإجراء من جانبك أو غير ذلك ، وأي وجميع الوثائق والملفات والمواد المصاحبة. تعود ملكية منصة Android Optimizer Platform إلى شركة MerryBlue LLC وتشغيلها. يتم تقديم Android Optimizer Platform بناءً على موافقتك دون تعديل جميع البنود والشروط الواردة هنا وجميع قواعد التشغيل والسياسات والإجراءات الأخرى التي قد يتم نشرها من وقت لآخر على هذا الموقع بواسطة Android Optimizer (يُشار إليها إجمالاً باسم ""الاتفاقية"" "").
+يرجى قراءة هذه الاتفاقية بعناية قبل الوصول إلى أو استخدام Android Optimizer Platform. من خلال الوصول إلى أو استخدام أي جزء من Android Optimizer Platform ، فإنك توافق على الالتزام بشروط وأحكام TOS هذه. إذا كنت لا توافق على جميع الشروط والأحكام الواردة في شروط الخدمة هذه ، فلا يجوز لك الوصول إلى أو استخدام نظام Android Optimizer Platform أو أي من خدمات Android Optimizer الأخرى.
+
+مسؤولية المستخدمين / المساهمين
+إذا أتاحت (أو سمحت لأي طرف ثالث بإتاحة) عن طريق مُحسِّن Android أو تطبيق تم إنشاؤه و / أو نشره من خلال مُحسِّن Android (يشار إلى جميع هذه المواد فيما بعد باسم ""المحتوى"") ، فأنت بذلك مسؤول عن محتوى ذلك المحتوى وأي ضرر ناتج عنه ، بغض النظر عما إذا كان المحتوى المعني يشكل نصًا أو رسومات أو صورًا أو صورًا أو ملفات بيانات أو صورًا فوتوغرافية أو روابط أو تصميمات أو ملف صوتي أو فيديو أو أي شيء آخر يشبه المواد التي سيتم استخدامها في التطبيق.
+
+من خلال إتاحة المحتوى ، فإنك تقر وتضمن ما يلي:
+
+لن ينتهك تنزيل المحتوى ونسخه واستخدامه حقوق الملكية ، بما في ذلك على سبيل المثال لا الحصر حقوق الطبع والنشر أو براءات الاختراع أو العلامات التجارية أو حقوق الأسرار التجارية لأي طرف ثالث ؛
+
+إذا كان صاحب العمل الخاص بك لديه حقوق الملكية الفكرية التي أنشأتها ، فإنك إما (1) تلقيت إذنًا من صاحب العمل لنشر المحتوى أو إتاحته ، أو (2) حصلت على تنازل من صاحب العمل فيما يتعلق بجميع الحقوق في المحتوى أو فيه ؛
+
+لقد امتثلت تمامًا لأي تراخيص من جهات خارجية تتعلق بالمحتوى ، وقمت بكل الأشياء اللازمة لتمرير أي شروط مطلوبة بنجاح إلى المستخدمين النهائيين ؛
+
+لا يحتوي المحتوى أو يثبت أي فيروسات أو فيروسات متنقلة أو برامج ضارة أو أحصنة طروادة أو أي رمز كمبيوتر آخر أو ملفات أو برامج مصممة لمقاطعة أو تدمير أو تقييد وظائف أي جهاز كمبيوتر يعمل بنظام Android Optimizer أو أجهزة أو معدات اتصالات ؛
+
+المحتوى ليس بريدًا عشوائيًا ، ولا يتم إنشاؤه آليًا أو عشوائيًا ، ولا يحتوي على محتوى تجاري غير أخلاقي أو غير مرغوب فيه مصمم لتوجيه حركة المرور إلى مواقع الجهات الخارجية أو تعزيز تصنيفات محرك البحث لمواقع الطرف الثالث ، أو لمزيد من الأعمال غير القانونية (مثل كعملية تصيد احتيالي) أو تضليل المستلمين فيما يتعلق بمصدر المواد (مثل الانتحال) ؛
+
+المحتوى ليس غير قانوني ، أو ضار ، أو مهدد ، أو مسيء ، أو مؤذٍ ، أو تشهيري ، أو تشهيري ، أو مبتذل ، أو فاحش ، أو إباحي للأطفال ، أو بذيء ، أو بذيء ، أو ينتهك خصوصية الآخرين ، أو بغيض ، أو عنصري ، أو عرقي أو غير مرغوب فيه ؛
+
+عدم الإعلان عن تطبيقك عبر الرسائل الإلكترونية غير المرغوب فيها مثل روابط البريد العشوائي في مجموعات الأخبار وقوائم البريد الإلكتروني والمدونات ومواقع الويب الأخرى والطرق الترويجية غير المرغوب فيها المماثلة ؛
+
+ولم يتم تسمية تطبيقك بطريقة تضلل القراء ليعتقدوا أنك شخص أو شركة أخرى.
+
+
+استخدام مقيد
+لا يجوز لك استخدام Android Optimizer Platform أو Android Optimizer لنسخ منصات أو خدمات Android Optimizer بشكل كبير ، بما في ذلك إعادة نشر محتوى Android Optimizer أو إنشاء مُحسِّن Android منفصل أو أداة إدارة محتوى مشابهة إلى حد كبير لـ Android Optimizer. إذا قرر مُحسِّن Android أو اعتقد ، وفقًا لتقديره الخاص ، أنك انتهكت أو حاولت انتهاك هذه الشروط أو روح هذه الشروط ، فقد يتم إبطال قدرتك على استخدام Android Optimizer Platform والوصول إليه بشكل مؤقت أو دائم ، مع أو بدون إشعار .
+
+حقوق الملكية
+يمتلك Android Optimizer جميع الحقوق والملكية والمصلحة في ومنصة Android Optimizer بما في ذلك ، على سبيل المثال لا الحصر ، جميع الحقوق الفكرية وحقوق الملكية المرتبطة به ، وباستثناء الترخيص المحدود الممنوح لك هنا ، لا يجوز تفسير أي شيء في شروط الخدمة هذه على أنه نقل أو نقل أو إضعاف أو التأثير سلبًا على ملكية ""مُحسِّن Android"" أو حقوق الملكية فيه أو أي معلومات أو مواد محسِّن Android أخرى ، ملموسة أو غير ملموسة ، بأي شكل وفي أي وسيط. تعد Android Optimizer وشعار Android Optimizer وجميع العلامات التجارية وعلامات الخدمة والرسومات والشعارات الأخرى المستخدمة فيما يتعلق بـ Android Optimizer Platform علامات تجارية أو علامات تجارية مسجلة لشركة Android Optimizer أو مرخصي Android Optimizer. قد تكون العلامات التجارية وعلامات الخدمة والرسومات والشعارات الأخرى المستخدمة فيما يتعلق بـ Android Optimizer Platform علامات تجارية لأطراف ثالثة. لا يمنحك استخدامك لـ Android Optimizer Platform أي حق أو ترخيص لإعادة إنتاج أو استخدام أي من مُحسِّن Android أو علامات تجارية تابعة لجهات خارجية.
+
+
+التغييرات
+يحتفظ مُحسِّن Android بالحق ، وفقًا لتقديره الخاص ، في تعديل أو استبدال أي جزء من شروط الخدمة هذه. تقع على عاتقك مسؤولية التحقق من شروط الخدمة هذه بشكل دوري لمعرفة التغييرات. استمرار استخدامك أو الوصول إلى نظام Android Optimizer Platform بعد نشر أي تغييرات على شروط الخدمة هذه يشكل قبولًا لهذه التغييرات. قد يقدم مُحسِّن Android أيضًا ، في المستقبل ، خدمات و / أو ميزات جديدة من خلال موقع Android Optimizer على الويب أو جنبًا إلى جنب مع Android Optimizer Platform (بما في ذلك ، إصدار أدوات وموارد جديدة). تخضع هذه الميزات و / أو الخدمات الجديدة لشروط وأحكام شروط الخدمة هذه.
+
+جمع البيانات واستخدامها
+أنت توافق بموجب هذا على أنه يجوز لـ Android Optimizer والشركات الأم والشركات الفرعية والشركات التابعة وخلفائها والمتنازل لهم ، جمع واستخدام بعض المعلومات الفنية المرتبطة باستخدامك لـ Android Optimizer ، بما في ذلك ، على سبيل المثال لا الحصر ، أي معلومات مقدمة فيما يتعلق بأي دعم أو الخدمات الفنية لـ Android Optimizer.
+
+تعديل Android Optimizer
+قد يقوم مُحسِّن Android في أي وقت ومن وقت لآخر بتعديل أو إيقاف ، بشكل مؤقت أو دائم ، نظام Android Optimizer Platform أو Android Optimizer ، أو أي جزء منه ، بإشعار أو بدون إشعار. كجزء من Android Optimizer Platform ، قد تتلقى من وقت لآخر تحديثات لـ Android Optimizer من Android Optimizer والتي يمكن تنزيلها وتثبيتها تلقائيًا على جهازك. قد تتضمن هذه التحديثات إصلاحات للأخطاء أو تحسينات أو تحسينات للميزات أو إصدارات جديدة تمامًا من Android Optimizer. أنت توافق على أنه يجوز لـ Android Optimizer أن يسلمك تلقائيًا مثل هذه التحديثات كجزء من الخدمة وستتلقىها وتثبتها كما هو مطلوب. أنت توافق على أن مُحسِّن Android لن يكون مسؤولاً تجاهك أو تجاه أي طرف ثالث عن أي تحديث أو تعديل أو تعليق أو وقف لنظام Android Optimizer Platform أو Android Optimizer.
+
+نهاية
+يحق لـ Android Optimizer إنهاء هذا الترخيص وحقك في استخدام مُحسِّن Android في أي وقت ولأي سبب ، بما في ذلك في حالة اعتقاد مُحسِّن Android بشكل معقول أنك فشلت في الامتثال لأي شرط أو شرط من شروط الخدمة هذه. إذا انتهى هذا الترخيص أو حقك في استخدام مُحسِّن Android لأي سبب من الأسباب ، فيجب عليك التوقف عن استخدام مُحسِّن Android وإما العودة إلى مُحسِّن Android أو تدمير مُحسِّن Android وجميع نسخ مُحسِّن Android التي بحوزتك أو تحت سيطرتك. قد يطلب منك مُحسِّن Android المصادقة على امتثالك لما سبق كتابةً ، وتوافق على القيام بذلك إذا قدم مُحسِّن Android مثل هذا الطلب.
+
+التنصل من الضمانات
+لا توجد إقرارات أو ضمانات سارية أو مقدمة لك بأي شكل من الأشكال فيما يتعلق بمُحسِّن Android أو شروط الخدمة هذه. إلى الحد الأقصى الذي يسمح به القانون ، فإننا نخلي مسؤوليتنا عن جميع الإقرارات والضمانات فيما يتعلق بأداة تحسين Android ووصولك إليها واستخدامها ، سواء كانت صريحة أو ضمنية ، بما في ذلك ، على سبيل المثال لا الحصر ، الضمانات الضمنية للضمانات الضمنية أي ضمانات للملكية و / أو عدم الانتهاك و / أو الناشئة عن دورة التعامل أو استخدام التجارة.
+
+بدون الحد من عمومية ما سبق ، يتوفر مُحسِّن Android لك على أساس ""كما هو"" و ""كما هو متاح"" ولا يضمن مُحسِّن Android أو يضمن أو يمثل أن مُحسِّن Android سيلبي متطلباتك أو استخدامك أو تشغيل أو نتائج استخدام منصة مُحسِّن Android أو مُحسِّن Android يجب أن تكون غير منقطعة ، وكاملة ، وموثوقة ، ودقيقة ، وحالية ، وخالية من الأخطاء ، وخالية من فيروسات الكمبيوتر أو آمنة بأي شكل آخر. أنت تتحمل كامل مخاطر التنزيل و / أو التثبيت و / أو النسخ و / أو التشغيل و / أو استخدام و / أو توزيع منصة مُحسِّن Android و / أو مُحسِّن Android.
+
+التمثيل العام والضمان
+أنت تقر وتضمن (1) أن استخدامك لمنصة Android Optimizer و Android Optimizer سيكون متوافقًا تمامًا مع جميع القوانين واللوائح المعمول بها (بما في ذلك على سبيل المثال لا الحصر ، أي قوانين أو لوائح محلية في بلدك أو ولايتك أو مدينتك أو منطقة حكومية أخرى ، فيما يتعلق بالسلوك عبر الإنترنت والمحتوى المقبول ، بما في ذلك جميع القوانين المعمول بها فيما يتعلق بنقل البيانات الفنية المصدرة من الولايات المتحدة أو البلد الذي تقيم فيه) و (2) استخدامك لنظام Android Optimizer Platform و Android Optimizer لن ينتهك أو اختلاس حقوق الملكية الفكرية لأي طرف ثالث.
+
+التعويض
+أنت توافق على الدفاع عن مُحسِّن Android و / أو الآباء والشركات الفرعية والشركات التابعة و / أو خلفائهم والمسؤولين والمديرين والموظفين والوكلاء والمرخصين والممثلين والمعلنين وشركاء الأعمال والترويج ومقدمي الخدمات التشغيلية والموردين والبائعين والمقاولين (""الأطراف المستحقة على مُحسِّن Android"") ضد أي وجميع المطالبات و / أو الطلبات و / أو الإجراءات وتعويض الأطراف المعوضة من Android Optimizer وحمايتهم من أي وجميع الخسائر والأضرار والتكاليف والنفقات (بما في ذلك أتعاب المحاماة المعقولة) ، ناتجًا عن أي خرق أو انتهاك لشروط الخدمة هذه ، أو التعدي أو الاختلاس أو أي انتهاك لحقوق أي طرف آخر ، أو انتهاك أو عدم الامتثال لأي قانون أو لائحة ، أو خرق أو انتهاك لأي شرط أو شرط من شروط الخدمة هذه ، استخدام أو تغيير أو تصدير Android Optimizer Platform أو Android Optimizer أو غير ذلك فيما يتعلق بشروط الخدمة هذه. يحتفظ Android Optimizer بالحق في أن يتولى ، على حسابه ، الدفاع الحصري والتحكم في أي مطالبات أو إجراءات وجميع المفاوضات للتسوية أو التسوية ، وأنت توافق على التعاون الكامل معنا بناءً على طلبنا.
+
+
+شروط عامة
+لن يكون أي تعديل أو تعديل أو تنازل أو إبراء عن أي شرط من شروط الخدمة هذه ساريًا ما لم يتم كتابيًا وموقعًا من قبل ممثل مفوض لـ Android Optimizer. لن يؤدي أي فشل أو تأخير من قِبل مُحسِّن Android لممارسة أي حق أو تنفيذ أي التزام إلى الإضرار أو تفسيره على أنه تنازل أو تنازل مستمر عن هذا الحق أو أي حق أو سلطة أخرى ، ما لم يكن ذلك كتابيًا وموقعًا بواسطة مُحسِّن Android. تشكل شروط الخدمة هذه الاتفاقية الكاملة بين Android Optimizer وبينك فيما يتعلق بوصولك إلى أو استخدام Android Optimizer Platform و / أو Android Optimizer وتحل محل أي اتفاقيات سابقة بينك وبين Android Optimizer بشأن هذا الموضوع. لا يجوز لك التنازل عن شروط الخدمة هذه أو أي حق ممنوح بموجب هذه الاتفاقية أو نقلها بأي شكل آخر بدون موافقة كتابية من مُحسِّن Android. حقوق Android Optimizer بموجب شروط الخدمة هذه قابلة للنقل مجانًا بواسطة مُحسِّن Android. إذا تم اعتبار أي شرط من شروط الخدمة هذه غير قانوني أو غير صالح أو غير قابل للتنفيذ ، فإن الأحكام المتبقية من شروط الخدمة هذه ستكون غير معطوبة وتظل سارية المفعول والتأثير الكامل. ستكون شروط الخدمة هذه ملزمة وستضمن لصالح الأطراف وخلفائهم والمتنازل لهم المسموح لهم."</string>
+    <string name="txt_label_privacy">تحكم الشروط والأحكام التالية جميع استخدامات منصة مُحسِّن Android.</string>
+    <string name="txt_verstion_privacy">الإصدار 1.0.22</string>
+    <string name="title_privacy">خصوصية</string>
+    <string name="txt_current_language">اللغة الحالية</string>
+    <string name="title_language">لغة</string>
+    <string name="title_about_app">حول التطبيق</string>
+    <string name="txt_option_kbs">كيلو بايت / ثانية</string>
+    <string name="txt_no_data">لايوجد بيانات</string>
+    <string name="cpu_temp_c">درجة حرارة وحدة المعالجة المركزية (درجة مئوية)</string>
+    <string name="cooler">برودة</string>
+    <string name="amount_of_processor_used">كمية المعالج المستخدمة</string>
+    <string name="kill_process">عملية قتل</string>
+    <string name="off_bluetooth">تم إيقاف تشغيل البلوتوث</string>
+    <string name="off_rotate">تم إيقاف الدوران</string>
+    <string name="clear_ram">كان الكبش واضحًا</string>
+    <string name="amount_of_processor_free">مقدار الخالي من المعالج</string>
+    <string name="automatically_optimize_in">التحسين تلقائيًا على::</string>
+    <string name="plesase_check_the_connection">يرجى التحقق من الاتصال</string>
+    <string name="yes">نعم</string>
+</resources>
