@@ -39,9 +39,9 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         MyApplication.setContext(this)
-        if (!PowerService.isServiceRunning(applicationContext, PowerService::class.java)) {
-            PowerService.startMy(applicationContext)
-        }
+//        if (!PowerService.isServiceRunning(applicationContext, PowerService::class.java)) {
+//            PowerService.startMy(applicationContext)
+//        }
     }
 
     private fun initOnboarding() {

@@ -18,7 +18,6 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.example.wise_memory_optimizer.MainActivity
@@ -36,7 +35,6 @@ import com.example.wise_memory_optimizer.utils.NetworkUtils
 import com.example.wise_memory_optimizer.utils.NetworkUtils.NETWORK_STATUS_NOT_CONNECTED
 import com.example.wise_memory_optimizer.utils.Utils.Companion.checkDoubleClick
 import com.example.wise_memory_optimizer.utils.showStateTesting
-import com.google.android.gms.tasks.OnSuccessListener
 import com.google.firebase.FirebaseApp
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -219,7 +217,8 @@ class HomeFragment : Fragment() {
         }
         dialogLoadingVpn = context?.let {
             DialogLoadingVpn(it, R.style.MaterialDialogSheet) {
-
+                if (dialogLoadingVpn!!.isShowing) dialogLoadingVpn!!.dismiss()
+                if (!it) stopVpn()
             }
         }
         dialogInformationVpn =
