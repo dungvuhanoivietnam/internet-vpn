@@ -70,6 +70,7 @@ public class ChangeVpnFragment extends Fragment {
     boolean vpnStart = false;
     private DialogLoadingVpn dialogLoadingVpn = null;
     private DialogInformationVpn dialogInformationVpn = null;
+    private long oldTimeClick = System.currentTimeMillis();
 
     @Nullable
     @Override
@@ -86,7 +87,7 @@ public class ChangeVpnFragment extends Fragment {
                 if (!NetworkUtils.isConnectVpn()) {
                     stopVpn();
                     prepareVpn();
-                }else{
+                } else {
                     updateStatus(true);
                 }
             } else {
@@ -153,7 +154,7 @@ public class ChangeVpnFragment extends Fragment {
             NavigationUtils.Companion.back(binding.getRoot());
         });
         binding.ivStart.setOnClickListener(view1 -> {
-            if (!Utils.Companion.checkDoubleClick())
+            if (!checkDoubleClick())
                 return;
             if (vpnStart) {
                 stopVpn();
@@ -354,19 +355,26 @@ public class ChangeVpnFragment extends Fragment {
      */
     private void startVpn() {
         // .ovpn file
-        storageRef.child("ovpn").child(server.getOvpn()).getBytes(Long.MAX_VALUE).addOnSuccessListener(bytes -> {
-            try {
-                OpenVpnApi.startVpn(getContext(), new String(bytes, StandardCharsets.UTF_8), server.getCountry(), server.getOvpnUserName(), server.getOvpnUserPassword(), MainActivity.class);
-            } catch (RemoteException e) {
-                e.printStackTrace();
-            }
-            if (dialogLoadingVpn != null && !dialogLoadingVpn.isShowing())
-                dialogLoadingVpn.show();
-            if (dialogLoadingVpn.isShowing())
-                dialogLoadingVpn.setStatus(getContext().getString(R.string.connecting));
-            vpnStart = true;
-        });
+        if (dialogLoadingVpn != null && !dialogLoadingVpn.isShowing())
+            dialogLoadingVpn.show();
+        if (dialogLoadingVpn.isShowing())
+            dialogLoadingVpn.setStatus(getContext().getString(R.string.connecting));
 
+        storageRef.child("ovpn").listAll().addOnSuccessListener(listResult -> {
+            for (StorageReference storageReference : listResult.getItems()) {
+                if (storageReference.getName().contains(server.getCountry())) {
+                    storageReference.getBytes(Long.MAX_VALUE).addOnSuccessListener(bytes -> {
+                        try {
+                            OpenVpnApi.startVpn(getContext(), new String(bytes, StandardCharsets.UTF_8), server.getCountry(), server.getOvpnUserName(), server.getOvpnUserPassword(), MainActivity.class);
+                        } catch (RemoteException e) {
+                            e.printStackTrace();
+                        }
+                        vpnStart = true;
+                    });
+                    break;
+                }
+            }
+        });
     }
 
     /**
@@ -410,5 +418,13 @@ public class ChangeVpnFragment extends Fragment {
         return false;
     }
 
+    private boolean checkDoubleClick() {
+        long tmp = System.currentTimeMillis();
+        if (tmp - oldTimeClick >= 1000) {
+            oldTimeClick = tmp;
+            return true;
+        }
+        return false;
+    }
 
 }

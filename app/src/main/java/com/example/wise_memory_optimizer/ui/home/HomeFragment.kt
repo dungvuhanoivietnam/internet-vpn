@@ -35,7 +35,6 @@ import com.example.wise_memory_optimizer.ui.vpn.ChangeVpnViewModel
 import com.example.wise_memory_optimizer.utils.NavigationUtils
 import com.example.wise_memory_optimizer.utils.NetworkUtils
 import com.example.wise_memory_optimizer.utils.NetworkUtils.NETWORK_STATUS_NOT_CONNECTED
-import com.example.wise_memory_optimizer.utils.Utils.Companion.checkDoubleClick
 import com.example.wise_memory_optimizer.utils.showStateTesting
 import com.google.firebase.FirebaseApp
 import com.google.firebase.database.DatabaseReference
@@ -49,6 +48,8 @@ import java.nio.charset.StandardCharsets
 
 
 class HomeFragment : Fragment() {
+
+    private var oldTimeClick = System.currentTimeMillis()
 
     private var _binding: FragmentHomeBinding? = null
     var drawerLayout: DrawerLayout? = null
@@ -157,9 +158,13 @@ class HomeFragment : Fragment() {
 
         binding.txtFaster.setOnClickListener({
             if (!checkDoubleClick()) return@setOnClickListener
+
             if (vpnStart) {
                 stopVpn()
             } else {
+                if (NetworkUtils.isConnectVpn()){
+                    stopVpn()
+                }
                 prepareVpn()
             }
         })
@@ -338,6 +343,7 @@ class HomeFragment : Fragment() {
 
     override fun onPause() {
         LocalBroadcastManager.getInstance(requireActivity()!!).unregisterReceiver(broadcastReceiver)
+        vpnStart = false
         super.onPause()
     }
 
@@ -373,6 +379,12 @@ class HomeFragment : Fragment() {
     private fun startVpn() {
         if (viewModel == null || viewModel!!.cities == null || viewModel!!.cities.size == 0)
             return
+        if (dialogLoadingVpn != null && !dialogLoadingVpn!!.isShowing) dialogLoadingVpn!!.show()
+        if (dialogLoadingVpn!!.isShowing) dialogLoadingVpn!!.setStatus(
+            requireContext().getString(
+                R.string.connecting
+            )
+        )
         var city: City? = null
         viewModel!!.cities.forEach {
             if (city == null){
@@ -390,9 +402,9 @@ class HomeFragment : Fragment() {
         server.ovpnUserPassword = city!!.pass
         // .ovpn file
         storageRef!!.child("ovpn").listAll().addOnSuccessListener {
-            it.items.forEach {
-                if (it.name.contains(server.country)){
-                    it.getBytes(Long.MAX_VALUE).addOnSuccessListener {
+            for (item in it.items){
+                if (item.name.contains(server.country)){
+                    item.getBytes(Long.MAX_VALUE).addOnSuccessListener {
                         try {
                             OpenVpnApi.startVpn(
                                 context,
@@ -404,14 +416,10 @@ class HomeFragment : Fragment() {
                         } catch (e: RemoteException) {
                             e.printStackTrace()
                         }
-                        if (dialogLoadingVpn != null && !dialogLoadingVpn!!.isShowing) dialogLoadingVpn!!.show()
-                        if (dialogLoadingVpn!!.isShowing) dialogLoadingVpn!!.setStatus(
-                            requireContext().getString(
-                                R.string.connecting
-                            )
-                        )
                         vpnStart = true
+
                     }
+                    break
                 }
             }
         }
@@ -494,5 +502,13 @@ class HomeFragment : Fragment() {
         }
     }
 
+    fun checkDoubleClick(): Boolean {
+        val tmp = System.currentTimeMillis()
+        if (tmp - oldTimeClick >= 1000) {
+            oldTimeClick = tmp
+            return true
+        }
+        return false
+    }
 
 }
