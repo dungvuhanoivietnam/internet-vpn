@@ -3,9 +3,7 @@ package com.example.wise_memory_optimizer.ui.menu.ui
 import android.content.Intent
 import android.content.res.Configuration
 import android.content.res.Resources
-import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
+import android.os.*
 import android.util.DisplayMetrics
 import android.view.LayoutInflater
 import android.view.View
@@ -21,7 +19,7 @@ import com.example.wise_memory_optimizer.ui.menu.adapter.ChangeLanguageAdapter
 import com.example.wise_memory_optimizer.ui.menu.adapter.Language
 import java.util.*
 
-class LanguageFragment(arg1: Boolean) : Fragment(R.layout.fragment_language) {
+class LanguageFragment() : Fragment(R.layout.fragment_language), Parcelable {
     private var _binding: FragmentLanguageBinding? = null
 
     private val binding get() = _binding!!
@@ -29,7 +27,15 @@ class LanguageFragment(arg1: Boolean) : Fragment(R.layout.fragment_language) {
     private var adapter: ChangeLanguageAdapter? = null
     private var position : Int = -1
     private var lang : Language?= null
-    private val firsTimeInApp = arg1
+    private var firsTimeInApp = false
+
+    constructor(parcel: Parcel) : this() {
+        position = parcel.readInt()
+    }
+
+    constructor(arg1: Boolean) : this() {
+        firsTimeInApp = arg1;
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -135,5 +141,23 @@ class LanguageFragment(arg1: Boolean) : Fragment(R.layout.fragment_language) {
         }
         adapter?.updateData(lstLanguage)
         binding.rclEnglish.adapter = adapter
+    }
+
+    override fun writeToParcel(parcel: Parcel, flags: Int) {
+        parcel.writeInt(position)
+    }
+
+    override fun describeContents(): Int {
+        return 0
+    }
+
+    companion object CREATOR : Parcelable.Creator<LanguageFragment> {
+        override fun createFromParcel(parcel: Parcel): LanguageFragment {
+            return LanguageFragment(parcel)
+        }
+
+        override fun newArray(size: Int): Array<LanguageFragment?> {
+            return arrayOfNulls(size)
+        }
     }
 }
