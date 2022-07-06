@@ -6,7 +6,6 @@ import com.example.wise_memory_optimizer.model.location_speed_test.LocationTesti
 
 class MainViewModel : ViewModel() {
     val listRecentlyTesting = mutableListOf<LocationTestingModel>()
-    private val listFavoriteTesting = mutableListOf<LocationTestingModel>()
     var resultTestingModel: LocationTestingModel? = null
 
     fun addRecentTestingModel(data: LocationTestingModel) {
@@ -15,7 +14,6 @@ class MainViewModel : ViewModel() {
     }
 
     fun deleteRecentTestingModel(data: LocationTestingModel) {
-        resultTestingModel = data
         listRecentlyTesting.remove(data)
     }
 

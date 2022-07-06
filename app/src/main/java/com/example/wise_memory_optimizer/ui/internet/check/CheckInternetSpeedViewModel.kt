@@ -46,6 +46,7 @@ class CheckInternetSpeedViewModel : ViewModel() {
     }
 
     companion object {
+        const val PING_MIN_VALUE = 1L
         const val PROXY_SERVER = ""
         const val COMMAND = "/system/bin/ping -c 1 8.8.8.8"
 
@@ -165,7 +166,10 @@ class CheckInternetSpeedViewModel : ViewModel() {
                 val a = System.currentTimeMillis() % 1000
                 val ipProcess = runTime.exec(COMMAND)
                 ipProcess.waitFor()
-                val ping = (System.currentTimeMillis() % 1000) - a
+                var ping = (System.currentTimeMillis() % 1000) - a
+                if (ping <= 0){
+                    ping = PING_MIN_VALUE
+                }
                 _pingValue.postValue(ping.toFloat())
             } catch (ex: Exception) {
                 ex.printStackTrace()

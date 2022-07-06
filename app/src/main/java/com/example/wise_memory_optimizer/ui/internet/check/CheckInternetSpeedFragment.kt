@@ -19,7 +19,6 @@ import com.example.wise_memory_optimizer.databinding.FragmentCheckInternetSpeedB
 import com.example.wise_memory_optimizer.model.location_speed_test.LocationTestingModel
 import com.example.wise_memory_optimizer.utils.NetWorkConnection
 import com.example.wise_memory_optimizer.utils.formatMbps
-import com.example.wise_memory_optimizer.utils.setTextPing
 import com.example.wise_memory_optimizer.utils.toMbps
 import com.github.anastr.speedviewlib.Gauge
 import fr.bmartel.speedtest.model.SpeedTestMode
@@ -48,7 +47,7 @@ class CheckInternetSpeedFragment : Fragment() {
         }.create()
     }
 
-    val isFavorite : Boolean by lazy {
+    private val isFavorite : Boolean by lazy {
         arguments?.getBoolean(IS_FAVORITE,false) ?: false
     }
 
@@ -56,7 +55,6 @@ class CheckInternetSpeedFragment : Fragment() {
         var TAG = CheckInternetSpeedFragment::class.java.simpleName
         const val LOCATION_NAME = "location-name"
         const val IS_FAVORITE = "is favorite"
-        const val PING_MIN_VALUE = 1F
     }
 
     override fun onCreateView(
@@ -113,12 +111,7 @@ class CheckInternetSpeedFragment : Fragment() {
         }
 
         viewModel.pingValue.observe(viewLifecycleOwner) {
-            if (it <= 0){
-                locationTestingModel.ping = PING_MIN_VALUE
-            }else{
-                locationTestingModel.ping = it
-            }
-
+            locationTestingModel.ping = it
             locationTestingModel.ping?.let { ping ->
                 binding.txtPing.text = ping.toInt().toString()
                 binding.txtPingResult.text = ping.toInt().toString()
