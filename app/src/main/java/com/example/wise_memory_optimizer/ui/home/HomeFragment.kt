@@ -238,10 +238,15 @@ class HomeFragment : Fragment() {
                 super.onReceive(context, intent)
                 if (intent!!.action == "android.net.conn.CONNECTIVITY_CHANGE") {
                     val status = intent.getIntExtra("status", 0)
-                    if (status != NETWORK_STATUS_NOT_CONNECTED && (viewModel == null || viewModel!!.dfCity.code == null) ) {
+                    if (status != NETWORK_STATUS_NOT_CONNECTED ) {
                         activity!!.runOnUiThread({
                             initData()
                         })
+                    } else if (status == NETWORK_STATUS_NOT_CONNECTED) {
+                        if (!dialogInformationVpn!!.isShowing) {
+                            dialogInformationVpn!!.show()
+                            dialogInformationVpn!!.setState(DialogInformationVpn.TYPE_INFO.ERROR_NETWORK)
+                        }
                     }
                 }
             }
@@ -269,7 +274,7 @@ class HomeFragment : Fragment() {
     private var storageRef: StorageReference? = null
     private val server = Server()
 
-    fun initLocalNetwork(){
+    fun initLocalNetwork() {
         binding.txtIpAddress.text = NetworkUtils.getIpAddress(context)
         binding.txtNation.text = NetworkUtils.findSSIDForWifiInfo(context)
     }
@@ -280,13 +285,13 @@ class HomeFragment : Fragment() {
                 ChangeVpnViewModel::class.java
             )
         }
+        if (dialogInformationVpn!!.isShowing) dialogInformationVpn!!.dismiss()
         initLocalNetwork()
         if (viewModel!!.dfCity.code != null) {
             internetSpeedViewModel.getPing()
             return
         }
         if (NetworkUtils.isNetworkAvailable(activity)) {
-            if (dialogInformationVpn!!.isShowing) dialogInformationVpn!!.dismiss()
             activity?.let { FirebaseApp.initializeApp(it) }
             database = FirebaseDatabase.getInstance()
             firebaseStorage = FirebaseStorage.getInstance()
@@ -300,7 +305,7 @@ class HomeFragment : Fragment() {
                 internetSpeedViewModel.getPing()
                 if (dialogLoadingVpn!!.isShowing && !requireActivity().isFinishing) dialogLoadingVpn!!.dismiss()
             }
-        }else{
+        } else {
             if (!dialogInformationVpn!!.isShowing) {
                 dialogInformationVpn!!.show()
                 dialogInformationVpn!!.setState(DialogInformationVpn.TYPE_INFO.ERROR_NETWORK)
