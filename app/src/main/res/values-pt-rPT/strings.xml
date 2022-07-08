@@ -288,9 +288,9 @@ Nenhuma alteração, modificação, renúncia ou quitação de qualquer disposi�
     <string name="onboard_title_1">Melhorando a conexão de rede</string>
     <string name="onboard_title_2">Solução de Internet e VPN\n para você</string>
     <string name="onboard_title_3">Solução de Internet e VPN\n para você</string>
-    <string name="onboard_des_1">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</string>
-    <string name="onboard_des_2">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</string>
-    <string name="onboard_des_3">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</string>
+    <string name="onboard_des_1">Teste e otimize a velocidade da sua rede com apenas UM toque, alterando a VPN</string>
+    <string name="onboard_des_2">Nosso aplicativo é um teste de velocidade de Internet altamente preciso e um aplicativo analisador de wifi, totalmente gratuito.</string>
+    <string name="onboard_des_3">Este é considerado um dos melhores recursos de segurança, evitando o caso de você ser rastreado por bandidos.</string>
     <string name="next">Próximo</string>
     <string name="boosting_your_internet">Aumentando a velocidade da sua internet Aguarde um momento!</string>
     <string name="your_network_speed_has_improved">A velocidade da sua rede melhorou</string>
@@ -299,5 +299,6 @@ Nenhuma alteração, modificação, renúncia ou quitação de qualquer disposi�
     <string name="notification_content">O tempo de otimização automática expirou. Você pode ativá-lo novamente aqui!</string>
 
     <string name="boost_internet">Boost Internet</string>
+    <string name="noname">&lt;Sem nome&gt;</string>
 
 </resources>

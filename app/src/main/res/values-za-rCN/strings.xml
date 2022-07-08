@@ -293,9 +293,9 @@ Android Optimizer 有权随时以任何理由终止本许可以及您使用 Andr
     <string name="onboard_title_1">改善网络连接</string>
     <string name="onboard_title_2">适合您的 Internet 和 VPN\n 解决方案</string>
     <string name="onboard_title_3">适合您的 Internet 和 VPN\n 解决方案</string>
-    <string name="onboard_des_1">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</string>
-    <string name="onboard_des_2">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</string>
-    <string name="onboard_des_3">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</string>
+    <string name="onboard_des_1">通过更改 VPN 只需一键即可测试和优化您的网络速度</string>
+    <string name="onboard_des_2">我们的应用程序是一个高度准确的互联网速度测试和 wifi 分析仪应用程序，完全免费。</string>
+    <string name="onboard_des_3">这被认为是最好的安全功能之一，避免了你被坏人跟踪的情况。</string>
     <string name="next">下一个</string>
     <string name="boosting_your_internet">提高您的网速 请稍等！</string>
     <string name="your_network_speed_has_improved">您的网络速度已提高</string>
@@ -304,5 +304,6 @@ Android Optimizer 有权随时以任何理由终止本许可以及您使用 Andr
     <string name="notification_content">自动优化时间已过。 你可以在这里重新打开它！</string>
 
     <string name="boost_internet">Boost Internet</string>
+    <string name="noname">&lt;无名&gt;</string>
 
 </resources>

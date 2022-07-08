@@ -292,9 +292,9 @@ Android Optimizer의 권한 있는 대리인이 서면으로 작성하고 서명
     <string name="onboard_title_1">네트워크 연결 개선</string>
     <string name="onboard_title_2">인터넷 및 VPN\n 솔루션</string>
     <string name="onboard_title_3">인터넷 및 VPN\n 솔루션</string>
-    <string name="onboard_des_1">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</string>
-    <string name="onboard_des_2">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</string>
-    <string name="onboard_des_3">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</string>
+    <string name="onboard_des_1">VPN을 변경하여 원터치로 네트워크 속도 테스트 및 최적화</string>
+    <string name="onboard_des_2">우리 앱은 완전 무료인 매우 정확한 인터넷 속도 테스트 및 Wi-Fi 분석기 응용 프로그램입니다.</string>
+    <string name="onboard_des_3">이것은 나쁜 사람에 의해 추적되는 경우를 피하면서 최고의 보안 기능 중 하나로 간주됩니다.</string>
     <string name="next">다음</string>
     <string name="boosting_your_internet">인터넷 속도 향상 잠시만 기다려 주십시오!</string>
     <string name="your_network_speed_has_improved">네트워크 속도가 향상되었습니다</string>
@@ -303,5 +303,6 @@ Android Optimizer의 권한 있는 대리인이 서면으로 작성하고 서명
     <string name="notification_content">자동 최적화 시간이 만료되었습니다. 여기에서 다시 켤 수 있습니다!</string>
 
     <string name="boost_internet">Boost Internet</string>
+    <string name="noname">&lt;노네임&gt;</string>
 
 </resources>

@@ -294,9 +294,9 @@ Android OptimizerまたはこれらのTOSに関連して適用される、また
     <string name="onboard_title_1">ネットワーク接続の改善</string>
     <string name="onboard_title_2">インターネットとVPN\nソリューション</string>
     <string name="onboard_title_3">インターネットとVPN\nソリューション</string>
-    <string name="onboard_des_1">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</string>
-    <string name="onboard_des_2">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</string>
-    <string name="onboard_des_3">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</string>
+    <string name="onboard_des_1">VPNを変更することにより、ワンタッチでネットワーク速度をテストおよび最適化できます</string>
+    <string name="onboard_des_2">私たちのアプリは、完全に無料の非常に正確なインターネット速度テストとwifiアナライザーアプリケーションです。</string>
+    <string name="onboard_des_3">これは最高のセキュリティ機能の1つと見なされており、悪意のある人物に追跡されることはありません。</string>
     <string name="next">次</string>
     <string name="boosting_your_internet">インターネットの速度を上げるちょっと待ってください！</string>
     <string name="your_network_speed_has_improved">ネットワーク速度が向上しました</string>
@@ -305,4 +305,5 @@ Android OptimizerまたはこれらのTOSに関連して適用される、また
     <string name="notification_content">自動最適化の期限が切れました。 ここでオンに戻すことができます！</string>
 
     <string name="boost_internet">Boost Internet</string>
+    <string name="noname">&lt;ノーネーム&gt;</string>
 </resources>

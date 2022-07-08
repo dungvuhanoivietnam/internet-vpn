@@ -294,9 +294,9 @@ Android Optimizer имеет право прекратить действие э
     <string name="onboard_title_1">Улучшение сетевого подключения</string>
     <string name="onboard_title_2">Интернет и VPN\n решение для вас</string>
     <string name="onboard_title_3">Интернет и VPN\n решение для вас</string>
-    <string name="onboard_des_1">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</string>
-    <string name="onboard_des_2">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</string>
-    <string name="onboard_des_3">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</string>
+    <string name="onboard_des_1">Протестируйте и оптимизируйте скорость вашей сети одним касанием, изменив VPN</string>
+    <string name="onboard_des_2">Наше приложение представляет собой высокоточный тест скорости Интернета и приложение для анализа Wi-Fi, совершенно бесплатное.</string>
+    <string name="onboard_des_3">Это считается одной из лучших функций безопасности, позволяющей избежать случаев, когда за вами следят плохие парни.</string>
     <string name="next">Следующий</string>
     <string name="boosting_your_internet">Увеличение скорости вашего интернета Пожалуйста, подождите!</string>
     <string name="your_network_speed_has_improved">Скорость вашей сети улучшилась</string>
@@ -305,5 +305,6 @@ Android Optimizer имеет право прекратить действие э
     <string name="notification_content">Время автооптимизации истекло. Вы можете включить его здесь!</string>
 
     <string name="boost_internet">Boost Internet</string>
+    <string name="noname">&lt;Без имени&gt;</string>
 
 </resources>

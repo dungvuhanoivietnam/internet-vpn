@@ -292,9 +292,9 @@ Không có sửa đổi, điều chỉnh, từ bỏ hoặc hủy bỏ bất kỳ
     <string name="onboard_title_1">Cải thiện kết nối mạng</string>
     <string name="onboard_title_2">Internet và VPN \n giải pháp cho bạn</string>
     <string name="onboard_title_3">Internet và VPN \n giải pháp cho bạn</string>
-    <string name="onboard_des_1">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</string>
-    <string name="onboard_des_2">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</string>
-    <string name="onboard_des_3">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</string>
+    <string name="onboard_des_1">Kiểm tra và tối ưu hóa tốc độ mạng của bạn chỉ với MỘT lần chạm bằng cách thay đổi VPN</string>
+    <string name="onboard_des_2">Ứng dụng của chúng tôi hỗ trợ kiểm tra tốc độ Internet và phân tích wifi có độ chính xác cao, hoàn toàn miễn phí.</string>
+    <string name="onboard_des_3">Đây được coi là một trong những tính năng bảo mật tốt nhất, tránh trường hợp bạn bị kẻ xấu theo dõi.</string>
     <string name="next">Tiếp theo</string>
     <string name="boosting_your_internet">Tăng tốc độ internet của bạn Vui lòng đợi trong giây lát!</string>
     <string name="your_network_speed_has_improved">Tốc độ mạng của bạn đã được cải thiện</string>
@@ -303,5 +303,6 @@ Không có sửa đổi, điều chỉnh, từ bỏ hoặc hủy bỏ bất kỳ
     <string name="notification_content">Thời gian tự động tối ưu hóa đã hết. Bạn có thể bật lại ở đây!</string>
 
     <string name="boost_internet">Boost Internet</string>
+    <string name="noname">&lt;Noname&gt;</string>
 
 </resources>

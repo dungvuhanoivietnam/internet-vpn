@@ -294,9 +294,9 @@ Keine Änderung, Änderung, Verzicht oder Aufhebung einer Bestimmung dieser Nutz
     <string name="onboard_title_1">Verbesserung der Netzwerkverbindung</string>
     <string name="onboard_title_2">Internet- und VPN-Lösung\n für Sie</string>
     <string name="onboard_title_3">Internet- und VPN-Lösung\n für Sie</string>
-    <string name="onboard_des_1">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</string>
-    <string name="onboard_des_2">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</string>
-    <string name="onboard_des_3">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</string>
+    <string name="onboard_des_1">Testen und optimieren Sie Ihre Netzwerkgeschwindigkeit mit nur EINEM Tastendruck, indem Sie das VPN wechseln</string>
+    <string name="onboard_des_2">Unsere App ist ein hochpräziser Internet-Geschwindigkeitstest und eine WLAN-Analyzer-Anwendung, völlig kostenlos.</string>
+    <string name="onboard_des_3">Dies gilt als eine der besten Sicherheitsfunktionen, um den Fall zu vermeiden, dass Sie von Bösewichten verfolgt werden.</string>
     <string name="next">Nächste</string>
     <string name="boosting_your_internet">Erhöhen Sie Ihre Internetgeschwindigkeit Bitte warten Sie einen Moment!</string>
     <string name="your_network_speed_has_improved">Ihre Netzwerkgeschwindigkeit hat sich verbessert</string>
@@ -305,4 +305,5 @@ Keine Änderung, Änderung, Verzicht oder Aufhebung einer Bestimmung dieser Nutz
     <string name="notification_content">Die Autooptimierungszeit ist abgelaufen. Hier können Sie es wieder einschalten!</string>
 
     <string name="boost_internet">Boost Internet</string>
+    <string name="noname">&lt;Kein Name&gt;</string>
 </resources>
