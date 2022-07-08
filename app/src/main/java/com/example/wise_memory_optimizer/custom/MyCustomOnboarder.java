@@ -27,12 +27,12 @@ public class MyCustomOnboarder extends OnboardAdvanced {
                 R.drawable.bg_guide,
                 getResources().getColor(R.color.color_4B5CBF),
                 getResources().getColor(R.color.white), 0, 0, R.drawable.bg_guide));
-        addSlide(OnboardFragment.newInstance(getString(R.string.onboard_title_2), getString(R.string.onboard_des_2),
+        addSlide(OnboardFragment.newInstance(getString(R.string.tv_internet_speed), getString(R.string.onboard_des_2),
                 R.drawable.bg_guide_ip_2,
                 R.drawable.bg_guide,
                 getResources().getColor(R.color.color_4B5CBF),
                 getResources().getColor(R.color.white), 0, 0, R.drawable.bg_guide));
-        addSlide(OnboardFragment.newInstance(getString(R.string.onboard_title_3), getString(R.string.onboard_des_3),
+        addSlide(OnboardFragment.newInstance(getString(R.string.tv_change_vpn), getString(R.string.onboard_des_3),
                 R.drawable.bg_guide_ip_3,
                 R.drawable.bg_guide,
                 getResources().getColor(R.color.color_4B5CBF),

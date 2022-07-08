@@ -113,8 +113,8 @@ public class OpenVPNService extends VpnService implements StateListener, Callbac
     private boolean mStarting = false;
     private long mConnecttime;
     private OpenVPNManagement mManagement;
-    //    private final long maxTimeService = 60 * 60 * 2 * 1000;
-    private final long maxTimeService = 60 * 1000;
+    private final long maxTimeService = 60 * 60 * 2 * 1000;
+//    private final long maxTimeService = 60 * 1000;
 
     /*private final IBinder mBinder = new IOpenVPNServiceInternal.Stub() {
 
