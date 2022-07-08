@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.wise_memory_optimizer.MainActivity
 import com.example.wise_memory_optimizer.R
+import com.example.wise_memory_optimizer.custom.MyCustomOnboarder
 import com.example.wise_memory_optimizer.custom.ToolbarCustomer
 import com.example.wise_memory_optimizer.databinding.FragmentLanguageBinding
 import com.example.wise_memory_optimizer.ui.battery.PreferenceUtil
@@ -115,12 +116,10 @@ class LanguageFragment() : Fragment(R.layout.fragment_language), Parcelable {
                     PreferenceUtil.SETTING_ENGLISH,
                     lang?.value
                 )
-                activity?.onBackPressed()
-//                Handler(Looper.getMainLooper()).postDelayed({
-//                    /* Create an Intent that will start the Menu-Activity. */
-//                    activity?.supportFragmentManager?.popBackStack()
-//                }, 500)
-
+                Handler(Looper.getMainLooper()).postDelayed({
+                    startActivity(Intent(activity, MainActivity::class.java))
+                    activity?.finish()
+                }, 500)
             }
         }
 

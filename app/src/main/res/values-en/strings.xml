@@ -232,12 +232,12 @@ You\'re so lucky! Smart Optimizer - Phone Cleaner is the most perfect answer to 
     <string name="unknow">Unknow</string>
     <string name="recently">Recently</string>
     <string name="favourite">Favourite</string>
-    <string name="onboard_title_1">Internet and VPN\n solution for you</string>
+    <string name="onboard_title_1">Improving Network Connection</string>
     <string name="onboard_title_2">Internet and VPN\n soldution for you</string>
     <string name="onboard_title_3">Internet and VPN\n solution for you</string>
-    <string name="onboard_des_1">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</string>
-    <string name="onboard_des_2">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</string>
-    <string name="onboard_des_3">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</string>
+    <string name="onboard_des_1">Test and optimize your network speed with just ONE touch by changing VPN</string>
+    <string name="onboard_des_2">Our app is a highly accurate Internet speed test and wifi analyzer application, completely free.</string>
+    <string name="onboard_des_3">This is considered one of the best security features, avoiding the case that you are tracked by bad guys.</string>
     <string name="next">Next</string>
     <string name="boosting_your_internet">Boosting your internet speed Please wait a moment!</string>
     <string name="your_network_speed_has_improved">Your network speed has improved</string>

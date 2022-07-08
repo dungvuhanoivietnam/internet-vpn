@@ -70,7 +70,7 @@
     <string name="speed_down_up">KB/s</string>
     <string name="vpn">VPN</string>
     <string name="done">Done</string>
-    <string name="vpn_being_change">VPN is being changed</string>
+    <string name="vpn_being_change">Improving Network Connection</string>
     <string name="rename">Rename</string>
     <string name="there_are_currently_no_checked_locations">There are currently no checked locations</string>
     <string name="location">Location:</string>
@@ -233,12 +233,7 @@ You\'re so lucky! Smart Optimizer - Phone Cleaner is the most perfect answer to 
     <string name="unknow">Unknow</string>
     <string name="recently">Recently</string>
     <string name="favourite">Favourite</string>
-    <string name="onboard_title_1">Internet and VPN\n solution for you</string>
-    <string name="onboard_title_2">Internet and VPN\n soldution for you</string>
-    <string name="onboard_title_3">Internet and VPN\n solution for you</string>
-    <string name="onboard_des_1">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</string>
-    <string name="onboard_des_2">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</string>
-    <string name="onboard_des_3">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</string>
+
     <string name="next">Next</string>
     <string name="boosting_your_internet">Boosting your internet speed Please wait a moment!</string>
     <string name="your_network_speed_has_improved">Your network speed has improved</string>
@@ -253,4 +248,11 @@ You\'re so lucky! Smart Optimizer - Phone Cleaner is the most perfect answer to 
     <string name="boost_internet">Boost Internet</string>
 
     <string name="noname">&lt;Noname&gt;</string>
+
+    <string name="onboard_title_2">Internet Speed</string>
+    <string name="onboard_title_3">Change VPN</string>
+    <string name="onboard_des_1">Test and optimize your network speed with just ONE touch by changing VPN</string>
+    <string name="onboard_des_2">Our app is a highly accurate Internet speed test and wifi analyzer application, completely free.</string>
+    <string name="onboard_des_3">This is considered one of the best security features, avoiding the case that you are tracked by bad guys.</string>
+    <string name="onboard_title_1">Improving Network Connection</string>
 </resources>

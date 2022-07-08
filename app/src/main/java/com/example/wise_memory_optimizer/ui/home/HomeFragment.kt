@@ -312,7 +312,7 @@ class HomeFragment : Fragment() {
             storageRef = firebaseStorage!!.reference
             databaseReference = database!!.reference
             requireActivity().runOnUiThread({
-                if (!dialogLoadingVpn!!.isShowing) {
+                if (dialogLoadingVpn != null && !dialogLoadingVpn!!.isShowing) {
                     dialogLoadingVpn!!.show()
                     dialogLoadingVpn!!.loadingInfo()
                 }
@@ -339,6 +339,8 @@ class HomeFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+        dialogLoadingVpn?.dismiss()
+        dialogLoadingVpn = null
         (requireActivity() as? MainActivity)?.unregisterReceiver(networkReceiver)
     }
 

@@ -72,7 +72,7 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:textColor="@color/color_violet"
-        android:textSize="32sp"
+        android:textSize="@dimen/_28sdp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/spv_internet"

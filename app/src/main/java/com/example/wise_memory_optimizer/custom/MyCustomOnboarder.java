@@ -1,5 +1,6 @@
 package com.example.wise_memory_optimizer.custom;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -10,6 +11,7 @@ import com.aemerse.onboard.OnboardAdvanced;
 import com.aemerse.onboard.OnboardFragment;
 import com.aemerse.onboard.ScreenUtils;
 import com.example.wise_memory_optimizer.MainActivity;
+import com.example.wise_memory_optimizer.MyContextWrapper;
 import com.example.wise_memory_optimizer.R;
 import com.example.wise_memory_optimizer.ui.battery.PreferenceUtil;
 import com.example.wise_memory_optimizer.ui.menu.ui.LanguageFragment;
@@ -24,23 +26,31 @@ public class MyCustomOnboarder extends OnboardAdvanced {
                 R.drawable.bg_guide_ip_1,
                 R.drawable.bg_guide,
                 getResources().getColor(R.color.color_4B5CBF),
-                getResources().getColor(R.color.white),0,0,R.drawable.bg_guide));
+                getResources().getColor(R.color.white), 0, 0, R.drawable.bg_guide));
         addSlide(OnboardFragment.newInstance(getString(R.string.onboard_title_2), getString(R.string.onboard_des_2),
                 R.drawable.bg_guide_ip_2,
                 R.drawable.bg_guide,
                 getResources().getColor(R.color.color_4B5CBF),
-                getResources().getColor(R.color.white),0,0,R.drawable.bg_guide));
+                getResources().getColor(R.color.white), 0, 0, R.drawable.bg_guide));
         addSlide(OnboardFragment.newInstance(getString(R.string.onboard_title_3), getString(R.string.onboard_des_3),
                 R.drawable.bg_guide_ip_3,
                 R.drawable.bg_guide,
                 getResources().getColor(R.color.color_4B5CBF),
-                getResources().getColor(R.color.white),0,0,R.drawable.bg_guide));
-        addFragment(new LanguageFragment(true));
+                getResources().getColor(R.color.white), 0, 0, R.drawable.bg_guide));
+        String language = PreferenceUtil.getString(getBaseContext(), PreferenceUtil.SETTING_ENGLISH, "");
+        if ("".equals(language))
+            addFragment(new LanguageFragment(true));
 //        getSupportFragmentManager().beginTransaction().add(R.id.background, new LanguageFragment());
     }
 
-    public void removeFragLang(){
+    public void removeFragLang() {
 
+    }
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        String language = PreferenceUtil.getString(newBase, PreferenceUtil.SETTING_ENGLISH, "");
+        super.attachBaseContext(MyContextWrapper.wrap(newBase, language));
     }
 
     @Override

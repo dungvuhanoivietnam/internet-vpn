@@ -46,6 +46,7 @@ import com.google.firebase.storage.StorageReference;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Objects;
 
 import de.blinkt.openvpn.OpenVpnApi;
 import de.blinkt.openvpn.core.OpenVPNService;
@@ -209,8 +210,10 @@ public class ChangeVpnFragment extends Fragment {
                 case "DISCONNECTED":
                     vpnStart = false;
                     vpnService.setDefaultStatus();
-                    if (dialogLoadingVpn != null && dialogLoadingVpn.isShowing())
-                        dialogLoadingVpn.dismiss();
+                    requireActivity().runOnUiThread(() -> {
+                        if (dialogLoadingVpn != null && dialogLoadingVpn.isShowing())
+                            dialogLoadingVpn.dismiss();
+                    });
 //                    if (dialogInformationVpn != null && !dialogInformationVpn.isShowing()) {
 //                        dialogInformationVpn.show();
 //                        dialogInformationVpn.setState(DialogInformationVpn.TYPE_INFO.ERROR_VPN);
@@ -218,15 +221,19 @@ public class ChangeVpnFragment extends Fragment {
                     break;
                 case "CONNECTED":
                     vpnStart = true;
-                    if (dialogLoadingVpn != null && dialogLoadingVpn.isShowing())
-                        dialogLoadingVpn.dismiss();
-                    if (dialogInformationVpn != null && !dialogInformationVpn.isShowing()) {
-                        dialogInformationVpn.show();
-                        dialogInformationVpn.setState(DialogInformationVpn.TYPE_INFO.SUCCESS_VPN);
-                    }
+                    requireActivity().runOnUiThread(() -> {
+                        if (dialogLoadingVpn != null && dialogLoadingVpn.isShowing())
+                            dialogLoadingVpn.dismiss();
+                        if (dialogInformationVpn != null && !dialogInformationVpn.isShowing()) {
+                            dialogInformationVpn.show();
+                            dialogInformationVpn.setState(DialogInformationVpn.TYPE_INFO.SUCCESS_VPN);
+                        }
+                        updateStatus(true);
+                    });
+
                     if (viewModel != null)
                         viewModel.setServerCahce(server);
-                    updateStatus(true);
+
                     break;
                 case "WAIT":
                     if (dialogLoadingVpn != null && dialogLoadingVpn.isShowing())
