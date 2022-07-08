@@ -128,7 +128,7 @@ public class ChangeVpnFragment extends Fragment {
         hmCountries = viewModel.getHmCountries();
         if (dfCity != null) {
             server.setCountry(dfCity.getCountry());
-            server.setOvpn(dfCity.getCode() + ".ovpn");
+            server.setOvpn(dfCity.getCode());
             server.setOvpnUserName(dfCity.getUsername());
             server.setOvpnUserPassword(dfCity.getPass());
         }
@@ -362,7 +362,7 @@ public class ChangeVpnFragment extends Fragment {
 
         storageRef.child("ovpn").listAll().addOnSuccessListener(listResult -> {
             for (StorageReference storageReference : listResult.getItems()) {
-                if (storageReference.getName().contains(server.getCountry())) {
+                if (storageReference.getName().contains(server.getOvpn())) {
                     storageReference.getBytes(Long.MAX_VALUE).addOnSuccessListener(bytes -> {
                         try {
                             OpenVpnApi.startVpn(getContext(), new String(bytes, StandardCharsets.UTF_8), server.getCountry(), server.getOvpnUserName(), server.getOvpnUserPassword(), MainActivity.class);

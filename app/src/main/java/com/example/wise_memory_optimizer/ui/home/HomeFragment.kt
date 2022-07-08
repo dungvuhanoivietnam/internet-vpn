@@ -287,7 +287,7 @@ class HomeFragment : Fragment() {
 
     fun initLocalNetwork() {
         binding.txtIpAddress.text = NetworkUtils.getIpAddress(context)
-        binding.txtNation.text = if (NetworkUtils.findSSIDForWifiInfo(context) != null) NetworkUtils.findSSIDForWifiInfo(context) else  NetworkUtils.getSSID(context)
+        binding.txtNation.text = if (NetworkUtils.findSSIDForWifiInfo(context) != null) NetworkUtils.findSSIDForWifiInfo(context) else getString(R.string.noname)
     }
 
     fun initData() {

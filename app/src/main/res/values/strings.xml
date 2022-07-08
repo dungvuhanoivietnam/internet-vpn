@@ -251,4 +251,6 @@ You\'re so lucky! Smart Optimizer - Phone Cleaner is the most perfect answer to 
     This app is the safest app to save private photos such as lock apps, hide photos, hide videos, and other private data with a password lock or pattern lock.
 "</string>
     <string name="boost_internet">Boost Internet</string>
+
+    <string name="noname">&lt;Noname&gt;</string>
 </resources>

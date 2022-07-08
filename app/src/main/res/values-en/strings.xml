@@ -246,5 +246,6 @@ You\'re so lucky! Smart Optimizer - Phone Cleaner is the most perfect answer to 
     <string name="notification_content">The auto-optimization time has expired. You can turn it back on here!</string>
 
     <string name="boost_internet">Boost Internet</string>
+    <string name="noname">&lt;Noname&gt;</string>
 
 </resources>
