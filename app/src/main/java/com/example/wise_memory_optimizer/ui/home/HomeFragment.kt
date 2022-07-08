@@ -287,7 +287,7 @@ class HomeFragment : Fragment() {
 
     fun initLocalNetwork() {
         binding.txtIpAddress.text = NetworkUtils.getIpAddress(context)
-        binding.txtNation.text = NetworkUtils.findSSIDForWifiInfo(context)
+        binding.txtNation.text = if (NetworkUtils.findSSIDForWifiInfo(context) != null) NetworkUtils.findSSIDForWifiInfo(context) else  NetworkUtils.getSSID(context)
     }
 
     fun initData() {
@@ -398,13 +398,13 @@ class HomeFragment : Fragment() {
             }
         }
         server.country = city!!.country
-        server.ovpn = city!!.code + ".ovpn"
+        server.ovpn = city!!.code
         server.ovpnUserName = city!!.username
         server.ovpnUserPassword = city!!.pass
         // .ovpn file
         storageRef!!.child("ovpn").listAll().addOnSuccessListener {
             for (item in it.items){
-                if (item.name.contains(server.country)){
+                if (item.name.contains(server.ovpn)){
                     item.getBytes(Long.MAX_VALUE).addOnSuccessListener {
                         try {
                             OpenVpnApi.startVpn(
@@ -448,6 +448,7 @@ class HomeFragment : Fragment() {
         if (connectionState != null) when (connectionState) {
             "DISCONNECTED" -> {
                 vpnStart = false
+                updateStatus(false)
                 if (dialogLoadingVpn != null && dialogLoadingVpn!!.isShowing) dialogLoadingVpn!!.dismiss()
             }
             "CONNECTED" -> {

@@ -164,14 +164,14 @@
 Are you looking for an Internet speed meter to monitor?
 Do you want to protect your location from tracking?
 
-You're so lucky! Smart Optimizer - Phone Cleaner is the most perfect answer to all your worries. Not only is an application to optimize memory, this app also gives you many more uses:
+You\'re so lucky! Smart Optimizer - Phone Cleaner is the most perfect answer to all your worries. Not only is an application to optimize memory, this app also gives you many more uses:
 ★ Ram Optimizes
 ★ Battery Optimizes
 ★ CPU Booster
 ★ Internet Speed
 ★ Delete Duplicate
 ★ Change VPN
-6 functions in ONE app - It's no exaggeration to say that this is the best app for your phone!"</string>
+6 functions in ONE app - It\'s no exaggeration to say that this is the best app for your phone!"</string>
     <string name="txt_label_abount_app">Best Lock Apps to Hide Photos</string>
     <string name="txt_version_abount_app">Version 1.0.22</string>
     <string name="txt_dialog_automatic_optiomization">Automatic optimization mode \n has been Activated</string>
@@ -247,8 +247,8 @@ You're so lucky! Smart Optimizer - Phone Cleaner is the most perfect answer to a
     <string name="notification_content">The auto-optimization time has expired. You can turn it back on here!</string>
 
     <string name="txt_label_privacy">Best Apps to Hide Photos</string>
-    <string name="txt_description_privacy">    Which one is the best app lock to hide photos? MyGuard - Lock app photo video is your answer. This app is the safest app to save private photos such as lock apps, hide photos, hide videos, and other private data with a password lock or pattern lock.     Which one is the best app lock to hide photos? MyGuard - Lock app photo video is your answer. This app is the safest app to save private photos such as lock apps, hide photos, hide videos, and other private data with a password lock or pattern lock.\n
+    <string name="txt_description_privacy">"    Which one is the best app lock to hide photos? MyGuard - Lock app photo video is your answer. This app is the safest app to save private photos such as lock apps, hide photos, hide videos, and other private data with a password lock or pattern lock.     Which one is the best app lock to hide photos? MyGuard - Lock app photo video is your answer. This app is the safest app to save private photos such as lock apps, hide photos, hide videos, and other private data with a password lock or pattern lock.
     This app is the safest app to save private photos such as lock apps, hide photos, hide videos, and other private data with a password lock or pattern lock.
-</string>
+"</string>
     <string name="boost_internet">Boost Internet</string>
 </resources>

@@ -63,7 +63,7 @@
                 android:paddingHorizontal="@dimen/_18sdp"
                 android:layout_marginTop="@dimen/_16sdp"
                 android:fontFamily="@font/poppins_medium500"
-                android:text="@string/txt_label_abount_app"
+                android:text="@string/txt_label_privacy"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/_14ssp"
                 app:layout_constraintStart_toStartOf="parent"

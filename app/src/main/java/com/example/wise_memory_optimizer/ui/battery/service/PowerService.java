@@ -95,7 +95,7 @@ public class PowerService extends Service {
     }
 
     public static void setMBS(Float mbs) {
-        remoteViews.setTextViewText(R.id.txt_global, mbs + "Kb/s");
+//        remoteViews.setTextViewText(R.id.txt_global, mbs + "Kb/s");
     }
 
     private Long getAvaiableRam(Context context) {
