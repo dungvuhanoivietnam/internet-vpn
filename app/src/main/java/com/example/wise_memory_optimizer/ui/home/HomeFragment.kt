@@ -162,7 +162,7 @@ class HomeFragment : Fragment() {
             if (vpnStart) {
                 stopVpn()
             } else {
-                if (NetworkUtils.isConnectVpn()){
+                if (NetworkUtils.isConnectVpn()) {
                     stopVpn()
                 }
                 prepareVpn()
@@ -249,10 +249,12 @@ class HomeFragment : Fragment() {
                             initData()
                         })
                     } else if (status == NETWORK_STATUS_NOT_CONNECTED) {
-                        if (!dialogInformationVpn!!.isShowing) {
-                            dialogInformationVpn!!.show()
-                            dialogInformationVpn!!.setState(DialogInformationVpn.TYPE_INFO.ERROR_NETWORK)
-                        }
+                        requireActivity().runOnUiThread({
+                            if (!dialogInformationVpn!!.isShowing) {
+                                dialogInformationVpn!!.show()
+                                dialogInformationVpn!!.setState(DialogInformationVpn.TYPE_INFO.ERROR_NETWORK)
+                            }
+                        })
                     }
                 }
             }
@@ -287,7 +289,10 @@ class HomeFragment : Fragment() {
 
     fun initLocalNetwork() {
         binding.txtIpAddress.text = NetworkUtils.getIpAddress(context)
-        binding.txtNation.text = if (NetworkUtils.findSSIDForWifiInfo(context) != null) NetworkUtils.findSSIDForWifiInfo(context) else getString(R.string.noname)
+        binding.txtNation.text =
+            if (NetworkUtils.findSSIDForWifiInfo(context) != null) NetworkUtils.findSSIDForWifiInfo(
+                context
+            ) else getString(R.string.noname)
     }
 
     fun initData() {
@@ -306,10 +311,12 @@ class HomeFragment : Fragment() {
             firebaseStorage = FirebaseStorage.getInstance()
             storageRef = firebaseStorage!!.reference
             databaseReference = database!!.reference
-            if (!dialogLoadingVpn!!.isShowing) {
-                dialogLoadingVpn!!.show()
-                dialogLoadingVpn!!.loadingInfo()
-            }
+            requireActivity().runOnUiThread({
+                if (!dialogLoadingVpn!!.isShowing) {
+                    dialogLoadingVpn!!.show()
+                    dialogLoadingVpn!!.loadingInfo()
+                }
+            })
             viewModel!!.getData(databaseReference, context) { o: Any? ->
                 internetSpeedViewModel.getPing()
                 if (dialogLoadingVpn!!.isShowing && !requireActivity().isFinishing) dialogLoadingVpn!!.dismiss()
@@ -388,11 +395,10 @@ class HomeFragment : Fragment() {
         )
         var city: City? = null
         viewModel!!.cities.forEach {
-            if (city == null){
+            if (city == null) {
                 city = it
-            }else if (city!!.ping != 0){
-                if (it.ping < city!!.ping)
-                {
+            } else if (city!!.ping != 0) {
+                if (it.ping < city!!.ping) {
                     city = it
                 }
             }
@@ -403,8 +409,8 @@ class HomeFragment : Fragment() {
         server.ovpnUserPassword = city!!.pass
         // .ovpn file
         storageRef!!.child("ovpn").listAll().addOnSuccessListener {
-            for (item in it.items){
-                if (item.name.contains(server.ovpn)){
+            for (item in it.items) {
+                if (item.name.contains(server.ovpn)) {
                     item.getBytes(Long.MAX_VALUE).addOnSuccessListener {
                         try {
                             OpenVpnApi.startVpn(
@@ -439,9 +445,11 @@ class HomeFragment : Fragment() {
     }
 
     fun updateStatus(isOn: Boolean) {
-        binding.txtFaster.setText(getString(if (isOn) R.string.cancel else R.string.faster))
-        binding.txtContentSuccess.setText(getString(if (isOn) R.string.optimization_time_is_maintained_in else R.string.optimize_current_network_speed))
-        binding.txtCountDown.visibility = if (!isOn) View.GONE else View.VISIBLE
+        requireActivity().runOnUiThread({
+            binding.txtFaster.setText(getString(if (isOn) R.string.cancel else R.string.faster))
+            binding.txtContentSuccess.setText(getString(if (isOn) R.string.optimization_time_is_maintained_in else R.string.optimize_current_network_speed))
+            binding.txtCountDown.visibility = if (!isOn) View.GONE else View.VISIBLE
+        })
     }
 
     fun setStatus(connectionState: String?) {
@@ -454,12 +462,15 @@ class HomeFragment : Fragment() {
             "CONNECTED" -> {
                 vpnStart = true
                 updateStatus(true)
-                if (dialogLoadingVpn != null && dialogLoadingVpn!!.isShowing) dialogLoadingVpn!!.dismiss()
-                if (dialogInformationVpn != null && !dialogInformationVpn!!.isShowing) {
-                    dialogInformationVpn!!.show()
-                    dialogInformationVpn!!.setState(DialogInformationVpn.TYPE_INFO.SUCCESS_VPN_HOME)
-                }
-                viewModel!!.serverCahce = server
+                requireActivity().runOnUiThread({
+                    if (dialogLoadingVpn != null && dialogLoadingVpn!!.isShowing) dialogLoadingVpn!!.dismiss()
+                    if (dialogInformationVpn != null && !dialogInformationVpn!!.isShowing) {
+                        dialogInformationVpn!!.show()
+                        dialogInformationVpn!!.setState(DialogInformationVpn.TYPE_INFO.SUCCESS_VPN_HOME)
+                    }
+                })
+                if (viewModel != null)
+                    viewModel!!.serverCahce = server
 
             }
             "WAIT" -> if (dialogLoadingVpn != null && dialogLoadingVpn!!.isShowing) dialogLoadingVpn!!.setStatus(

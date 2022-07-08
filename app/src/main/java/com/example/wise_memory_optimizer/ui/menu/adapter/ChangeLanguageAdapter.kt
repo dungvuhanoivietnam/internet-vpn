@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.wise_memory_optimizer.R
 import com.example.wise_memory_optimizer.databinding.ItemLanguageBinding
 
@@ -39,6 +40,7 @@ class ChangeLanguageAdapter(
         val item = listLanguage[position]
 
         binding.tvEnglish.text = item.language
+        Glide.with(context).load(item.flags).into(binding.ivImage)
 
 //        binding.rootView.setBackgroundColor(
 //            if (item.selected) ContextCompat.getColor(
@@ -71,4 +73,4 @@ class ChangeLanguageAdapter(
 
 }
 
-data class Language(var language: String?, var selected: Boolean, var value: String? = "")
+data class Language(var language: String?, var selected: Boolean, var value: String? = "", var flags: Int)

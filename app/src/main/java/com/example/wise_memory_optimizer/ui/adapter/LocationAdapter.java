@@ -75,6 +75,8 @@ public class LocationAdapter extends RecyclerView.Adapter<LocationAdapter.ViewHo
 
         Glide.with(context).load(country.getFlag()).into(holder.ivFlag);
         holder.txtCountry.setText(country.getName());
+        if (cities == null)
+            return;
         boolean onlyCity = cities.size() == 1;
         if (!onlyCity) {
             holder.txtCityName.setText(String.format(context.getString(R.string.total_location), cities.size() + ""));

@@ -124,17 +124,16 @@ class LanguageFragment() : Fragment(R.layout.fragment_language), Parcelable {
             }
         }
 
-        lstLanguage.add(Language(getString(R.string.txt_language_en), false, "en"))
-        lstLanguage.add(Language(getString(R.string.txt_language_chi), false, "zh"))
-        lstLanguage.add(Language(getString(R.string.txt_language_ja), false, "ja"))
-        lstLanguage.add(Language(getString(R.string.txt_language_vi), false, "vi"))
-        lstLanguage.add(Language(getString(R.string.txt_language_spanish), false, "es"))
-        lstLanguage.add(Language(getString(R.string.txt_language_portuguese), false, "pt"))
-        lstLanguage.add(Language(getString(R.string.txt_language_russiane), false, "ru"))
-        lstLanguage.add(Language(getString(R.string.txt_language_korean), false, "ko"))
-        lstLanguage.add(Language(getString(R.string.txt_language_french), false, "fr"))
-        lstLanguage.add(Language(getString(R.string.txt_language_german), false, "de"))
-        lstLanguage.add(Language(getString(R.string.txt_language_arabic), false, "ar"))
+        lstLanguage.add(Language(getString(R.string.txt_language_en), false, "en",R.drawable.flag_en))
+        lstLanguage.add(Language(getString(R.string.txt_language_chi), false, "zh",R.drawable.flag_cn))
+        lstLanguage.add(Language(getString(R.string.txt_language_ja), false, "ja",R.drawable.flag_jp))
+        lstLanguage.add(Language(getString(R.string.txt_language_vi), false, "vi",R.drawable.flag_vi))
+        lstLanguage.add(Language(getString(R.string.txt_language_spanish), false, "es",R.drawable.flag_sp))
+        lstLanguage.add(Language(getString(R.string.txt_language_portuguese), false, "pt",R.drawable.flag_ft))
+        lstLanguage.add(Language(getString(R.string.txt_language_russiane), false, "ru",R.drawable.flag_rs))
+        lstLanguage.add(Language(getString(R.string.txt_language_korean), false, "ko",R.drawable.flag_kr))
+        lstLanguage.add(Language(getString(R.string.txt_language_french), false, "fr",R.drawable.flag_fr))
+        lstLanguage.add(Language(getString(R.string.txt_language_german), false, "de",R.drawable.flag_gr))
         adapter = ChangeLanguageAdapter(requireContext()) {
             lang = it
             binding.cbb.text = it.language
