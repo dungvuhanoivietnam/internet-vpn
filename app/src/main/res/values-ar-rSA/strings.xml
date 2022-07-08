@@ -269,4 +269,40 @@
     <string name="automatically_optimize_in">التحسين تلقائيًا على::</string>
     <string name="plesase_check_the_connection">يرجى التحقق من الاتصال</string>
     <string name="yes">نعم</string>
+
+    // more
+    <string name="check_speed">تحقق من السرعة</string>
+    <string name="nation">مزود خدمة الإنترنت:</string>
+    <string name="current_network">الشبكة الحالية</string>
+    <string name="ping">بينغ</string>
+    <string name="faster">بسرعة</string>
+    <string name="optimize_current_network_speed">تحسين سرعة الشبكة الحالية</string>
+    <string name="recheck">أعد فحص</string>
+    <string name="speed_test">اختبار السرعة</string>
+    <string name="change_vpn">&amp; أمبير ؛ تغ</string>
+    <string name="menu_notification">تنبيه</string>
+    <string name="name_author">Application developed \nby Merry Blue</string>
+    <string name="privacy">خصوصية</string>
+    <string name="about_app">حول التطبيق</string>
+    <string name="premium">الممتازة</string>
+    <string name="Boost">تعزيز</string>
+    <string name="internet">إنترنت</string>
+    <string name="ipwf">IPWF:</string>
+    <string name="unknow">مجهول</string>
+    <string name="recently">حديثاً</string>
+    <string name="favourite">المفضل</string>
+    <string name="onboard_title_1">حل إنترنت و VPN \ n من أجلك</string>
+    <string name="onboard_title_2">حل إنترنت و VPN \ n من أجلك</string>
+    <string name="onboard_title_3">حل إنترنت و VPN \ n من أجلك</string>
+    <string name="onboard_des_1">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</string>
+    <string name="onboard_des_2">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</string>
+    <string name="onboard_des_3">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</string>
+    <string name="next">التالي</string>
+    <string name="boosting_your_internet">زيادة سرعة الإنترنت لديك من فضلك انتظر لحظة!</string>
+    <string name="your_network_speed_has_improved">لقد تحسنت سرعة شبكتك</string>
+    <string name="select_language">اختار اللغة</string>
+    <string name="optimization_time_is_maintained_in">يتم الحفاظ على وقت التحسين في</string>
+    <string name="notification_content">انتهى وقت التحسين التلقائي. يمكنك إعادة تشغيله هنا!</string>
+
+    <string name="boost_internet">Boost Internet</string>
 </resources>

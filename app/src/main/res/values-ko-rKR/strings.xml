@@ -268,4 +268,40 @@ Android Optimizer의 권한 있는 대리인이 서면으로 작성하고 서명
     <string name="plesase_check_the_connection">연결을 확인하십시오</string>
     <string name="yes">예</string>
 
+    // more
+    <string name="check_speed">속도 확인</string>
+    <string name="nation">ISP:</string>
+    <string name="current_network">현재 네트워크</string>
+    <string name="ping">핑</string>
+    <string name="faster">더 빠르게</string>
+    <string name="optimize_current_network_speed">현재 네트워크 속도 최적화</string>
+    <string name="recheck">재확인</string>
+    <string name="speed_test">속도 테스트</string>
+    <string name="change_vpn">&amp; VPN 변경</string>
+    <string name="menu_notification">공고</string>
+    <string name="name_author">Merry Blue에서\n개발한 애플리케이션</string>
+    <string name="privacy">은둔</string>
+    <string name="about_app">앱 정보</string>
+    <string name="premium">프리미엄</string>
+    <string name="Boost">후원</string>
+    <string name="internet">Internet</string>
+    <string name="ipwf">IPWF:</string>
+    <string name="unknow">알려지지 않은</string>
+    <string name="recently">최근에</string>
+    <string name="favourite">가장 좋아하는</string>
+    <string name="onboard_title_1">인터넷 및 VPN\n 솔루션</string>
+    <string name="onboard_title_2">인터넷 및 VPN\n 솔루션</string>
+    <string name="onboard_title_3">인터넷 및 VPN\n 솔루션</string>
+    <string name="onboard_des_1">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</string>
+    <string name="onboard_des_2">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</string>
+    <string name="onboard_des_3">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</string>
+    <string name="next">다음</string>
+    <string name="boosting_your_internet">인터넷 속도 향상 잠시만 기다려 주십시오!</string>
+    <string name="your_network_speed_has_improved">네트워크 속도가 향상되었습니다</string>
+    <string name="select_language">언어 선택</string>
+    <string name="optimization_time_is_maintained_in">최적화 시간은 다음에서 유지됩니다.</string>
+    <string name="notification_content">자동 최적화 시간이 만료되었습니다. 여기에서 다시 켤 수 있습니다!</string>
+
+    <string name="boost_internet">Boost Internet</string>
+
 </resources>

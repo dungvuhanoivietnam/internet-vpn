@@ -269,4 +269,40 @@ Android OptimizerまたはこれらのTOSに関連して適用される、また
     <string name="automatically_optimize_in">自動的に最適化：</string>
     <string name="plesase_check_the_connection">接続を確認してください</string>
     <string name="yes">はい</string>
+
+    // more
+    <string name="check_speed">速度を確認する</string>
+    <string name="nation">ISP:</string>
+    <string name="current_network">現在のネットワーク</string>
+    <string name="ping">ping</string>
+    <string name="faster">もっと早く</string>
+    <string name="optimize_current_network_speed">現在のネットワーク速度を最適化する</string>
+    <string name="recheck">再確認</string>
+    <string name="speed_test">スピードテスト</string>
+    <string name="change_vpn">&amp; VPNを変更する</string>
+    <string name="menu_notification">通知</string>
+    <string name="name_author">アプリケーションは\nメリーブルーによって開発されました</string>
+    <string name="privacy">プライバシー</string>
+    <string name="about_app">アプリについて</string>
+    <string name="premium">プレミアム</string>
+    <string name="Boost">ブースト</string>
+    <string name="internet">インターネット</string>
+    <string name="ipwf">IPWF:</string>
+    <string name="unknow">わからない</string>
+    <string name="recently">最近</string>
+    <string name="favourite">お気に入り</string>
+    <string name="onboard_title_1">インターネットとVPN\nソリューション</string>
+    <string name="onboard_title_2">インターネットとVPN\nソリューション</string>
+    <string name="onboard_title_3">インターネットとVPN\nソリューション</string>
+    <string name="onboard_des_1">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</string>
+    <string name="onboard_des_2">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</string>
+    <string name="onboard_des_3">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</string>
+    <string name="next">次</string>
+    <string name="boosting_your_internet">インターネットの速度を上げるちょっと待ってください！</string>
+    <string name="your_network_speed_has_improved">ネットワーク速度が向上しました</string>
+    <string name="select_language">言語を選択する</string>
+    <string name="optimization_time_is_maintained_in">最適化時間はで維持されます</string>
+    <string name="notification_content">自動最適化の期限が切れました。 ここでオンに戻すことができます！</string>
+
+    <string name="boost_internet">Boost Internet</string>
 </resources>

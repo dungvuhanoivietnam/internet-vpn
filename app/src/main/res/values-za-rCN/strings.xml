@@ -269,4 +269,40 @@ Android Optimizer 有权随时以任何理由终止本许可以及您使用 Andr
     <string name="plesase_check_the_connection">请检查连接</string>
     <string name="yes">是的</string>
 
+    // more
+    <string name="check_speed">检查速度</string>
+    <string name="nation">互联网服务提供商：</string>
+    <string name="current_network">当前网络</string>
+    <string name="ping">平</string>
+    <string name="faster">快点</string>
+    <string name="optimize_current_network_speed">优化当前网络速度</string>
+    <string name="recheck">重新检查</string>
+    <string name="speed_test">速度测试</string>
+    <string name="change_vpn">&amp; 更改 VPN</string>
+    <string name="menu_notification">通知</string>
+    <string name="name_author">应用程序开发者 \n 由 Merry Blue</string>
+    <string name="privacy">隐私</string>
+    <string name="about_app">关于应用</string>
+    <string name="premium">优质的</string>
+    <string name="Boost">促进</string>
+    <string name="internet">互联网</string>
+    <string name="ipwf">IPWF:</string>
+    <string name="unknow">未知</string>
+    <string name="recently">最近</string>
+    <string name="favourite">最喜欢的</string>
+    <string name="onboard_title_1">适合您的 Internet 和 VPN\n 解决方案</string>
+    <string name="onboard_title_2">适合您的 Internet 和 VPN\n 解决方案</string>
+    <string name="onboard_title_3">适合您的 Internet 和 VPN\n 解决方案</string>
+    <string name="onboard_des_1">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</string>
+    <string name="onboard_des_2">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</string>
+    <string name="onboard_des_3">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</string>
+    <string name="next">下一个</string>
+    <string name="boosting_your_internet">提高您的网速 请稍等！</string>
+    <string name="your_network_speed_has_improved">您的网络速度已提高</string>
+    <string name="select_language">选择语言</string>
+    <string name="optimization_time_is_maintained_in">优化时间保持在</string>
+    <string name="notification_content">自动优化时间已过。 你可以在这里重新打开它！</string>
+
+    <string name="boost_internet">Boost Internet</string>
+
 </resources>

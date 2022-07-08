@@ -269,4 +269,40 @@ Keine Änderung, Änderung, Verzicht oder Aufhebung einer Bestimmung dieser Nutz
     <string name="automatically_optimize_in">Automatisch optimieren auf:</string>
     <string name="plesase_check_the_connection">Bitte überprüfen Sie die Verbindung</string>
     <string name="yes">Ja</string>
+
+    // more
+    <string name="check_speed">Geschwindigkeit prüfen</string>
+    <string name="nation">Internetanbieter:</string>
+    <string name="current_network">Aktuelles Netzwerk</string>
+    <string name="ping">Klingeln</string>
+    <string name="faster">Schneller</string>
+    <string name="optimize_current_network_speed">Optimieren Sie die aktuelle Netzwerkgeschwindigkeit</string>
+    <string name="recheck">Überprüfen Sie erneut</string>
+    <string name="speed_test">Geschwindigkeitstest</string>
+    <string name="change_vpn">&amp; VPN ändern</string>
+    <string name="menu_notification">Benachrichtigung</string>
+    <string name="name_author">Anwendung entwickelt \nvon Merry Blue</string>
+    <string name="privacy">Privatsphäre</string>
+    <string name="about_app">Über App</string>
+    <string name="premium">Prämie</string>
+    <string name="Boost">Schub</string>
+    <string name="internet">Internet</string>
+    <string name="ipwf">IPWF:</string>
+    <string name="unknow">Unbekannt</string>
+    <string name="recently">In letzter Zeit</string>
+    <string name="favourite">Favorit</string>
+    <string name="onboard_title_1">Internet- und VPN-Lösung\n für Sie</string>
+    <string name="onboard_title_2">Internet- und VPN-Lösung\n für Sie</string>
+    <string name="onboard_title_3">Internet- und VPN-Lösung\n für Sie</string>
+    <string name="onboard_des_1">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</string>
+    <string name="onboard_des_2">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</string>
+    <string name="onboard_des_3">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</string>
+    <string name="next">Nächste</string>
+    <string name="boosting_your_internet">Erhöhen Sie Ihre Internetgeschwindigkeit Bitte warten Sie einen Moment!</string>
+    <string name="your_network_speed_has_improved">Ihre Netzwerkgeschwindigkeit hat sich verbessert</string>
+    <string name="select_language">Sprache auswählen</string>
+    <string name="optimization_time_is_maintained_in">Die Optimierungszeit wird beibehalten in</string>
+    <string name="notification_content">Die Autooptimierungszeit ist abgelaufen. Hier können Sie es wieder einschalten!</string>
+
+    <string name="boost_internet">Boost Internet</string>
 </resources>

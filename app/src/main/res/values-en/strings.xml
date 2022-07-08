@@ -268,4 +268,40 @@ No amendment, modification, waiver or discharge of any provision of these TOS sh
     <string name="plesase_check_the_connection">Please check the connection</string>
     <string name="yes">Yes</string>
 
+    // more
+    <string name="check_speed">Check Speed</string>
+    <string name="nation">ISP:</string>
+    <string name="current_network">Current network</string>
+    <string name="ping">ping</string>
+    <string name="faster">Faster</string>
+    <string name="optimize_current_network_speed">Optimize current network speed</string>
+    <string name="recheck">Recheck</string>
+    <string name="speed_test">Speed Test</string>
+    <string name="change_vpn">&amp; Change VPN</string>
+    <string name="menu_notification">Notification</string>
+    <string name="name_author">Application developed \nby Merry Blue</string>
+    <string name="privacy">Privacy</string>
+    <string name="about_app">About App</string>
+    <string name="premium">Premium</string>
+    <string name="Boost">Boost</string>
+    <string name="internet">Internet</string>
+    <string name="ipwf">IPWF:</string>
+    <string name="unknow">Unknow</string>
+    <string name="recently">Recently</string>
+    <string name="favourite">Favourite</string>
+    <string name="onboard_title_1">Internet and VPN\n solution for you</string>
+    <string name="onboard_title_2">Internet and VPN\n soldution for you</string>
+    <string name="onboard_title_3">Internet and VPN\n solution for you</string>
+    <string name="onboard_des_1">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</string>
+    <string name="onboard_des_2">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</string>
+    <string name="onboard_des_3">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</string>
+    <string name="next">Next</string>
+    <string name="boosting_your_internet">Boosting your internet speed Please wait a moment!</string>
+    <string name="your_network_speed_has_improved">Your network speed has improved</string>
+    <string name="select_language">Select language</string>
+    <string name="optimization_time_is_maintained_in">Optimization time is maintained in</string>
+    <string name="notification_content">The auto-optimization time has expired. You can turn it back on here!</string>
+
+    <string name="boost_internet">Boost Internet</string>
+
 </resources>

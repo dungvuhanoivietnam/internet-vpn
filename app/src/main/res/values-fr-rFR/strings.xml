@@ -269,4 +269,40 @@ Aucun amendement, modification, renonciation ou décharge de toute disposition d
     <string name="plesase_check_the_connection">Veuillez vérifier la connexion</string>
     <string name="yes">Oui</string>
 
+    // more
+    <string name="check_speed">Vérifier la vitesse</string>
+    <string name="nation">FAI:</string>
+    <string name="current_network">Réseau actuel</string>
+    <string name="ping">ping</string>
+    <string name="faster">Plus rapide</string>
+    <string name="optimize_current_network_speed">Optimiser la vitesse actuelle du réseau</string>
+    <string name="recheck">Revérifier</string>
+    <string name="speed_test">Test de rapidité</string>
+    <string name="change_vpn">&amp; Changer de VPN</string>
+    <string name="menu_notification">Notification</string>
+    <string name="name_author">Application développée\npar Merry Blue</string>
+    <string name="privacy">Intimité</string>
+    <string name="about_app">À propos de l'application</string>
+    <string name="premium">Prime</string>
+    <string name="Boost">Augmenter</string>
+    <string name="internet">l'Internet</string>
+    <string name="ipwf">IPWF:</string>
+    <string name="unknow">Inconnue</string>
+    <string name="recently">Récemment</string>
+    <string name="favourite">Favori</string>
+    <string name="onboard_title_1">Solution Internet et VPN\n pour vous</string>
+    <string name="onboard_title_2">Solution Internet et VPN\n pour vous</string>
+    <string name="onboard_title_3">Solution Internet et VPN\n pour vous</string>
+    <string name="onboard_des_1">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</string>
+    <string name="onboard_des_2">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</string>
+    <string name="onboard_des_3">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</string>
+    <string name="next">Prochain</string>
+    <string name="boosting_your_internet">Boostez votre vitesse Internet Veuillez patienter un instant!</string>
+    <string name="your_network_speed_has_improved">La vitesse de votre réseau s'est améliorée</string>
+    <string name="select_language">Choisir la langue</string>
+    <string name="optimization_time_is_maintained_in">Le temps d'optimisation est maintenu dans</string>
+    <string name="notification_content">Le délai d'optimisation automatique a expiré. Vous pouvez le réactiver ici!</string>
+
+    <string name="boost_internet">Boost Internet</string>
+
 </resources>

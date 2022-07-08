@@ -270,4 +270,40 @@ Android Optimizer имеет право прекратить действие э
     <string name="plesase_check_the_connection">Пожалуйста, проверьте соединение</string>
     <string name="yes">Да</string>
 
+    // more
+    <string name="check_speed">Проверить скорость</string>
+    <string name="nation">Интернет-провайдер:</string>
+    <string name="current_network">Текущая сеть</string>
+    <string name="ping">пинг</string>
+    <string name="faster">Быстрее</string>
+    <string name="optimize_current_network_speed">Оптимизировать текущую скорость сети</string>
+    <string name="recheck">перепроверить</string>
+    <string name="speed_test">Тест скорости</string>
+    <string name="change_vpn">&amp; Изменить VPN</string>
+    <string name="menu_notification">Уведомление</string>
+    <string name="name_author">Приложение разработано \nMerry Blue</string>
+    <string name="privacy">Конфиденциальность</string>
+    <string name="about_app">О приложении</string>
+    <string name="premium">Премиум</string>
+    <string name="Boost">Способствовать росту</string>
+    <string name="internet">Интернет</string>
+    <string name="ipwf">ИПВФ:</string>
+    <string name="unknow">Неизвестный</string>
+    <string name="recently">Совсем недавно</string>
+    <string name="favourite">Любимый</string>
+    <string name="onboard_title_1">Интернет и VPN\n решение для вас</string>
+    <string name="onboard_title_2">Интернет и VPN\n решение для вас</string>
+    <string name="onboard_title_3">Интернет и VPN\n решение для вас</string>
+    <string name="onboard_des_1">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</string>
+    <string name="onboard_des_2">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</string>
+    <string name="onboard_des_3">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</string>
+    <string name="next">Следующий</string>
+    <string name="boosting_your_internet">Увеличение скорости вашего интернета Пожалуйста, подождите!</string>
+    <string name="your_network_speed_has_improved">Скорость вашей сети улучшилась</string>
+    <string name="select_language">Выберите язык</string>
+    <string name="optimization_time_is_maintained_in">Время оптимизации поддерживается в</string>
+    <string name="notification_content">Время автооптимизации истекло. Вы можете включить его здесь!</string>
+
+    <string name="boost_internet">Boost Internet</string>
+
 </resources>

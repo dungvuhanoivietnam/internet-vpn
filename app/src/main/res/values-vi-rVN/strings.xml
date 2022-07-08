@@ -268,4 +268,40 @@ Không có sửa đổi, điều chỉnh, từ bỏ hoặc hủy bỏ bất kỳ
     <string name="plesase_check_the_connection">Vui lòng kiểm tra kết nối</string>
     <string name="yes">Đồng ý</string>
 
+    // more
+    <string name="check_speed">Kiểm tra tốc độ</string>
+    <string name="nation">ISP:</string>
+    <string name="current_network">Mạng hiện hành</string>
+    <string name="ping">ping</string>
+    <string name="faster">Nhanh hơn</string>
+    <string name="optimize_current_network_speed">Tối ưu hóa tốc độ mạng hiện tại</string>
+    <string name="recheck">Kiểm tra lại</string>
+    <string name="speed_test">Kiểm tra tốc độ</string>
+    <string name="change_vpn">&amp; Thay đổi VPN</string>
+    <string name="menu_notification">Thông báo</string>
+    <string name="name_author">Ứng dụng được phát triển \n bởi Merry Blue</string>
+    <string name="privacy">Sự riêng tư</string>
+    <string name="about_app">Giới thiệu về ứng dụng</string>
+    <string name="premium">Cao cấp</string>
+    <string name="Boost">Tăng</string>
+    <string name="internet">Internet</string>
+    <string name="ipwf">IPWF:</string>
+    <string name="unknow">không xác định</string>
+    <string name="recently">Gần đây</string>
+    <string name="favourite">Yêu thích</string>
+    <string name="onboard_title_1">Internet và VPN \n giải pháp cho bạn</string>
+    <string name="onboard_title_2">Internet và VPN \n giải pháp cho bạn</string>
+    <string name="onboard_title_3">Internet và VPN \n giải pháp cho bạn</string>
+    <string name="onboard_des_1">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</string>
+    <string name="onboard_des_2">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</string>
+    <string name="onboard_des_3">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</string>
+    <string name="next">Tiếp theo</string>
+    <string name="boosting_your_internet">Tăng tốc độ internet của bạn Vui lòng đợi trong giây lát!</string>
+    <string name="your_network_speed_has_improved">Tốc độ mạng của bạn đã được cải thiện</string>
+    <string name="select_language">Chọn ngôn ngữ</string>
+    <string name="optimization_time_is_maintained_in">Thời gian tối ưu hóa được duy trì trong</string>
+    <string name="notification_content">Thời gian tự động tối ưu hóa đã hết. Bạn có thể bật lại ở đây!</string>
+
+    <string name="boost_internet">Boost Internet</string>
+
 </resources>
