@@ -260,6 +260,11 @@ class HomeFragment : Fragment() {
         IntentFilter("android.net.conn.CONNECTIVITY_CHANGE").also {
             (requireActivity() as? MainActivity)?.registerReceiver(networkReceiver, it)
         }
+        viewModel = activity?.let {
+            ViewModelProvider(it).get(
+                ChangeVpnViewModel::class.java
+            )
+        }
         return root
     }
 
@@ -286,13 +291,9 @@ class HomeFragment : Fragment() {
     }
 
     fun initData() {
-        if (activity == null)
+        if (activity == null || viewModel == null)
             return
-        viewModel = activity?.let {
-            ViewModelProvider(it).get(
-                ChangeVpnViewModel::class.java
-            )
-        }
+
         if (dialogInformationVpn!!.isShowing) dialogInformationVpn!!.dismiss()
         initLocalNetwork()
         if (viewModel!!.dfCity.code != null) {

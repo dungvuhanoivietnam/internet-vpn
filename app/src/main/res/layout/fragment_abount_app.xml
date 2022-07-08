@@ -31,31 +31,43 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_group_39652" />
+                app:srcCompat="@drawable/ic_banner_menu" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/label1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="9dp"
-                android:text="@string/txt_version_abount_app"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:text="@string/speed_test"
                 android:textColor="@android:color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/image_android_optimize" />
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/label_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:text="@string/boost_internet"
+                android:textColor="@color/color_8767DF"
+                android:textSize="@dimen/_18sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/label1" />
+
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/label2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="14dp"
+                android:paddingHorizontal="@dimen/_18sdp"
+                android:layout_marginTop="@dimen/_16sdp"
                 android:fontFamily="@font/poppins_medium500"
                 android:text="@string/txt_label_abount_app"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/_14ssp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/label1" />
+                app:layout_constraintTop_toBottomOf="@+id/label_content" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/label3"
@@ -66,7 +78,7 @@
                 android:layout_marginEnd="25dp"
                 android:fontFamily="@font/poppins_regular400"
                 android:lineSpacingExtra="@dimen/_2sdp"
-                android:text="@string/txt_description_abount_app"
+                android:text="@string/txt_description_privacy"
                 android:textColor="#D9D9D9"
                 android:textSize="@dimen/_13ssp"
                 app:layout_constraintTop_toBottomOf="@id/label2" />
@@ -80,6 +92,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="16dp"
+        android:visibility="gone"
         android:layout_marginBottom="20dp"
         android:scaleType="fitXY"
         android:src="@drawable/img_language"
