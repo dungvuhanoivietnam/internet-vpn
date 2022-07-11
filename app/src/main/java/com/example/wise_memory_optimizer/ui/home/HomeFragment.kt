@@ -37,8 +37,11 @@ import com.example.wise_memory_optimizer.utils.NetworkUtils
 import com.example.wise_memory_optimizer.utils.NetworkUtils.NETWORK_STATUS_NOT_CONNECTED
 import com.example.wise_memory_optimizer.utils.showStateTesting
 import com.google.firebase.FirebaseApp
+import com.google.firebase.analytics.FirebaseAnalytics
+import com.google.firebase.analytics.ktx.analytics
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import de.blinkt.openvpn.OpenVpnApi
@@ -50,6 +53,7 @@ import java.nio.charset.StandardCharsets
 class HomeFragment : Fragment() {
 
     private var oldTimeClick = System.currentTimeMillis()
+    private lateinit var firebaseAnalytics: FirebaseAnalytics
 
     private var _binding: FragmentHomeBinding? = null
     var drawerLayout: DrawerLayout? = null
@@ -237,6 +241,13 @@ class HomeFragment : Fragment() {
                     }
                 }
             }
+
+        activity?.let { FirebaseApp.initializeApp(it) }
+        database = FirebaseDatabase.getInstance()
+        firebaseStorage = FirebaseStorage.getInstance()
+        firebaseAnalytics = Firebase.analytics
+        firebaseAnalytics.logEvent(FirebaseAnalytics.Event.APP_OPEN,Bundle())
+
         initData()
         initObserver()
         networkReceiver = object : NetworkChangeReceiver() {
@@ -245,9 +256,7 @@ class HomeFragment : Fragment() {
                 if (intent!!.action == "android.net.conn.CONNECTIVITY_CHANGE") {
                     val status = intent.getIntExtra("status", 0)
                     if (status != NETWORK_STATUS_NOT_CONNECTED) {
-                        activity!!.runOnUiThread({
-                            initData()
-                        })
+                        initData()
                     } else if (status == NETWORK_STATUS_NOT_CONNECTED) {
                         requireActivity().runOnUiThread({
                             if (!dialogInformationVpn!!.isShowing) {
@@ -306,19 +315,16 @@ class HomeFragment : Fragment() {
             return
         }
         if (NetworkUtils.isNetworkAvailable(activity)) {
-            activity?.let { FirebaseApp.initializeApp(it) }
-            database = FirebaseDatabase.getInstance()
-            firebaseStorage = FirebaseStorage.getInstance()
             storageRef = firebaseStorage!!.reference
             databaseReference = database!!.reference
-            requireActivity().runOnUiThread({
-                if (dialogLoadingVpn != null && !dialogLoadingVpn!!.isShowing) {
-                    dialogLoadingVpn!!.show()
-                    dialogLoadingVpn!!.loadingInfo()
-                }
-            })
+            if (dialogLoadingVpn != null && !dialogLoadingVpn!!.isShowing) {
+                dialogLoadingVpn!!.show()
+                dialogLoadingVpn!!.loadingInfo()
+            }
             viewModel!!.getData(databaseReference, context) { o: Any? ->
                 internetSpeedViewModel.getPing()
+                if (dialogLoadingVpn == null)
+                    return@getData
                 if (dialogLoadingVpn!!.isShowing && !requireActivity().isFinishing) dialogLoadingVpn!!.dismiss()
             }
         } else {
@@ -346,7 +352,8 @@ class HomeFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        drawerLayout?.closeDrawer(GravityCompat.END);
+        if (drawerLayout != null)
+            drawerLayout?.closeDrawer(GravityCompat.END);
         LocalBroadcastManager.getInstance(requireActivity())
             .registerReceiver(broadcastReceiver, IntentFilter("connectionState"))
     }
@@ -410,13 +417,15 @@ class HomeFragment : Fragment() {
         server.ovpnUserName = city!!.username
         server.ovpnUserPassword = city!!.pass
         // .ovpn file
+        if (storageRef == null)
+            return
         storageRef!!.child("ovpn").listAll().addOnSuccessListener {
             for (item in it.items) {
                 if (item.name.contains(server.ovpn)) {
                     item.getBytes(Long.MAX_VALUE).addOnSuccessListener {
                         try {
                             OpenVpnApi.startVpn(
-                                context,
+                                requireContext(),
                                 String(it, StandardCharsets.UTF_8),
                                 server.getCountry(),
                                 server.getOvpnUserName(),

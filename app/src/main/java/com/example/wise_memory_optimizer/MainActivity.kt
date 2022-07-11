@@ -8,15 +8,17 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.wise_memory_optimizer.custom.MyCustomOnboarder
 import com.example.wise_memory_optimizer.databinding.ActivityMainBinding
 import com.example.wise_memory_optimizer.ui.battery.PreferenceUtil
-import com.example.wise_memory_optimizer.ui.battery.service.PowerService
 import com.example.wise_memory_optimizer.utils.ScreenUtils
-import com.example.wise_memory_optimizer.utils.SharePreferenceUtils
-import com.example.wise_memory_optimizer.utils.SharePrefrenceUtils
+import com.google.firebase.analytics.FirebaseAnalytics
+import com.google.firebase.analytics.ktx.analytics
+import com.google.firebase.ktx.Firebase
 
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

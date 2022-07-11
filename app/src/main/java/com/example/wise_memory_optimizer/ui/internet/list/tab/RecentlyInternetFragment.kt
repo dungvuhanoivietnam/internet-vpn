@@ -132,6 +132,8 @@ class RecentlyInternetFragment : Fragment() {
              *   Handle delete location testing
              * */
             findViewById<ExtTextView>(R.id.btn_delete).setOnClickListener {
+                if (position > listLocationTesting.size)
+                    return@setOnClickListener
                 listLocationTesting.removeAt(position)
                 viewModelActivity.deleteRecentTestingModel(model)
                 adapterSpeedTest?.notifyItemRemoved(position)
