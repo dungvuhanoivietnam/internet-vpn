@@ -124,7 +124,7 @@ class LanguageFragment() : Fragment(R.layout.fragment_language), Parcelable {
         }
 
         lstLanguage.add(Language(getString(R.string.txt_language_en), false, "en",R.drawable.flag_en))
-        lstLanguage.add(Language(getString(R.string.txt_language_chi), false, "zh",R.drawable.flag_cn))
+        lstLanguage.add(Language(getString(R.string.txt_language_chi), false, "za",R.drawable.flag_cn))
         lstLanguage.add(Language(getString(R.string.txt_language_ja), false, "ja",R.drawable.flag_jp))
         lstLanguage.add(Language(getString(R.string.txt_language_vi), false, "vi",R.drawable.flag_vi))
         lstLanguage.add(Language(getString(R.string.txt_language_spanish), false, "es",R.drawable.flag_sp))

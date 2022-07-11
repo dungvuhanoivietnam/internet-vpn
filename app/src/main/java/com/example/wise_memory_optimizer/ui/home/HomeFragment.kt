@@ -296,7 +296,7 @@ class HomeFragment : Fragment() {
     }
 
     fun initData() {
-        if (activity == null || viewModel == null)
+        if (activity == null || viewModel == null || dialogInformationVpn == null)
             return
 
         if (dialogInformationVpn!!.isShowing) dialogInformationVpn!!.dismiss()
