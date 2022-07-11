@@ -8,15 +8,17 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.wise_memory_optimizer.custom.MyCustomOnboarder
 import com.example.wise_memory_optimizer.databinding.ActivityMainBinding
 import com.example.wise_memory_optimizer.ui.battery.PreferenceUtil
-import com.example.wise_memory_optimizer.ui.battery.service.PowerService
 import com.example.wise_memory_optimizer.utils.ScreenUtils
-import com.example.wise_memory_optimizer.utils.SharePreferenceUtils
-import com.example.wise_memory_optimizer.utils.SharePrefrenceUtils
+import com.google.firebase.analytics.FirebaseAnalytics
+import com.google.firebase.analytics.ktx.analytics
+import com.google.firebase.ktx.Firebase
 
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private lateinit var firebaseAnalytics: FirebaseAnalytics
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,6 +44,8 @@ class MainActivity : AppCompatActivity() {
 //        if (!PowerService.isServiceRunning(applicationContext, PowerService::class.java)) {
 //            PowerService.startMy(applicationContext)
 //        }
+
+        firebaseAnalytics = Firebase.analytics
     }
 
     private fun initOnboarding() {

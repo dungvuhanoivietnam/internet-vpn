@@ -57,6 +57,8 @@ public class NetworkUtils {
         WifiManager wm = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
         WifiInfo wifiInfo = wm.getConnectionInfo();
         List<WifiConfiguration> listOfConfigurations = wm.getConfiguredNetworks();
+        if (listOfConfigurations == null)
+            return null;
 
         for (int index = 0; index < listOfConfigurations.size(); index++) {
             WifiConfiguration configuration = listOfConfigurations.get(index);

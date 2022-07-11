@@ -86,8 +86,8 @@ class LanguageFragment() : Fragment(R.layout.fragment_language), Parcelable {
                 )
                 Handler(Looper.getMainLooper()).postDelayed({
                     /* Create an Intent that will start the Menu-Activity. */
-                    activity?.finish()
-                    startActivity(Intent(activity, MainActivity::class.java))
+                    startActivity(Intent(requireActivity(), MainActivity::class.java))
+                    requireActivity().finish()
                 }, 500)
 
             }

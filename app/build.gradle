@@ -126,4 +126,5 @@ dependencies {
     // Firebase crash
     implementation 'com.google.firebase:firebase-crashlytics-ktx:18.2.11'
 
+    implementation 'com.google.firebase:firebase-analytics-ktx'
 }

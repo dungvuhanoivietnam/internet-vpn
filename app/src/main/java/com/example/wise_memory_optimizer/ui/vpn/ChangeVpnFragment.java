@@ -83,7 +83,7 @@ public class ChangeVpnFragment extends Fragment {
         initView();
         initDialog();
 
-        if (NetworkUtils.isConnectVpn() && server.getCountry().contains(viewModel.getServerCahce().getCountry())) {
+        if (NetworkUtils.isConnectVpn() && server.getCountry() != null && viewModel.getServerCahce() != null && viewModel.getServerCahce().getCountry() != null && server.getCountry().contains(viewModel.getServerCahce().getCountry())) {
             if (NetworkUtils.isNetworkAvailable(getActivity())) {
                 if (!NetworkUtils.isConnectVpn()) {
                     stopVpn();
@@ -368,11 +368,15 @@ public class ChangeVpnFragment extends Fragment {
             dialogLoadingVpn.setStatus(getContext().getString(R.string.connecting));
 
         storageRef.child("ovpn").listAll().addOnSuccessListener(listResult -> {
+            if (server.getOvpn() == null)
+                return;
             for (StorageReference storageReference : listResult.getItems()) {
+                if (storageReference.getName() == null)
+                    continue;
                 if (storageReference.getName().contains(server.getOvpn())) {
                     storageReference.getBytes(Long.MAX_VALUE).addOnSuccessListener(bytes -> {
                         try {
-                            OpenVpnApi.startVpn(getContext(), new String(bytes, StandardCharsets.UTF_8), server.getCountry(), server.getOvpnUserName(), server.getOvpnUserPassword(), MainActivity.class);
+                            OpenVpnApi.startVpn(requireContext(), new String(bytes, StandardCharsets.UTF_8), server.getCountry(), server.getOvpnUserName(), server.getOvpnUserPassword(), MainActivity.class);
                         } catch (RemoteException e) {
                             e.printStackTrace();
                         }
