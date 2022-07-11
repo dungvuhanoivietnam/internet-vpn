@@ -86,7 +86,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@id/spacing_vertical"
             app:layout_constraintTop_toBottomOf="@id/spacing_horizontal"
-            app:textViewFontAssetName="@string/font_black" />
+            app:textViewFontAssetName="@string/font_medium" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
