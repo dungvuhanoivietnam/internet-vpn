@@ -143,7 +143,7 @@ class InternetSpeedFragment : Fragment() {
     private fun updateDefaultTestingData(defaultTestingModel: LocationTestingModel) {
         binding.run {
             defaultTestingModel.ping?.let {
-                txtPing.setTextPing(it)
+                txtPing.text = it.toInt().toString()
                 spvInternet.speedTo(it)
                 PowerService.startMy(context)
                 PowerService.setMBS(it)
