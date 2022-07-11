@@ -37,8 +37,11 @@ import com.example.wise_memory_optimizer.utils.NetworkUtils
 import com.example.wise_memory_optimizer.utils.NetworkUtils.NETWORK_STATUS_NOT_CONNECTED
 import com.example.wise_memory_optimizer.utils.showStateTesting
 import com.google.firebase.FirebaseApp
+import com.google.firebase.analytics.FirebaseAnalytics
+import com.google.firebase.analytics.ktx.analytics
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import de.blinkt.openvpn.OpenVpnApi
@@ -50,6 +53,7 @@ import java.nio.charset.StandardCharsets
 class HomeFragment : Fragment() {
 
     private var oldTimeClick = System.currentTimeMillis()
+    private lateinit var firebaseAnalytics: FirebaseAnalytics
 
     private var _binding: FragmentHomeBinding? = null
     var drawerLayout: DrawerLayout? = null
@@ -241,6 +245,8 @@ class HomeFragment : Fragment() {
         activity?.let { FirebaseApp.initializeApp(it) }
         database = FirebaseDatabase.getInstance()
         firebaseStorage = FirebaseStorage.getInstance()
+        firebaseAnalytics = Firebase.analytics
+        firebaseAnalytics.logEvent(FirebaseAnalytics.Event.APP_OPEN,Bundle())
 
         initData()
         initObserver()

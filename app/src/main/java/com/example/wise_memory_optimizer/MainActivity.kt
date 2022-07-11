@@ -17,7 +17,7 @@ import com.google.firebase.ktx.Firebase
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private lateinit var firebaseAnalytics: FirebaseAnalytics
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,8 +44,6 @@ class MainActivity : AppCompatActivity() {
 //        if (!PowerService.isServiceRunning(applicationContext, PowerService::class.java)) {
 //            PowerService.startMy(applicationContext)
 //        }
-
-        firebaseAnalytics = Firebase.analytics
     }
 
     private fun initOnboarding() {
