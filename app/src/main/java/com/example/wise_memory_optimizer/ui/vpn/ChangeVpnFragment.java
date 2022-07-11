@@ -283,6 +283,7 @@ public class ChangeVpnFragment extends Fragment {
                     binding.txtSpeedUpload.setText(byteOut + "");
                     SharePrefrenceUtils.getInstance(getContext()).saveUp(dfCity.getCode(), byteOut);
                 }
+                updateStatus(!"00:00:00".equals(duration));
             } catch (Exception e) {
                 e.printStackTrace();
             }

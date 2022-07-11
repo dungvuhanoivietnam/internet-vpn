@@ -8,6 +8,7 @@ import android.net.VpnService
 import android.os.Bundle
 import android.os.RemoteException
 import android.provider.Settings
+import android.util.Log
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
@@ -107,10 +108,6 @@ class HomeFragment : Fragment() {
         val aboutApp: MenuCustomer = headerView.findViewById(R.id.about_app)
         home.setListener(object : MenuCustomer.Listener {
             override fun onClick() {
-                val data = Bundle()
-                data.putString("data", "Auto Optimize")
-                findNavController()
-                    .navigate(R.id.action_back, data)
                 drawerLayout?.closeDrawers()
             }
         })
@@ -162,8 +159,8 @@ class HomeFragment : Fragment() {
 
         binding.txtFaster.setOnClickListener({
             if (!checkDoubleClick()) return@setOnClickListener
-
             if (vpnStart) {
+                isCancelVpn = true
                 stopVpn()
             } else {
                 if (NetworkUtils.isConnectVpn()) {
@@ -229,7 +226,10 @@ class HomeFragment : Fragment() {
         dialogLoadingVpn = context?.let {
             DialogLoadingVpn(it, R.style.MaterialDialogSheet) {
                 if (dialogLoadingVpn!!.isShowing) dialogLoadingVpn!!.dismiss()
-                if (!it) stopVpn()
+                if (!it) {
+                    stopVpn()
+                    isCancelVpn = true
+                }
             }
         }
         dialogInformationVpn =
@@ -238,7 +238,8 @@ class HomeFragment : Fragment() {
                     if (it == DialogInformationVpn.TYPE_INFO.ERROR_NETWORK) {
                         val intent = Intent(Settings.ACTION_WIRELESS_SETTINGS)
                         requireActivity().startActivityForResult(intent, 50)
-                    }
+                    } else if (it == DialogInformationVpn.TYPE_INFO.SUCCESS_VPN_HOME || it == DialogInformationVpn.TYPE_INFO.ERROR_VPN)
+                        dialogInformationVpn!!.dismiss()
                 }
             }
 
@@ -246,7 +247,7 @@ class HomeFragment : Fragment() {
         database = FirebaseDatabase.getInstance()
         firebaseStorage = FirebaseStorage.getInstance()
         firebaseAnalytics = Firebase.analytics
-        firebaseAnalytics.logEvent(FirebaseAnalytics.Event.APP_OPEN,Bundle())
+        firebaseAnalytics.logEvent(FirebaseAnalytics.Event.APP_OPEN, Bundle())
 
         initData()
         initObserver()
@@ -279,6 +280,8 @@ class HomeFragment : Fragment() {
         return root
     }
 
+    var isCancelVpn: Boolean = false
+
     var networkReceiver: NetworkChangeReceiver? = null
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -308,12 +311,13 @@ class HomeFragment : Fragment() {
         if (activity == null || viewModel == null || dialogInformationVpn == null)
             return
 
-        if (dialogInformationVpn!!.isShowing) dialogInformationVpn!!.dismiss()
         initLocalNetwork()
         if (viewModel!!.dfCity.code != null) {
             internetSpeedViewModel.getPing()
             return
         }
+
+        if (dialogInformationVpn!!.isShowing) dialogInformationVpn!!.dismiss()
         if (NetworkUtils.isNetworkAvailable(activity)) {
             storageRef = firebaseStorage!!.reference
             databaseReference = database!!.reference
@@ -456,6 +460,7 @@ class HomeFragment : Fragment() {
     }
 
     fun updateStatus(isOn: Boolean) {
+        vpnStart = isOn
         requireActivity().runOnUiThread({
             binding.txtFaster.setText(getString(if (isOn) R.string.cancel else R.string.faster))
             binding.txtContentSuccess.setText(getString(if (isOn) R.string.optimization_time_is_maintained_in else R.string.optimize_current_network_speed))
@@ -464,8 +469,16 @@ class HomeFragment : Fragment() {
     }
 
     fun setStatus(connectionState: String?) {
+        Log.e("natruou", connectionState + "")
         if (connectionState != null) when (connectionState) {
             "DISCONNECTED" -> {
+                if (!isCancelVpn) {
+                    if (dialogInformationVpn != null && !dialogInformationVpn!!.isShowing) {
+                        dialogInformationVpn!!.show()
+                        dialogInformationVpn!!.setState(DialogInformationVpn.TYPE_INFO.ERROR_VPN)
+                    }
+                }
+                isCancelVpn = false
                 vpnStart = false
                 updateStatus(false)
                 if (dialogLoadingVpn != null && dialogLoadingVpn!!.isShowing) dialogLoadingVpn!!.dismiss()
@@ -517,8 +530,7 @@ class HomeFragment : Fragment() {
                 if (lastPacketReceive == null) lastPacketReceive = "0"
                 if (byteIn == null) byteIn = ""
                 if (byteOut == null) byteOut = ""
-                if ("".equals(duration))
-                    updateStatus(false)
+                updateStatus(!"00:00:00".equals(duration))
                 binding.txtCountDown.setText("" + duration)
             } catch (e: java.lang.Exception) {
                 e.printStackTrace()
